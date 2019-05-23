@@ -1,0 +1,37 @@
+menu:
+  keppler_booking:
+    name: Keppler Booking
+    current: ['/']
+    url_path: /
+    icon: rocket
+    model: User
+    environment: all
+    position: 4
+    submenu:
+      - image:
+          name: images
+          url_path: /admin/booking/images
+          icon: layers
+          current: ['/admin/booking/images']
+          model: KepplerBooking::Image
+
+      - prices_room:
+          name: prices rooms
+          url_path: /admin/booking/prices_rooms
+          icon: layers
+          current: ['/admin/booking/prices_rooms']
+          model: KepplerBooking::PricesRoom
+
+      - room:
+          name: rooms
+          url_path: /admin/booking/rooms
+          icon: layers
+          current: ['/admin/booking/rooms']
+          model: KepplerBooking::Room
+
+      # - new:
+      #     name: + Add new module
+      #     url_path: /url_path
+      #     current: ['/current_path']
+      #     enviroment: development
+      #     model: User
