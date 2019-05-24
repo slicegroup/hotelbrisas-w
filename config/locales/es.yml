@@ -242,6 +242,7 @@ es:
       icon: Icono
       image_background: 'Imagen de fondo'
       country: País
+      images_room: Imagenes de la Habitación
       state: Estado
       city: Ciudad
       company: Empresa

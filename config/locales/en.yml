@@ -217,6 +217,8 @@ en:
       full_name: 'Full Name'
       email: Email
       role: Role
+      images_room: Images Room
+      prices_room: List of Price
       phone: Phone
       phone_number: 'Phone Number'
       phone_code: 'Phone Code'

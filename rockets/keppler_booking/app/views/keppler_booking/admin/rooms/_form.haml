@@ -30,17 +30,15 @@
                   .col-xs-12
                     = f.input :cover, as: :keppler_file # , max_size: 225
                   .col-xs-12
-                    = link_to_add_association 'Añadir imagen', f, :images, class: "btn input-field"
+                    = link_to_add_association 'Añadir imagen', f, :images, class: "btn btn-primary btn-file"
                   .col-xs-12
                     = f.simple_fields_for :images do |c|
                       = render 'image_fields', :f => c
                   .col-xs-12
-                    = link_to_add_association 'Añadir Precio', f, :prices_rooms, class: "btn input-field"
+                    = link_to_add_association 'Añadir Precio', f, :prices_rooms, class: "btn btn-primary btn-file"
                   .col-xs-12								
                     = f.simple_fields_for :prices_rooms do |c|
                       = render 'prices_room_fields', :f => c
-                  .col-xs-12
-                    = f.input :permalink, as: :string
                   .col-xs-12
                     = f.input :air_conditioner, as: :keppler_boolean
                   .col-xs-12

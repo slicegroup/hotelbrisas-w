@@ -33,3 +33,23 @@
                           = image_tag image.url if image.url
                       - else 
                         = sanitize raw value
+      
+            %table.table
+              %tbody
+                %tr.list-row
+                  %th.display-label= t("activerecord.attributes.images_room")
+                  - @images_room.each do |image|
+                    %td.display-value.fs-body-1.tc-black-2
+                      = image_tag "#{image.img}"
+
+                %tr.list-row
+                  %th.display-label= t("activerecord.attributes.prices_room")
+                  %th.display-value.fs-body-1.tc-black-2
+                    Amount People
+                
+                - @prices_room.each do |attribute, value|
+                  %tr.list-row
+                    %td.display-value.fs-body-1.tc-black-2
+                      #{sanitize raw attribute.price} BsS
+                    %td.display-value.fs-body-1.tc-black-2
+                      #{sanitize raw attribute.amount_people}

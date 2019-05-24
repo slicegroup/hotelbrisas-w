@@ -18,7 +18,10 @@ module KepplerBooking
       end
 
       # GET /bookings/1
-      def show; end
+      def show
+        @images_room = Room.find(params[:id]).images
+        @prices_room = Room.find(params[:id]).prices_rooms
+      end
 
       # GET /bookings/new
       def new

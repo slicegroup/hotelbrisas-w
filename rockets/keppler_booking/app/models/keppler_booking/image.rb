@@ -14,10 +14,16 @@ module KepplerBooking
     mount_uploader :img, AttachmentUploader
     belongs_to :room
 
-
-
     def self.index_attributes
       %i[img]
     end
+    
+    def remove_image
+      if !self.img.nil?
+        image = File.dirname(Rails.root.join(self.img.to_s))
+        FileUtils.rm_rf(image)
+      end
+    end
+
   end
 end
