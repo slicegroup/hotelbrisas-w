@@ -11,6 +11,7 @@ module KepplerBooking
     include Searchable
     acts_as_list
     acts_as_paranoid
+    belongs_to :reservation
 
     def self.index_attributes
       %i[]

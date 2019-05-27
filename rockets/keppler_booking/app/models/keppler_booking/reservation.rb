@@ -11,6 +11,10 @@ module KepplerBooking
     include Searchable
     acts_as_list
     acts_as_paranoid
+    has_many :orders, :dependent => :destroy
+    validates_presence_of :adults, :checkin, :checkout, :name, :email, :documentation, :phone
+    accepts_nested_attributes_for :orders, :reject_if => :all_blank, :allow_destroy => true
+
 
     def self.index_attributes
       %i[name email origin motive]

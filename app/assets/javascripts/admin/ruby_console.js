@@ -1,6 +1,5 @@
 $( document ).on('turbolinks:load', function() {
   var open = false;
-  
 
   $(".console-btn").click(function(){
     if(open===false) {

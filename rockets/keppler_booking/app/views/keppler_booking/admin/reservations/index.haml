@@ -26,7 +26,7 @@
               %a.tool-btn{ 'data-confirm': t('keppler.messages.data_confirm'), 'data-method': 'delete', 'v-bind:href': 'link', rel: 'nofollow', ':class': '{disabled: !checks}' }
                 %i.icon-trash
           - if can?(model).create?
-            .add
+            .add.hide
               = link_to new_admin_booking_reservation_path, class: 'btn-add' do
                 +
                 = t('keppler.actions.add')
@@ -35,6 +35,7 @@
               = file_field_tag :file, id: 'upload-file'
 
         .box.slice-box
+          #calendar
           .box-body.no-padding
             %table.table
               %thead
