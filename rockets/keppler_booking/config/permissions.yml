@@ -1,4 +1,18 @@
 modules:
+  orders:
+    name: Order
+    model: KepplerBookingOrder
+    actions: [
+      'index', 'create', 'update', 'destroy', 'download', 'upload', 'clone'
+    ]
+
+  reservations:
+    name: Reservation
+    model: KepplerBookingReservation
+    actions: [
+      'index', 'create', 'update', 'destroy', 'download', 'upload', 'clone'
+    ]
+
   images:
     name: Image
     model: KepplerBookingImage

@@ -288,6 +288,7 @@ GEM
       turbolinks
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    jquery-validation-rails (1.19.0)
     jshint (1.5.0)
       execjs (>= 1.4.0)
       multi_json (~> 1.0)
@@ -604,6 +605,7 @@ DEPENDENCIES
   jquery-slick-rails (= 1.9.0)
   jquery-turbolinks (= 2.1.0)
   jquery-ui-rails (= 6.0.1)
+  jquery-validation-rails
   jshint
   kaminari (~> 1.1, >= 1.1.1)
   kaminari-i18n (= 0.5.0)

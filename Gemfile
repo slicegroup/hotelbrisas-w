@@ -97,6 +97,7 @@ gem 'route_translator', '5.6.2'
 # Pagination
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'kaminari-i18n', '0.5.0'
+gem 'jquery-validation-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

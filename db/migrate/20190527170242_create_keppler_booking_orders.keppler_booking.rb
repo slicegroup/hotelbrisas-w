@@ -1,0 +1,14 @@
+# This migration comes from keppler_booking (originally 20190527170240)
+class CreateKepplerBookingOrders < ActiveRecord::Migration[5.2]
+  def change
+    create_table :keppler_booking_orders do |t|
+      t.integer :room_id
+      t.integer :quantity_people
+      t.integer :reservation_id
+      t.integer :position
+      t.datetime :deleted_at
+      t.datetime :created_at
+      t.datetime :updated_at
+    end
+  end
+end
