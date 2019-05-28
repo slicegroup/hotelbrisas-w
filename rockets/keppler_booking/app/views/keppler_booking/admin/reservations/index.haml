@@ -26,7 +26,7 @@
               %a.tool-btn{ 'data-confirm': t('keppler.messages.data_confirm'), 'data-method': 'delete', 'v-bind:href': 'link', rel: 'nofollow', ':class': '{disabled: !checks}' }
                 %i.icon-trash
           - if can?(model).create?
-            .add.hide
+            .add
               = link_to new_admin_booking_reservation_path, class: 'btn-add' do
                 +
                 = t('keppler.actions.add')
@@ -69,3 +69,21 @@
           = paginate @objects, window: 1
   .listing-show
     = render 'description', activities: @activities
+
+
+:javascript
+  $('#calendar').fullCalendar()
+  var reservations = #{raw @reservations.map {|a| [a.id, a.name, a.checkin.to_datetime.strftime('%F'), a.checkout.to_datetime.strftime('%F')]}};
+
+  reservations.map(function(a) {
+    var event = new Object();
+    event.id = a[0];
+    event.title= a[1];
+    event.start = new Date(a[2]);
+    event.end = new Date(a[3]);
+    event.url = '/admin/booking/reservations/' + a[0];
+
+    http://localhost:3000/admin/booking/reservations/1
+
+    $('#calendar').fullCalendar( 'renderEvent', event, true );
+  }) 

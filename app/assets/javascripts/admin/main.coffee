@@ -1,7 +1,5 @@
 $(document).on 'turbolinks:load', ->
 
-  $('#calendar').fullCalendar()
-
   toggleMenu = ->
     $slice = $('#sidebar-footer .brand')
     $slice.toggleClass 'hidden'

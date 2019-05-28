@@ -29,6 +29,10 @@ KepplerFrontend::Engine.routes.draw do
       post '/views/generate', to: 'views#generate', as: 'views_generate'
       delete '/views/remove/:file', to: 'views#remove', as: 'views_remove'
 
+      #get "/reservaciones" => 'app/front#reservations' , as: :new_reservation
+      #post "/reservaciones" => 'app/front#create_reservations' , as: :create_reservation
+
+
       get '/assets', to: 'multimedia#index', as: 'multimedia'
       post '/assets/upload', to: 'multimedia#upload', as: 'upload_multimedia'
       get '/assets/upload', to: 'multimedia#upload', as: 'show_upload_multimedia'
