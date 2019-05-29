@@ -8,12 +8,12 @@ menu:
     environment: all
     position: 4
     submenu:
-      - order:
-          name: orders
-          url_path: /admin/booking/orders
-          icon: layers
-          current: ['/admin/booking/orders']
-          model: KepplerBooking::Order
+      #- order:
+          #name: orders
+          #url_path: /admin/booking/orders
+          #icon: layers
+          #current: ['/admin/booking/orders']
+          #model: KepplerBooking::Order
 
       - reservation:
           name: reservations
@@ -22,19 +22,19 @@ menu:
           current: ['/admin/booking/reservations']
           model: KepplerBooking::Reservation
 
-      - image:
-          name: images
-          url_path: /admin/booking/images
-          icon: layers
-          current: ['/admin/booking/images']
-          model: KepplerBooking::Image
+     # - image:
+      #    name: images
+       #   url_path: /admin/booking/images
+        # icon: layers
+        #  current: ['/admin/booking/images']
+        # model: KepplerBooking::Image
 
-      - prices_room:
-          name: prices rooms
-          url_path: /admin/booking/prices_rooms
-          icon: layers
-          current: ['/admin/booking/prices_rooms']
-          model: KepplerBooking::PricesRoom
+      #- prices_room:
+       #   name: prices rooms
+        #  url_path: /admin/booking/prices_rooms
+         # icon: layers
+          #current: ['/admin/booking/prices_rooms']
+          #model: KepplerBooking::PricesRoom
 
       - room:
           name: rooms
