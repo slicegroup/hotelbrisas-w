@@ -161,11 +161,12 @@ header {
   align-items: flex-end;
 }
 
-.input-date p {
+.input-date input {
   padding: .5rem 1rem;
   border: 1px solid #c2c2c2;
    border-radius: .5rem;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0;
