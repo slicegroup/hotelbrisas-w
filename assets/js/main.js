@@ -18,5 +18,4 @@ $('.slick-services').slick({
   dots: true,
   // autoplay: true,
   // autoplaySpeed: 1000
-
 });
