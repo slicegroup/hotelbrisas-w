@@ -38,6 +38,11 @@
                   .col-xs-12
                     = f.input :checkout, as: :string, input_html: { class: 'datepicker' }
                   .col-xs-12
+                    = link_to_add_association 'Añadir Habitación', f, :orders, class: "btn input-field"
+                  .col-xs-12
+                    = f.simple_fields_for :orders do |c|
+                      = render 'order_fields', :f => c
+                  .col-xs-12
                     = f.input :payment, input_html: { min: 0 }
                   .col-xs-12
                     = f.input :observations, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } }
