@@ -38,7 +38,7 @@
                   .col-xs-12
                     = f.input :checkout, as: :string, input_html: { class: 'datepicker' }
                   .col-xs-12
-                    = link_to_add_association 'Añadir Habitación', f, :orders, class: "btn input-field"
+                    = link_to_add_association 'Añadir Habitación', f, :orders, class: "btn btn-primary btn-file btn-cocoon"
                   .col-xs-12
                     = f.simple_fields_for :orders do |c|
                       = render 'order_fields', :f => c
@@ -48,6 +48,8 @@
                     = f.input :observations, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } }
                   .col-xs-12
                     = f.input :total_price, input_html: { min: 0 }
+                  .col-xs-12
+                    = f.input :status
                   .col-xs-12
                     .pull-right
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'
