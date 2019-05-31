@@ -1,227 +1,300 @@
 !!!
-%html
-  %header
-    = render 'app/layouts/head'
-    %link{ rel: 'stylesheet', href: 'https://cdn.linearicons.com/free/1.0.0/icon-font.min.css' }
-    %link{ rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css' }
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "ie=edge", "http-equiv" => "X-UA-Compatible"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap", :rel => "stylesheet"}/
+    %link{:crossorigin => "anonymous", :href => "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", :integrity => "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", :rel => "stylesheet"}/
+    %link{:href => "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css", :rel => "stylesheet"}/
   %body
-    %main#keppler{:role => "main"}
-      .front
-        .languages
-          %a.active-lang{ href: '#' } ESP
-          %a{ href: '#' } ENG
-        - if current_user
-          %a.btn-main{href: "/admin" } Ir a admin
-        - else
-          %a.btn-main{href: "/#{Appearance.first.admin_code}/sign_in" } Ir a admin
-        .front-content
-          .front-logo
-            %span Keppler
-          .front-social
-            %ul
-              %li
-                =  link_to "https://twitter.com/slicegroupxyz", target: '_blank' do
-                  = icon 'fab', 'twitter'
-              %li
-                =  link_to "https://www.facebook.com/slicegroupxyz/", target: '_blank' do
-                  = icon 'fab', 'facebook'
-              %li
-                =  link_to "https://www.instagram.com/slicegroupxyz/", target: '_blank' do
-                  = icon 'fab', 'instagram'
-              %li
-                =  link_to "https://github.com/SliceDevelopers", target: '_blank' do
-                  = icon 'fab', 'github'
-
-      %section.documentation
-        .container-fluid
-          .documentation-header
-            %p
-              %span Keppler
-              es un CMS con un entorno de desarrollo que cuenta con una base de gemas ya integradas, de tal forma que acelerará el desarrollo de aplicaciones de vanguardia bajo la plataforma de Ruby on Rails.
+    %header
+      / START NAVBAR
+      %nav.navbar.navbar-expand-lg.navbar-light.container
+        %a.navbar-brand{:href => "#"}
+          %img.logo-navbar{:alt => "", :src => "assets/app/Logo Brisas BLANCO.png"}/
+        %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+          %span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse.navbar-align
+          %ul.navbar-nav
+            %li.nav-item.active
+              %a.nav-link.nav-custom{:href => "#"}
+                Inicio
+                %span.sr-only (current)
+            %li.nav-item
+              %a.nav-link.nav-custom{:href => "#room"} Habitaciones
+            %li.nav-item
+              %a.nav-link.nav-custom{:href => "#services"} Servicios
+            %li.nav-item
+              %a.nav-link.nav-custom{:href => "#gallery"} Galería
+            %li.nav-item
+              %a.nav-link.nav-custom{:href => "#events"} Eventos
+            %li.nav-item
+              %a.nav-link.nav-custom{:href => "#"} Salones
+            %li.nav-item
+              %a.nav-link.nav-custom{:href => "#footer"} Contáctanos
+      / END NAVBAR
+    / BANNER HOME
+    %section.banner-home
+      .single-banner
+        .item-banner{:style => "background-image:url('assets/app/1.1-min.JPG')"}
+          .mask-banner
+            %p.banner-p Lorem Ipsum
+            %h2.title-banner Excelencia y calidad
+            %a.btn-general.btn-banner{:href => ""} Reservar Ahora
+        .item-banner{:style => "background-image:url('assets/app/8-min.JPG')"}
+          .mask-banner
+            %p.banner-p Lorem Ipsum
+            %h2.title-banner Excelencia y calidad
+            %a.btn-general.btn-banner{:href => ""} Reservar Ahora
+        .item-banner{:style => "background-image:url('assets/app/1.1-min.JPG')"}
+          .mask-banner
+            %p.banner-p Lorem Ipsum
+            %h2.title-banner Excelencia y calidad
+            %a.btn-general.btn-banner{:href => ""} Reservar Ahora
+    / END BANNER HOME
+    / WIDGET BOOKING
+    %section.booking-section
+      .booking
+        .container
           .row
-            .board
-              .board-inner
-                %ul#myTab.nav.nav-tabs
-                  %li.active
-                    %a{"data-toggle" => "tab", :href => "#features"}
-                      Características
-                  %li
-                    %a{"data-toggle" => "tab", :href => "#gem"}
-                      Gema Keppler
-                  %li
-                    %a{"data-toggle" => "tab", :href => "#scaffolds"}
-                      Keppler Scaffolds
-                  %li
-                    %a{"data-toggle" => "tab", :href => "#plugins"}
-                      Plugins
-                  %li
-                    %a{"data-toggle" => "tab", :href => "#simpleform"}
-                      Simple Form con Bootstrap
-              .tab-content
-                #features.tab-pane.fade.in.active
-                  .features-content
-                    .feature-box
-                      %i.lnr.lnr-database
-                      = link_to 'PostgreSQL', 'https://www.postgresql.org/', target: '_blank'
-                      %p Base de datos por defecto
-                    .feature-box
-                      %i.icon-login
-                      = link_to 'Devise', 'https://github.com/plataformatec/devise', target: '_blank'
-                      %p Autenticación de Usuarios
-                    .feature-box
-                      %i.icon-people
-                      = link_to 'Rolify', 'https://github.com/RolifyCommunity/rolify', target: '_blank'
-                      %p Roles de Usuarios
-                    .feature-box
-                      %i.icon-lock
-                      = link_to 'Pundit', 'https://github.com/varvet/pundit', target: '_blank'
-                      %p Autorizaciones
-                    .feature-box
-                      %i.icon-book-open
-                      = link_to 'Kaminari', 'https://github.com/amatsuda/kaminari', target: '_blank'
-                      %p Manejo de Paginación
-                  .features-content
-                    .feature-box
-                      %i.icon-list
-                      = link_to 'SimpleForm', 'https://github.com/RolifyCommunity/rolify', target: '_blank'
-                      %p Helpers de Formularios
-                    .feature-box
-                      %i.icon-magnifier
-                      = link_to 'Ransack', 'https://github.com/activerecord-hackery/ransack', target: '_blank'
-                      %p Búsquedas full-text
-                    .feature-box
-                      %i.lnr.lnr-text-format
-                      = link_to 'AdminLTE', 'https://adminlte.io', target: '_blank'
-                      %p Framework front-end para el administrativo
-                    .feature-box
-                      %i.lnr.lnr-code
-                      = link_to 'VueJS', 'https://vuejs.org/', target: '_blank'
-                      %p Framework JavaScript
-                    .feature-box
-                      %i.icon-graph
-                      = link_to 'Sitemap Generator', 'https://github.com/kjvarga/sitemap_generator', target: '_blank'
-                      %p Sitemap dinámicos
-                #gem.tab-pane.fade
-                  .pane-box
-                    %h4.content-subtitle Instalación
-                    %p Una de las novedades de Keppler Admin v2.0 es el lanzamiento de una gema que nos permite el fácil y rápido manejo de las funcionalidades del CMS.
-                    Para instalarlo necesitamos ejecutar el siguiente comando desde la consola:
-                    %pre
-                      %code.ruby
-                        gem install keppler
-                  .pane-box
-                    %h4.content-subtitle Lista de comandos
-                    %p Para verificar que está instalada la gema correctamente y ver una lista de los posibles comandos
-                    que podemos utilizar, ejecutamos:
-                    %pre
-                      %code.ruby
-                        keppler
-                  .pane-box
-                    %h4.content-subtitle Nuevo Proyecto
-                    %p Para crear un nuevo proyecto en Ruby on Rails con Keppler Admin, podemos ejecutar:
-                    %pre
-                      %code.ruby
-                        keppler new NuevoProyecto
-                  .pane-box
-                    %h4.content-subtitle Creación del archivo secrets.yml
-                    %p Si detienes el proceso a la mitad o aún no tienes configurado un archivo secrets.yml con la configuración de
-                    la base de datos y otros inicializadores, puedes crear la base de datos ejecutando:
-                    %pre
-                      %code.ruby
-                        keppler db_conf
-                  .pane-box
-                    %h4.content-subtitle Instalación de las dependencias
-                    %p Antes de poder iniciar con un proyecto nuevo, primero debemos instalar todas las gemas
-                    instanciadas en el Gemfile, ubicado en la raíz del proyecto, con el comando:
-                    %pre
-                      %code.ruby
-                        keppler dep
-                #scaffolds.tab-pane.fade
-                  %p Keppler ofrece la posibilidad de realizar tareas de scaffolds totalmente configurados para adaptarse al administrativo.
-
-                  .pane-box
-                    %p Para crear un nuevo módulo sólo debes llamar al siguiente comando desde la consola:
-                    %pre
-                      %code.ruby
-                        keppler add module ModuleName attribute:type
-                  .pane-box
-                    %p Por ejemplo, crearemos un scaffold de productos con diversos campos y tipos de datos:
-                    %pre
-                      %code.ruby
-                        keppler add module Product title:string description:text quantity:integer price:float arrival_date:date arrival_time:time available:boolean user:references
-                  .pane-box
-                    %p Luego debemos migrar la tabla a la base de datos con:
-                    %pre
-                      %code.ruby
-                        keppler migrate
-                  .pane-box
-                    %p Si luego deseamos borrar, crear, migrar y llenar la base de datos desde cero, podemos realizarlo ejecutando el comando:
-                    %pre
-                      %code.ruby
-                        keppler reset
-                  .pane-box
-                    %p Por último, si todo ha sido ejecutado debida y correctamente, podemos iniciar el proyecto ejecutando en la consola:
-                    %pre
-                      %code.ruby
-                        keppler server
-                #simpleform.tab-pane.fade
-                  .pane-box
-                    %p
-                      Se ofrece una integración por defecto entre SimpleForm y Bootstrap, usted tiene la posibilidad de cambiar su funcionalidad en
-                      %pre
-                        %code.ruby
-                          config/initializers/simple_form_bootstrap.rb
-                  .pane-box
-                    %p Aquí algunos ejemplos para la creación de inputs:
-                    %pre
-                      %code.haml
-                        :preserve
-                          # Inputs de tipo string o textarea
-                          = f.input :name
-
-                          # Inputs de tipo CKEditor
-                          = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini'} }
-
-                          # Inputs de tipo boolean
-                          = f.input :public, as: :keppler_boolean
-
-                          # Inputs de tipo file
-                          = f.input :image, as: :keppler_file
-
-                          # Inputs de tipo select
-                          = f.input :role_ids, collection: Role.all, label: false, include_blank: "Seleccione un rol"
-
-                          # Inputs de tipo radio buttons
-                          = f.collection_radio_buttons :option, [['vegan', 'vegan'] ,['vegetarian', 'vegetarian']], :first, :last
-
-                          # Inputs de tipo check_boxes
-                          = f.collection_check_boxes :options, [['vegan', 'vegan'] ,['vegetarian', 'vegetarian']], :first, :last
-
-                          # Inputs de tipo date
-                          = f.input :date, input_html: { class: 'datepicker' }
-                  .pane-box
-                    %strong Nota:
-                    %p
-                      Puede revisar la documentación de
-                      = link_to 'AdminLTE', 'https://adminlte.io'
-                      para agregar nuevas integraciones para sus formularios a través de los
-                    = link_to 'Wrappers', 'https://github.com/plataformatec/simple_form/wiki/Custom-Wrappers'
-                    de simpleform.
-                #plugins.tab-pane.fade
-                  %p
-                    La plataforma permite la adaptación de módulos con facil instalación,
-                    algunos de los módulos desarrollados son:
-
-                  %ul
+            .col-lg-3
+              Desde
+              .input-date
+                %input{:type => "date"}/
+                / <p class="">dd/mm/aa <i class="fa fa-calendar" aria-hidden="true"></i></p>
+            .col-lg-3
+              Hasta
+              .input-date
+                %input{:type => "date"}/
+            .col-lg-3
+              .row
+                .col-lg-6
+                  Niños
+                  .input-date
+                    %input{:min => "0", :type => "number"}/
+                .col-lg-6
+                  Adultos
+                  .input-date
+                    %input{:min => "0", :type => "number"}/
+                    / <p>1<i class="fa fa-angle-down" aria-hidden="true"></i></p>
+            .col-lg-3.flex-booking
+              %a.btn-general{:href => ""} Ver disponibilidad
+    / END WIDGET BOOKING
+    / SECTION ROOM
+    %section#room.room
+      .container
+        %h2.title-section Nuestras Habitaciones
+        .slick-room
+          .item-room
+            .img-room{:style => "background-image:url('assets/app/room-1.jpg')"}
+            .details-room
+              %h3.title-room Matrimonial Standard
+              %p.price
+                145.800 Bs
+                %span /Noche
+              %ul.list-room
+                .row
+                  .col-lg-4
                     %li
-                      = link_to 'Keppler Google Analytics Dashboard', 'https://github.com/slicegroup/keppler_ga_dashboard'
-                      -
-                      %small Integrado
+                      %i.fa.fa-check{"aria-hidden" => "true"}
+                      Capacidad:
                     %li
-                      = link_to 'Keppler Blog', 'https://github.com/slicegroup/keppler_blog'
+                      %i.fa.fa-check{"aria-hidden" => "true"}
+                      Cama:
                     %li
-                      = link_to 'Keppler Catalogs', 'https://github.com/slicegroup/keppler_catalogs'
+                      %i.fa.fa-check{"aria-hidden" => "true"}
+                      Servicios:
+                  .col-lg-8
+                    %li Máximo 2 personas
+                    %li 1 cama Queen
+                    %li Wifi + Tv por cable + Nevera...
+              %a.btn-general.btn-red{:href => ""} Ver Detalles
+          .item-room
+            .img-room{:style => "background-image:url('assets/app/junior.jpg')"}
+            .details-room
+              %h3.title-room Junior Suite
+              %p.price
+                378.000 Bs
+                %span /Noche
+              %ul.list-room
+                .row
+                  .col-lg-4
                     %li
-                      = link_to 'Keppler Contact', 'https://github.com/slicegroup/keppler_contact_us'
-    .doc-footer
-      = "#{t('keppler.powered')} <span>Slice Group</span>".html_safe
+                      %i.fa.fa-check{"aria-hidden" => "true"}
+                      Capacidad:
+                    %li
+                      %i.fa.fa-check{"aria-hidden" => "true"}
+                      Cama:
+                    %li
+                      %i.fa.fa-check{"aria-hidden" => "true"}
+                      Servicios:
+                  .col-lg-8
+                    %li Máximo 6 personas
+                    %li 2 matrimoniales y 2 individuales
+                    %li Wifi + Tv por cable + Nevera...
+              %a.btn-general.btn-red{:href => ""} Ver Detalles
+    / END ROOM
+    %section#services.services
+      %img.img-service{:alt => "", :src => "assets/app/service.jpg"}/
+      .container.padding-top-bottom
+        .row
+          .col-lg-6.services-flex
+            %h2.title-section
+              Conoce nuestros
+              %br/
+              Servicios
+            %p.subtitle-service
+              Las mejores habitaciones que combinan confort y exclusividad ¡Ven a disfrutarlas!
+          .col-lg-6
+            .slick-services
+              .item-service
+                .row
+                  .col-lg-3.services-flex
+                    %img.icon-service{:alt => "", :src => "assets/app/pool.svg"}/
+                  .col-lg-9
+                    .text-service
+                      .title-service Acceso a la Piscina
+                      %p.description-service
+                        Además de comodidad, también le ofrecemos diversión. Nuestra área de
+                        piscina es ideal para compartir en familia y disfrutar de deliciosos snacks.
+              .item-service
+                .row
+                  .col-lg-3.services-flex
+                    %img.icon-service{:alt => "", :src => "assets/app/parking.svg"}/
+                  .col-lg-9
+                    .text-service
+                      .title-service Taxi Privado
+                      %p.description-service
+                        Siempre estamos preparados para ofrecerle lo mejor; por ello,
+                        ponemos
+                        a su disposición el servicio de taxi privado para atenderle en su salida del hotel, con la
+                        confianza y garantía que usted necesita.
+              .item-service
+                .row
+                  .col-lg-3.services-flex
+                    %img.icon-service{:alt => "", :src => "assets/app/weightlifter.svg"}/
+                  .col-lg-9
+                    .text-service
+                      .title-service Acceso al Gimnasio
+                      %p.description-service
+                        Con nosotros puedes verte y sentirte bien al mismo tiempo, el acceso
+                        a
+                        nuestro gimnasio te permitirá mantenerte en forma y continuar con tu rutina..
+              .item-service
+                .row
+                  .col-lg-3.services-flex
+                    %img.icon-service{:alt => "", :src => "assets/app/receptionist.svg"}/
+                  .col-lg-9
+                    .text-service
+                      .title-service Servicio 24 horas
+                      %p.description-service
+                        Con nosotros puedes verte y sentirte bien al mismo tiempo, el acceso
+                        a
+                        nuestro gimnasio te permitirá mantenerte en forma y continuar con tu rutina..
+              .item-service
+                .row
+                  .col-lg-3.services-flex
+                    %img.icon-service{:alt => "", :src => "assets/app/room-service.svg"}/
+                  .col-lg-9
+                    .text-service
+                      .title-service Servicio a la Habitación
+                      %p.description-service
+                        Pensamos en su tranquilidad y le ofrecemos nuestro servicio de room
+                        service, brindándole una variedad de opciones de deliciosos platillos preparados en nuestro
+                        restaurante y que podrá degustar desde la comodidad de su habitación.
+              .item-service
+                .row
+                  .col-lg-3.services-flex
+                    %img.icon-service{:alt => "", :src => "assets/app/wifi.svg"}/
+                  .col-lg-9
+                    .text-service
+                      .title-service Wifi Gratis
+                      %p.description-service
+                        Porque sabemos que para hacer buenos negocios necesita estar conectado, tenemos disponible la red
+                        WiFi en nuestras instalaciones para hacer su estadía más productiva.
+    %section#gallery.gallery
+      .container.padding-top-bottom
+        %h2.title-section Galería
+        .row
+          .col-lg-6
+            %img.img-gallery{:alt => "", :src => "assets/app/9-min.JPG"}/
+          .col-lg-6
+            %img.img-gallery{:alt => "", :src => "assets/app/41.jpg"}/
+          .col-lg-4
+            %img.img-gallery{:alt => "", :src => "assets/app/22-min.JPG"}/
+          .col-lg-4
+            %img.img-gallery{:alt => "", :src => "assets/app/1-min.jpg"}/
+          .col-lg-4
+            %img.img-gallery{:alt => "", :src => "assets/app/14-min.JPG"}/
+        .box-btn
+          %a.btn-general.btn-red{:href => ""} Ver Más
+    %section#events.events
+      .container.padding-top-bottom
+        .item-event
+          %img.img-event{:alt => "", :src => "assets/app/events.jpg"}/
+          .info-event
+            %h2.title-section Eventos
+            %p.description-event
+              Hotel Brisas Paraguaná es reconocido por contar con la mayor variedad de salones para la realización de
+              reuniones, banquetes y convenciones, con nosotros puede organizar sus eventos con la comodidad de saber que
+              tenemos todo lo que necesita para que su celebración sea memorable.
+              
+              Nuestros salones son ideales para crear hermosas decoraciones y hacer únicos sus eventos. Reserve con
+              nosotros y celebre sus momentos por todo lo alto.
+            %a.btn-general.btn-red{:href => ""} Solicitar Información
+    %section.space
+      .container.padding-top-bottom
+        .row
+          .col-lg-6
+            %h2.title-section
+              Acerca de nuestros
+              %br/
+              Salones
+            %p.subtitle-space
+              Male bring land. Dominion over can yielding his moveth under him is. Multiply which
+              firmamen
+            %img.img-space{:alt => "", :src => "assets/app/space2.jpg"}/
+            %img.img-space{:alt => "", :src => "assets/app/space3.jpg"}/
+          .col-lg-6
+            %img.img-space{:alt => "", :src => "assets/app/space4.jpg"}/
+            %img.img-space.space-last{:alt => "", :src => "assets/app/space1.jpg"}/
+    / FOOTER
+    %footer#footer
+      .container
+        .row.padding-top-bottom
+          .col-lg-4
+            %h2.title-section Contáctanos
+            %ul
+              %li.phone
+                %a{:href => ""}
+                  %i.fa.fa-phone{"aria-hidden" => "true"}>
+                  +58 4146950188
+                %a{:href => ""}
+                  \/
+                  = succeed "+58" do
+                    %i.fa.fa-phone{"aria-hidden" => "true"}
+              %li
+                %a{:href => ""}
+                  %i.fa.fa-map-marker{"aria-hidden" => "true"}
+                  Av. Prieto Figueroa con Av. Manuelita Saenz. Península de
+                  Paraguaná, Edo. Falcón, Venezuela.
+              %li.social
+                %a{:href => ""}
+                  %i.fa.fa-instagram{"aria-hidden" => "true"}
+                %a{:href => ""}
+                  %i.fa.fa-facebook{"aria-hidden" => "true"}
+                %a{:href => ""}
+                  %i.fa.fa-twitter{"aria-hidden" => "true"}
+          .col-lg-4.services-flex
+            %img.logo-footer{:alt => "", :src => "assets/app/Logo Brisas BLANCO.png"}/
+          .col-lg-4.feed-instagram
+            %img{:alt => "", :src => "assets/app/instag.png"}/
+      .powered
+        %p
+          Diseño y desarrollo por
+          %a{:href => ""} Slice Group
+    / END FOOTER
+  %script{:crossorigin => "anonymous", :integrity => "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1", :src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"}
+  %script{:src => "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", :type => "text/javascript"}
