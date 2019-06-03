@@ -1,6 +1,8 @@
 KepplerFrontend::Engine.routes.draw do
   root to: 'app/frontend#keppler', as: :keppler
-
+  get "/reservaciones", to: 'app/frontend#reservations'
+  post "/reservaciones", to: 'app/frontend#create_reservation', as: 'create_reservation'
+    
   namespace :admin do
     scope :frontend, as: :frontend do
       resources :themes do
@@ -29,8 +31,8 @@ KepplerFrontend::Engine.routes.draw do
       post '/views/generate', to: 'views#generate', as: 'views_generate'
       delete '/views/remove/:file', to: 'views#remove', as: 'views_remove'
 
-      #get "/reservaciones" => 'app/front#reservations' , as: :new_reservation
-      #post "/reservaciones" => 'app/front#create_reservations' , as: :create_reservation
+      
+      #post "/reservaciones" => 'app/frontend#create_reservations' , as: :create_reservation
 
 
       get '/assets', to: 'multimedia#index', as: 'multimedia'
