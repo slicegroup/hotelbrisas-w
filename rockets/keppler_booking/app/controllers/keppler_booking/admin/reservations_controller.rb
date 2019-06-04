@@ -13,7 +13,6 @@ module KepplerBooking
 
       # GET /bookings
       def index
-        @reservations2 = Reservation.where(name: "hugo")
         respond_to_formats(@reservations2)
         redirect_to_index(@objects)
       end
