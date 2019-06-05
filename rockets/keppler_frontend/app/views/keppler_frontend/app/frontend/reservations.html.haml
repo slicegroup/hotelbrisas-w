@@ -24,9 +24,9 @@
 				.col-12
 					.row
 						.col-3
-							= f.input :checkin, label: false, placeholder: "Check-in", as: :string, input_html: {class: "datepicker form-control", id: "checkin" }
+							= f.input :checkin, label: false, placeholder: "Check-in", as: :string, input_html: {class: "datepicker form-control", id: "checkin", autocomplete: "off"}
 						.col-3
-							= f.input :checkout, label: false, placeholder: "Check-out", as: :string, input_html: {class: "datepicker form-control", id: "checkout"}
+							= f.input :checkout, label: false, placeholder: "Check-out", as: :string, input_html: {class: "datepicker form-control", id: "checkout", autocomplete: "off"}
 						.col-3
 							= f.input :email, label: false, placeholder: "Correo Electrónico", input_html: { class: "required form-control" }
 						.col-3
@@ -36,21 +36,19 @@
 			.title-form
 				%a Tipo de habitación
 				%center
-					%i.fa.fa-spinner.fa-spin#form-rooms-spinner{"aria-hidden" => "true"}
+					//%i.fa.fa-spinner.fa-spin#form-rooms-spinner{"aria-hidden" => "true"}
 
 			.row#form-rooms
-				%center
-					.col-lg-12
-						= link_to_add_association 'Añadir Habitación', f, :orders, class: "btn btn-save"
-					.col-12
-						= f.simple_fields_for :orders do |c|
-							= render 'order_fields', :f => c
+				.col-12
+					%center
+						= link_to_add_association 'Añadir Habitación', f, :orders, class: "btn btn-warning"
+				.col-12
+					= f.simple_fields_for :orders do |c|
+						= render 'order_fields', :f => c
 
 			.row
-				.col-lg-6.col-md-6.col-sm-6.col-xs-12{style: "padding: 0"}
-					.title-form{style: "padding-top: 0;"}
-						%a Total de reserva
-					.content-box{style: "margin-top: 10px; border: 1px solid #C45036;"}
+				.col-lg-6.col-md-6.col-sm-6.col-xs-12
+					.content-box#table-prices{style: "margin-top: 10px; border: 1px solid #C45036;"}
 						%table
 							%tbody
 								%tr
@@ -62,63 +60,67 @@
 									%td.position-td-title
 										Precio total (Por noche)
 									%td#price-night.position-td-field
-										Bs. 0
+										BsS. 0
 								%tr
 									%td.position-td-title
 										Total a pagar:
 									%td#price-total.position-td-field
-										Bs. 0
+										BsS. 0
 
 					.content-box{style: "margin-top: 10px;"}
-						= f.input :payment, as: :select, include_blank: false, collection: [["Tipo de pago", "0"], ["Tarjeta de crédito","1"], ["Deposito y/o Transferencia", "2"], ["Efectivo","3"]], label: false, input_html: { class: "required" }
+						= f.input :payment, as: :select, include_blank: false, collection: [["Tipo de pago", "0"], ["Tarjeta de crédito","1"], ["Deposito y/o Transferencia", "2"], ["Efectivo","3"], ["Divisas","4"]], label: false, input_html: { class: "required" }
 
 				.col-lg-6.col-md-6.col-sm-6.col-xs-12#col
-					.title-form.text-margin{style: "padding-top: 0;"}
-						%a Observaciones
+
 					.content-box{style: "margin-top: 10px;"}
 						= f.input :observations, label: false, placeholder: 'Observaciones', input_html: { class: "form-control", style: "height: 70px;"}
+			%center
+				.term-conditions
+					%label.terminos
+						%input#defaultCheck1.form-check-input{:type => "checkbox", :value => "", "data-target" => "#exampleModal", "data-toggle" => "modal"}/
+						%label.form-check-label{:for => "defaultCheck1"}
+							Acepto los términos y condiciones de reserva
 
-			.term-conditions
-				%label.terminos
-					%input#term{:type => "checkbox", :value => ""}
-					%a{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button", :style => "cursor: pointer;"}
-						Acepto los términos y condiciones de reserva
+				.form-actions{style: "margin-top: 20px;"}
+					= f.button :submit, "Enviar", class: "btn btn-primary disabled", id: "btn-submit" , style: "width: auto;", controller: "reservation", action: "create"
 
 
-			.form-actions{style: "margin-top: 20px;"}
-				= f.button :submit, "Enviar", class: "btn btn-save disabled", id: "btn-submit" , style: "width: auto;", controller: "reservation", action: "create"
 
+			
 
-	.modal.fade#myModal.bs-example-modal-lg{:role => "dialog", :tabindex => "-1"}
-		.modal-dialog.modal-lg{:role => "document"}
-			.modal-content
-				.modal-header
-					%button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-						%span{"aria-hidden" => "true"} ×
-					%h4.modal-title PLAZO PARA GARANTIZAR SU RESERVA
-				.modal-body
-					%ul
-						%li Nuestras tarifas y precios  están sujetas a cambio y a disponibilidad sin previo aviso. Incluye desayuno.
+#exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
+	.modal-dialog.modal-lg{:role => "document"}
+		.modal-content
+			.modal-header
+				%h5.modal-title PLAZO PARA GARANTIZAR SU RESERVA
+				%button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+					%span{"aria-hidden" => "true"} ×
+			.modal-body
+				%ul
+					%li Nuestras tarifas y precios  están sujetas a cambio y a disponibilidad sin previo aviso. Incluye desayuno.
 
-						%li Para formalizar su reserva podrá ser mediante tarjeta de crédito (enviar autorización firmada con copia de C.I. y la Tarjeta de Crédito), depósito y/o transferencia bancaria (enviar copia del comprobante de pago) DE SER LA TRANSFERENCIA DESDE OTRO BANCO DISTINTO AL QUE SE LES HA INDICADO, DEBE REALIZARLA CON 3 DIAS DE ANTICIPACION PARA QUE EL MISMO PUEDA SER VERIFICADO.
+					%li Para formalizar su reserva podrá ser mediante tarjeta de crédito (enviar autorización firmada con copia de C.I. y la Tarjeta de Crédito), depósito y/o transferencia bancaria (enviar copia del comprobante de pago) DE SER LA TRANSFERENCIA DESDE OTRO BANCO DISTINTO AL QUE SE LES HA INDICADO, DEBE REALIZARLA CON 3 DIAS DE ANTICIPACION PARA QUE EL MISMO PUEDA SER VERIFICADO.
 
-						%li Es obligatorio el Nombre, Apellido, Numero de Cedula  y  número de teléfono de la persona responsable de cada habitación para realizar una reservación.
+					%li Es obligatorio el Nombre, Apellido, Numero de Cedula  y  número de teléfono de la persona responsable de cada habitación para realizar una reservación.
 
-						%li En caso de Anulación o cambio de fecha, deben enviar correo para notificarlo  con 24horas de antelación de la llegada del huésped, de no informar la penalización será  de 01 noche de alojamiento por NO SHOW. Al anular reserva garantizadas no aplican reembolsos y el monto o saldo a favor  quedara en depósito para ser utilizado en otra fecha.
+					%li En caso de Anulación o cambio de fecha, deben enviar correo para notificarlo  con 24horas de antelación de la llegada del huésped, de no informar la penalización será  de 01 noche de alojamiento por NO SHOW. Al anular reserva garantizadas no aplican reembolsos y el monto o saldo a favor  quedara en depósito para ser utilizado en otra fecha.
 
-						%li Al efectuar el Check In, el huésped debe entregar en la recepción del hotel el voucher original del depósito bancario, deberá aperturar un voucher de tarjeta de crédito como garantía para cargos adicionales de restaurant, llamadas telefónicas o lavandería, el cual se devolverá al momento de retirarse de las instalaciones, si no efectuó ningún cargo.
+					%li Al efectuar el Check In, el huésped debe entregar en la recepción del hotel el voucher original del depósito bancario, deberá aperturar un voucher de tarjeta de crédito como garantía para cargos adicionales de restaurant, llamadas telefónicas o lavandería, el cual se devolverá al momento de retirarse de las instalaciones, si no efectuó ningún cargo.
 
-						%li Hora Check In: 3:00 p.m. Hora Check Out 1:00 p.m.
+					%li Hora Check In: 3:00 p.m. Hora Check Out 1:00 p.m.
 
-						%li No se aplicaran reembolsos para las salidas anticipadas, estos créditos quedaran en depósito o parte de pago de próximas reserva.
+					%li No se aplicaran reembolsos para las salidas anticipadas, estos créditos quedaran en depósito o parte de pago de próximas reserva.
 
-						%li El recargo por cada hora adicional del uso de habitación es el 10% por hora y después de las  17:00hrs/ 5:00pm se cobrara la tarifa de 01 noche de alojamiento por Late Check out.
+					%li El recargo por cada hora adicional del uso de habitación es el 10% por hora y después de las  17:00hrs/ 5:00pm se cobrara la tarifa de 01 noche de alojamiento por Late Check out.
 
-						%li Somos un ambiente libre de humo. Está prohibido fumar en las áreas internas del hotel y las habitaciones, en caso de fumar en las habitaciones se les cargara (02) dos noche adicional, ya que las mismas quedaran fuera de uso para ser aireadas.
+					%li Somos un ambiente libre de humo. Está prohibido fumar en las áreas internas del hotel y las habitaciones, en caso de fumar en las habitaciones se les cargara (02) dos noche adicional, ya que las mismas quedaran fuera de uso para ser aireadas.
 
-						%li No permitimos la entrada de mascotas.
+					%li No permitimos la entrada de mascotas.
 
-						%li El Hotel se reserva el derecho a considerar, a todos los efectos, su reserva como “No show” en caso de que el huésped no se presente en la fecha de entrada al Hotel sin previo aviso
+					%li El Hotel se reserva el derecho a considerar, a todos los efectos, su reserva como “No show” en caso de que el huésped no se presente en la fecha de entrada al Hotel sin previo aviso
+			.modal-footer
+				%button.btn.btn.btn-main{"data-dismiss" => "modal", :type => "button"} Aceptar
 
-		.modal-footer
-			%button.btn.btn.btn-main{"data-dismiss" => "modal", :type => "button"} Aceptar
+:javascript
+	$('.datepicker').datepicker({
+	});

@@ -17,8 +17,7 @@ module KepplerFrontend
         #EventMailer.reservation_user(@reservation).deliver_now
         redirect_to root_path, notice: 'Su solicitud de reserva ha sido enviada exitósamente. Pronto será contactado(a) por un ejecutivo para su confirmación'
       else
-        session[:reservation] = params[:reservation]
-        redirect_to root_path
+        render :reservations
       end
     end
 
