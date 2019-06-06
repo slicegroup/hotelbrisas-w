@@ -1,6 +1,6 @@
 html {
     font-size: 14px;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; 
   }
   
   * {
@@ -27,6 +27,11 @@ html {
   }
   
   /* GENERAL CLASS */
+
+  .nested-fields {
+    border: 1px solid #35322e;
+    margin-top: 5px;
+  }
 
   .modal-body {
     margin: 0 10px !important;
