@@ -1,4 +1,7 @@
-
+%link{:href => "//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css", :rel => "stylesheet"}/
+%script{:src => "https://code.jquery.com/jquery-1.12.4.js"}
+%script{:src => "https://code.jquery.com/ui/1.12.1/jquery-ui.js"}
+%link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css", :rel => "stylesheet"}/
 %body
 	.container
 		= simple_form_for @reservation, url: create_reservation_path  do |f|
@@ -24,9 +27,9 @@
 				.col-12
 					.row
 						.col-3
-							= f.input :checkin, label: false, placeholder: "Check-in", as: :string, input_html: {class: "datepicker form-control", id: "checkin", autocomplete: "off"}
+							= f.input :checkin, label: false, placeholder: "Check-in", as: :string, input_html: {class: "datepicker form-control", id: "CheckInDatePicker", autocomplete: "off"}
 						.col-3
-							= f.input :checkout, label: false, placeholder: "Check-out", as: :string, input_html: {class: "datepicker form-control", id: "checkout", autocomplete: "off"}
+							= f.input :checkout, label: false, placeholder: "Check-out", as: :string, input_html: {class: "datepicker form-control", id: "CheckOutDatePicker", autocomplete: "off"}
 						.col-3
 							= f.input :email, label: false, placeholder: "Correo Electrónico", input_html: { class: "required form-control" }
 						.col-3
@@ -54,7 +57,7 @@
 								%tr
 									%td.position-td-title
 										Número de días:
-									%td#num-rooms.position-td-field
+									%td#num-days.position-td-field
 										0
 								%tr
 									%td.position-td-title
@@ -82,7 +85,7 @@
 							Acepto los términos y condiciones de reserva
 
 				.form-actions{style: "margin-top: 20px;"}
-					= f.button :submit, "Enviar", class: "btn btn-primary disabled", id: "btn-submit" , style: "width: auto;", controller: "reservation", action: "create"
+					= f.button :submit, "Enviar", class: "btn btn-primary disabled", id: "btn-submit", controller: "reservation", action: "create"
 
 
 
@@ -122,5 +125,27 @@
 				%button.btn.btn.btn-main{"data-dismiss" => "modal", :type => "button"} Aceptar
 
 :javascript
-	$('.datepicker').datepicker({
+	$(document).ready(function(){
+		$("#CheckInDatePicker").datepicker({     
+			defaultDate: "+0",               
+			changeMonth: true,
+			dateFormat: "dd-mm-yy",
+			minDate: "+0",
+			onSelect: function (dateText, inst) {
+				var d = $.datepicker.parseDate(inst.settings.dateFormat, dateText);
+				d.setDate(d.getDate() + 1);
+			$("#CheckOutDatePicker").val($.datepicker.formatDate(inst.settings.dateFormat, d));
+
+			},
+
+			onClose: function (selectedDate) {
+				$("#CheckOutDatePicker").datepicker("option", "minDate", selectedDate);
+			}
+
+		});
+
+		$("#CheckOutDatePicker").datepicker({    
+			dateFormat: "dd-mm-yy"
+		}); 
+
 	});

@@ -105,6 +105,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 #javascript
 gem 'gon', '6.2.1'
 
+#datepicker
+gem 'bootstrap-datepicker-rails'
+
 #Full calendar
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
