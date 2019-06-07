@@ -1,10 +1,9 @@
 .nested-fields.col-lg-12
 	.row
-		.col-lg-4
-			= f.label :room_id, "Habitaciones"
+		.col
 			= f.select :room_id, options_from_collection_for_select(KepplerBooking::Room.all, :id, :name), { include_blank: 'Seleccione una Habitación'}, { :class => "form-control", :prompt => "Seleccione una Habitación"}
-		.col-lg-4
-			= f.input :quantity_people, input_html: { min: 1 }
-		.col-lg-4
+		.col
+			= f.input :quantity_people, placeholder: "Cantidad de Personas", label: false, input_html: { min: 1 }
+		.col
 			= link_to_remove_association f do
-				%i.icon-trash
+				%p Eliminar Habitacion

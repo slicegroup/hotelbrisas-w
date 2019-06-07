@@ -1,9 +1,10 @@
 %link{:href => "//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css", :rel => "stylesheet"}/
 %script{:src => "https://code.jquery.com/jquery-1.12.4.js"}
 %script{:src => "https://code.jquery.com/ui/1.12.1/jquery-ui.js"}
-%link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css", :rel => "stylesheet"}/
+%script{:src => "https://unpkg.com/sweetalert/dist/sweetalert.min.js"}
+
 %body
-	.container
+	.container#form-reservations
 		= simple_form_for @reservation, url: create_reservation_path  do |f|
 			.title-form
 				%a Datos de reservación
@@ -44,7 +45,7 @@
 			.row#form-rooms
 				.col-12
 					%center
-						= link_to_add_association 'Añadir Habitación', f, :orders, class: "btn btn-warning"
+						= link_to_add_association 'Añadir Habitación', f, :orders, class: "btn btn-warning", id: "add-rooms"
 				.col-12
 					= f.simple_fields_for :orders do |c|
 						= render 'order_fields', :f => c
@@ -126,6 +127,11 @@
 
 :javascript
 	$(document).ready(function(){
+		$("#navbar").css("background-color", "#35322e");
+		$("#navbar").css("padding", "0");
+		$("#add-rooms").css("pointer-events", "none");
+		$("#add-rooms").css("opacity", "0.5");
+
 		$("#CheckInDatePicker").datepicker({     
 			defaultDate: "+0",               
 			changeMonth: true,
@@ -134,18 +140,48 @@
 			onSelect: function (dateText, inst) {
 				var d = $.datepicker.parseDate(inst.settings.dateFormat, dateText);
 				d.setDate(d.getDate() + 1);
-			$("#CheckOutDatePicker").val($.datepicker.formatDate(inst.settings.dateFormat, d));
-
+				$("#CheckOutDatePicker").val($.datepicker.formatDate(inst.settings.dateFormat, d));
 			},
 
 			onClose: function (selectedDate) {
-				$("#CheckOutDatePicker").datepicker("option", "minDate", selectedDate);
+				if ($('#CheckInDatePicker').val() != "" && $('#CheckOutDatePicker').val() != ""){
+					var AddDay = $("#CheckOutDatePicker").datepicker('getDate');
+					AddDay.setDate(AddDay.getDate());
+					$("#CheckOutDatePicker").datepicker("option", "minDate", AddDay);
+					var f1 = $('#CheckInDatePicker').val();
+					var f2 = $('#CheckOutDatePicker').val();
+					dias = (restaFechas(f1,f2));
+					$("#CheckOutDatePicker").datepicker("show");
+				}
 			}
+		});
 
+		$( "#CheckOutDatePicker").change(function() {
+			var f1 = $('#CheckInDatePicker').val();
+			var f2 = $('#CheckOutDatePicker').val();
+			dias = (restaFechas(f1,f2));
 		});
 
 		$("#CheckOutDatePicker").datepicker({    
 			dateFormat: "dd-mm-yy"
-		}); 
+		});
 
+		restaFechas = function(f1,f2) {
+			var aFecha1 = f1.split('-'); 
+			var aFecha2 = f2.split('-'); 
+			var fFecha1 = Date.UTC(aFecha1[2],aFecha1[1]-1,aFecha1[0]); 
+			var fFecha2 = Date.UTC(aFecha2[2],aFecha2[1]-1,aFecha2[0]); 
+			var dif = fFecha2 - fFecha1;
+			var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
+			if (dias < 1){
+				$('#CheckInDatePicker').val("");
+				$('#CheckOutDatePicker').val("");
+				swal("Oops...", "La fecha de llegada no puede ser mayor a la de salida", "error");
+			} else {
+				$('#num-days').text(dias);
+				$("#add-rooms").css("pointer-events", "all");
+				$("#add-rooms").css("opacity", "1");
+			} 
+			return dias;
+		}
 	});
