@@ -21,6 +21,13 @@ module KepplerFrontend
       end
     end
 
+    def reservations_find_room
+      @find_room = KepplerBooking::Room.find(params[:room_id])
+      respond_to do |format|
+        format.js {}
+      end
+    end
+
     private
       def reservation_params
         params.require(:reservation).permit(:name, :email, :documentation, :total_price, :phone, :adults, :status, :kids, :babies, :origin, :motive, :checkin, :checkout, :payment, :observations, orders_attributes: [:id, :room_id, :quantity, :quantity_people, :_destroy])
