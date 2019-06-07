@@ -4,9 +4,7 @@ KepplerFrontend::Engine.routes.draw do
   post "/reservaciones", to: 'app/frontend#create_reservation', as: 'create_reservation'
 
   #ajax find room
-  get '/reservations/room/:room_id/:select_room_id', to: 'app/frontend##reservations_find_room', as: :reservations_find_room
-  get '/reservations/rooms/:room_id/:select_price_room_id/:target', to: 'app/frontend##reservations_find_prices', as: :reservations_find_room_prices
-
+  get '/reservations/rooms/:room_id/:target_id', to: 'app/frontend##reservations_find_room', as: :reservations_find_room
     
   namespace :admin do
     scope :frontend, as: :frontend do

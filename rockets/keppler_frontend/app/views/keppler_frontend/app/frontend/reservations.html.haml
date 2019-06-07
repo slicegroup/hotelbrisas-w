@@ -28,9 +28,9 @@
 				.col-12
 					.row
 						.col-3
-							= f.input :checkin, label: false, placeholder: "Check-in", as: :string, input_html: {class: "datepicker form-control", id: "CheckInDatePicker", autocomplete: "off"}
+							= f.input :checkin, label: false, placeholder: "Fecha de llegada", as: :string, input_html: {class: "datepicker form-control", id: "CheckInDatePicker", autocomplete: "off"}
 						.col-3
-							= f.input :checkout, label: false, placeholder: "Check-out", as: :string, input_html: {class: "datepicker form-control", id: "CheckOutDatePicker", autocomplete: "off"}
+							= f.input :checkout, label: false, placeholder: "Fecha de salida", as: :string, input_html: {class: "datepicker form-control", id: "CheckOutDatePicker", autocomplete: "off"}
 						.col-3
 							= f.input :email, label: false, placeholder: "Correo Electrónico", input_html: { class: "required form-control" }
 						.col-3
@@ -131,6 +131,7 @@
 		$("#navbar").css("padding", "0");
 		$("#add-rooms").css("pointer-events", "none");
 		$("#add-rooms").css("opacity", "0.5");
+		$('#CheckOutDatePicker').prop('disabled', true);
 
 		$("#CheckInDatePicker").datepicker({     
 			defaultDate: "+0",               
@@ -138,27 +139,29 @@
 			dateFormat: "dd-mm-yy",
 			minDate: "+0",
 			onSelect: function (dateText, inst) {
-				var d = $.datepicker.parseDate(inst.settings.dateFormat, dateText);
+				let d = $.datepicker.parseDate(inst.settings.dateFormat, dateText);
 				d.setDate(d.getDate() + 1);
 				$("#CheckOutDatePicker").val($.datepicker.formatDate(inst.settings.dateFormat, d));
 			},
 
 			onClose: function (selectedDate) {
 				if ($('#CheckInDatePicker').val() != "" && $('#CheckOutDatePicker').val() != ""){
-					var AddDay = $("#CheckOutDatePicker").datepicker('getDate');
+					let AddDay = $("#CheckOutDatePicker").datepicker('getDate');
 					AddDay.setDate(AddDay.getDate());
 					$("#CheckOutDatePicker").datepicker("option", "minDate", AddDay);
-					var f1 = $('#CheckInDatePicker').val();
-					var f2 = $('#CheckOutDatePicker').val();
+					let f1 = $('#CheckInDatePicker').val();
+					let f2 = $('#CheckOutDatePicker').val();
 					dias = (restaFechas(f1,f2));
+					$('#CheckOutDatePicker').prop('disabled', false);
 					$("#CheckOutDatePicker").datepicker("show");
+					
 				}
 			}
 		});
 
 		$( "#CheckOutDatePicker").change(function() {
-			var f1 = $('#CheckInDatePicker').val();
-			var f2 = $('#CheckOutDatePicker').val();
+			let f1 = $('#CheckInDatePicker').val();
+			let f2 = $('#CheckOutDatePicker').val();
 			dias = (restaFechas(f1,f2));
 		});
 
@@ -167,12 +170,12 @@
 		});
 
 		restaFechas = function(f1,f2) {
-			var aFecha1 = f1.split('-'); 
-			var aFecha2 = f2.split('-'); 
-			var fFecha1 = Date.UTC(aFecha1[2],aFecha1[1]-1,aFecha1[0]); 
-			var fFecha2 = Date.UTC(aFecha2[2],aFecha2[1]-1,aFecha2[0]); 
-			var dif = fFecha2 - fFecha1;
-			var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
+			let aFecha1 = f1.split('-'); 
+			let aFecha2 = f2.split('-'); 
+			let fFecha1 = Date.UTC(aFecha1[2],aFecha1[1]-1,aFecha1[0]); 
+			let fFecha2 = Date.UTC(aFecha2[2],aFecha2[1]-1,aFecha2[0]); 
+			let dif = fFecha2 - fFecha1;
+			let dias = Math.floor(dif / (1000 * 60 * 60 * 24));
 			if (dias < 1){
 				$('#CheckInDatePicker').val("");
 				$('#CheckOutDatePicker').val("");
@@ -184,4 +187,14 @@
 			} 
 			return dias;
 		}
+
+		var count = 1;
+
+		$( "#add-rooms" ).click(function() {
+			setTimeout(function(){
+				$('#select-rooms-').attr("id", "select-room-" + count);
+				$('#quantity_people-').attr("id", "quantity_people-room-" + count);
+				  count++
+			}, 500);
+		});
 	});

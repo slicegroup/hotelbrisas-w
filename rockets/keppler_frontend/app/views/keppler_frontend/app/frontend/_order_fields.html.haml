@@ -1,9 +1,12 @@
+- @rooms = KepplerBooking::Room.all
+- a = rand(2**32..2**64-1)
+
 .nested-fields.col-lg-12
-	.row
+	.row#container-room-
 		.col
-			= f.select :room_id, options_from_collection_for_select(KepplerBooking::Room.all, :id, :name), { include_blank: 'Seleccione una Habitación'}, { :class => "form-control", :prompt => "Seleccione una Habitación"}
+			= f.select :room_id, options_from_collection_for_select(@rooms, :id, :name), { include_blank: 'Seleccione una Habitación'}, { :class => "form-control select-rooms", :prompt => "Seleccione una Habitación", :id => "select-rooms-"}
 		.col
-			= f.input :quantity_people, placeholder: "Cantidad de Personas", label: false, input_html: { min: 1 }
+			= f.input :quantity_people, placeholder: "Cantidad de Personas", label: false, input_html: { min: 1, id: "quantity_people-"}
 		.col
 			= link_to_remove_association f do
 				%p Eliminar Habitacion
