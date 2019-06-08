@@ -22,6 +22,7 @@ module KepplerFrontend
     end
 
     def reservations_find_room
+      @target = params[:target_id]
       @find_room = KepplerBooking::Room.find(params[:room_id])
       respond_to do |format|
         format.js {}

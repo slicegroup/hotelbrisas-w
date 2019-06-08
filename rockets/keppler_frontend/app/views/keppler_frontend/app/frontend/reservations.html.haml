@@ -188,13 +188,23 @@
 			return dias;
 		}
 
-		var count = 1;
+		var count = 0;
 
 		$( "#add-rooms" ).click(function() {
+			count++
 			setTimeout(function(){
-				$('#select-rooms-').attr("id", "select-room-" + count);
+				$('#container-room-').attr("id", "container-room-" + count);
+				$('#select-rooms-').attr("id", "select-rooms-" + count);
 				$('#quantity_people-').attr("id", "quantity_people-room-" + count);
-				  count++
-			}, 500);
+
+				$( "#select-rooms-" + count).change(function() {
+					var TargetID = "container-room-" + count
+					var TargetVal = $('#select-rooms-' + count).val();
+					$.ajax({
+						url: "/reservations/room/" + TargetVal + "/" + TargetID,
+						type: 'GET'
+					});
+				});
+			}, 500); 
 		});
 	});
