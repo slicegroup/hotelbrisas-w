@@ -198,7 +198,7 @@
 				$('#quantity_people-').attr("id", "quantity_people-room-" + count);
 
 				$( "#select-rooms-" + count).change(function() {
-					var TargetID = "container-room-" + count
+					var TargetID = count
 					var TargetVal = $('#select-rooms-' + count).val();
 					$.ajax({
 						url: "/reservations/room/" + TargetVal + "/" + TargetID,

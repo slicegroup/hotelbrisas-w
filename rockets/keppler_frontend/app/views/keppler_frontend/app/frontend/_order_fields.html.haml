@@ -5,7 +5,7 @@
 		.col
 			= f.select :room_id, options_from_collection_for_select(@rooms, :id, :name), { include_blank: 'Seleccione una Habitación'}, { :class => "form-control select-rooms", :prompt => "Seleccione una Habitación", :id => "select-rooms-"}
 		.col
-			= f.input :quantity_people, placeholder: "Cantidad de Personas", label: false, input_html: { min: 1, id: "quantity_people-"}
+			= f.select :quantity_people, options_for_select([ "Cantidad de Personas" ], ["Cantidad de Personas"]), { include_blank: false}, { :id => "quantity_people-", :class => "form-control"}
 		.col
 			= link_to_remove_association f do
 				%p Eliminar Habitacion
