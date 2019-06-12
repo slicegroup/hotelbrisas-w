@@ -204,7 +204,24 @@
 						url: "/reservations/room/" + TargetVal + "/" + TargetID,
 						type: 'GET'
 					});
+					$('#quantity_people-room-' + count).attr("disabled", false);
+				});
+
+				$( "#quantity_people-room-" + count).change(function() {
+					var people_room_price = $("#quantity_people-room-" + count).val();
+					$( "#container-room-price-" + count ).remove();
+					$( "#container-room-" + count ).append('<div class=col id=container-room-price-'+count+'>'+people_room_price+'</div>');
+
+					var price_night = 0;
+					for (var i = 1; i <= count; i++) {
+						text_price = $("#container-room-price-" + i).text();
+						console.log("--" + text_price)
+						price_night = price_night + parseInt(text_price);
+						console.log(price_night);
+					}
 				});
 			}, 500); 
 		});
+
+
 	});
