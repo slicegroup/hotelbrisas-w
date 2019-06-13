@@ -36,7 +36,7 @@
 						.col-3
 							= f.input :motive, label: false, placeholder: "Motivo", input_html: { class: "required form-control" }
 				.col-lg-3
-					= f.input :total_price, label: false, input_html: {style: "display:none;", id: "total_prices"}
+					= f.input :total_price, label: false, input_html: {style: "", id: "total_prices"}
 			.title-form
 				%a Tipo de habitación
 				%center
@@ -197,17 +197,19 @@
 				$('#select-rooms-').attr("id", "select-rooms-" + count);
 				$('#quantity_people-').attr("id", "quantity_people-room-" + count);
 
-				$( "#select-rooms-" + count).change(function() {
-					var TargetID = count
-					var TargetVal = $('#select-rooms-' + count).val();
+				$( ".select-rooms").change(function() {
+					var IdTargetRoom = parseInt($(this).attr('id').split("-")[2]);
+					var TargetID = IdTargetRoom
+					var TargetVal = $('#select-rooms-' + IdTargetRoom).val();
 					$.ajax({
 						url: "/reservations/room/" + TargetVal + "/" + TargetID,
 						type: 'GET'
 					});
-					$('#quantity_people-room-' + count).attr("disabled", false);
+					$('#quantity_people-room-' + IdTargetRoom).attr("disabled", false);
 				});
 
 				$( "#quantity_people-room-" + count).change(function() {
+					console.log(count)
 					var people_room_price = $("#quantity_people-room-" + count).val();
 					$( "#container-room-price-" + count ).remove();
 					$( "#container-room-" + count ).append('<div class=col id=container-room-price-'+count+'>'+people_room_price+'</div>');
@@ -215,10 +217,9 @@
 					var price_night = 0;
 					for (var i = 1; i <= count; i++) {
 						text_price = $("#container-room-price-" + i).text();
-						console.log("--" + text_price)
 						price_night = price_night + parseInt(text_price);
-						console.log(price_night);
 					}
+					$("#total_prices").val(price_night);
 				});
 			}, 500); 
 		});
