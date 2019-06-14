@@ -1,6 +1,6 @@
 $( "#container-room-<%= @target %>-img" ).remove();
 $( "#container-room-<%= @target %>" ).append("<div class='col' id=container-room-<%= @target %>-img> <img src=<%= @find_room.cover %> width=100%> </div>" );
-$( '#quantity_people-room-<%= @target %>' ).empty();
+$( '#quantity-people-room-<%= @target %>' ).empty();
 <% @find_room.prices_rooms.each do |value| %>
-    $('#quantity_people-room-<%= @target %>').append($('<option>', { value: <%= value.price %>, text: "<%= value.amount_people %> Persona(s)" }));
+    $('#quantity-people-room-<%= @target %>').append($('<option>', { value: <%= value.price %>, text: "<%= value.amount_people %> Persona(s)" }));
 <% end %>

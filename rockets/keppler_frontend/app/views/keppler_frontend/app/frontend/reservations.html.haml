@@ -154,6 +154,10 @@
 					dias = (restaFechas(f1,f2));
 					$('#CheckOutDatePicker').prop('disabled', false);
 					$("#CheckOutDatePicker").datepicker("show");
+
+					var QuantityRooms = $(".select-rooms").length;
+					
+					TotalPrice();
 					
 				}
 			}
@@ -163,12 +167,32 @@
 			let f1 = $('#CheckInDatePicker').val();
 			let f2 = $('#CheckOutDatePicker').val();
 			dias = (restaFechas(f1,f2));
+
+			TotalPrice();
 		});
 
 		$("#CheckOutDatePicker").datepicker({    
 			dateFormat: "dd-mm-yy"
 		});
 
+		//Calcula el precio a total a pagar
+		TotalPrice = function(){
+			// QuantityRooms me permite saber cuantas habitaciones hay activas en la reserva
+			var QuantityRooms = $(".select-rooms").length;
+			var price_night = 0;
+
+			// Dependiendo de la cantidad de habitacion las recorro y obtengo su precio actual
+			// lo guardo en un acumulador multiplicado por el numero de noches
+			for (var i = 1; i <= QuantityRooms; i++) {
+			text_price = $("#container-room-price-" + i).text();
+			price_night = price_night + parseInt(text_price);
+			}
+
+			$("#price-total").text("BsS." + (dias * price_night))
+			$("#total_prices").val(dias * price_night);
+		}
+
+		// Calcula los dias entre las fechas de los check
 		restaFechas = function(f1,f2) {
 			let aFecha1 = f1.split('-'); 
 			let aFecha2 = f2.split('-'); 
@@ -188,6 +212,7 @@
 			return dias;
 		}
 
+
 		var count = 0;
 
 		$( "#add-rooms" ).click(function() {
@@ -195,34 +220,48 @@
 			setTimeout(function(){
 				$('#container-room-').attr("id", "container-room-" + count);
 				$('#select-rooms-').attr("id", "select-rooms-" + count);
-				$('#quantity_people-').attr("id", "quantity_people-room-" + count);
+				$('#quantity_people-').attr("id", "quantity-people-room-" + count);
 
+				//Detecta el select que disparo el change() y carga el cover
 				$( ".select-rooms").change(function() {
 					var IdTargetRoom = parseInt($(this).attr('id').split("-")[2]);
 					var TargetID = IdTargetRoom
 					var TargetVal = $('#select-rooms-' + IdTargetRoom).val();
 					$.ajax({
 						url: "/reservations/room/" + TargetVal + "/" + TargetID,
+						success:function() {
+							console.log("success");
+							$('#quantity-people-room-' + IdTargetRoom + ' option:eq(0)').prop('selected', 0).trigger('change');
+						},
+						error: function() {
+							swal("Oops...", "Error al cargar la habitación, intente nuevamente", "error");
+						},
 						type: 'GET'
 					});
-					$('#quantity_people-room-' + IdTargetRoom).attr("disabled", false);
+					$('#quantity-people-room-' + IdTargetRoom).attr("disabled", false);
 				});
 
-				$( "#quantity_people-room-" + count).change(function() {
-					console.log(count)
-					var people_room_price = $("#quantity_people-room-" + count).val();
-					$( "#container-room-price-" + count ).remove();
-					$( "#container-room-" + count ).append('<div class=col id=container-room-price-'+count+'>'+people_room_price+'</div>');
+				//Detecta el select que disparo el change() y colocar los precios de la habitacion seleccionada
+				$( ".select-prices-room").change(function() {
+					var IdTargetRoom = parseInt($(this).attr('id').split("-")[3]);
+					var people_room_price = $("#quantity-people-room-" + IdTargetRoom).val();
+					$( "#container-room-price-" + IdTargetRoom ).remove();
+					$( "#container-room-" + IdTargetRoom ).append('<div class=col id=container-room-price-'+IdTargetRoom+'>'+people_room_price+'</div>');
 
 					var price_night = 0;
 					for (var i = 1; i <= count; i++) {
 						text_price = $("#container-room-price-" + i).text();
 						price_night = price_night + parseInt(text_price);
 					}
-					$("#total_prices").val(price_night);
+
+					let f1 = $('#CheckInDatePicker').val();
+					let f2 = $('#CheckOutDatePicker').val();
+					dias = (restaFechas(f1,f2));
+					$("#price-night").text("BsS." + price_night)
+					$("#price-total").text("BsS." + (dias * price_night))
+					$("#total_prices").val(dias * price_night);
+					
 				});
 			}, 500); 
 		});
-
-
 	});
