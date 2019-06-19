@@ -6,13 +6,14 @@
   /* BOOKING */
 
   .booking-section {
-    transform: translateY(-4rem);
     position: initial;
+    background-color: #f5f5f5;
   }
 
   .booking {
     width: 93%;
     padding: 1.5rem 1rem;
+    transform: translateY(-4rem);
   }
 
   .booking .btn-general {
@@ -23,9 +24,17 @@
 
   /* ROOM */
 
+  .room {
+    padding-top: 0;
+  }
+
+  .room .container {
+    padding: 0;
+  }
+
   .item-room {
     display: initial!important;
-    height: 100vh;
+    min-height: 50rem;
   }
   
   .img-room, .details-room {
@@ -33,11 +42,11 @@
   }
 
   .img-room {
-    height: 30%;
+    height: 40%;
   }
 
   .details-room {
-    height: 70%;
+    height: 60%;
   }
 
   .details-room {
@@ -60,6 +69,87 @@
 
   .slick-room .slick-prev-arrow {
     left: 75%;  }
+  
+    footer ul, footer .title-section {
+      text-align: center;
+    }
+
+    footer .services-flex {
+      padding: 3rem 0;
+    }
+
+    .feed-instagram {
+      justify-content: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 997px) {
+  
+  html {
+    font-size: 14px;
+  }
+
+  .room {
+    padding-top: 12rem;
+  }
+
+  .details-room {
+    padding: 2rem;
+    height: 88%;
+    width: 52%;
+  }
+
+  .slick-room .slick-next-arrow {
+    right: 0;
+  }
+
+  .slick-room .slick-prev-arrow {
+    left: 42rem;
+  }
+
+  .slick-prev-arrow, .slick-next-arrow {
+    align-items: flex-end;
+    padding-bottom: 4rem;
+  }
+}
 
 
+@media screen and (min-width: 0px) and (max-width: 997px) {
+  .services .title-section {
+    text-align: center;
+    color: #f35314;
+  }
+  
+  .subtitle-service {
+    margin: 0;
+    text-align: center;
+  }
+  
+  .services .slick-dots {
+    flex-direction: initial;
+    right: initial;
+    width: 100%;
+    height: initial;
+  }
+  
+  .services .slick-dots li button::before {
+    width: 1.5rem;
+    height: 1rem;
+  }
+  
+  .item-service .services-flex{
+    align-items: center;
+  }
+  
+  .text-service {
+    text-align: center;
+  }
+  
+  .img-service {
+    display: none;
+  }
+
+  .services .slick-dots li {
+    margin: .5rem;
+  }
 }

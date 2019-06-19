@@ -18,4 +18,28 @@ $('.slick-services').slick({
   dots: true,
   // autoplay: true,
   // autoplaySpeed: 1000
+  responsive: [
+    {
+      breakpoint: 997,
+      settings: {
+        slidesToShow: 2,
+        vertical: false,
+        verticalSwiping: false,
+        slidesToScroll: 2,
+      }
+    },
+    {
+      breakpoint: 430,
+      settings: {
+        slidesToShow: 1,
+        vertical: false,
+        verticalSwiping: false,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: false,
+      }
+    },
+
+  ]
 });
+
