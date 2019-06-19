@@ -11,6 +11,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/medias.css">
 
@@ -86,8 +87,8 @@
 
   <!-- WIDGET BOOKING -->
   <section class="booking-section">
-    <div class="booking">
-      <div class="container">
+    <div class=" booking animated fadeIn" style="visibility: visible; animation-delay: 1.5s; animation-name: fadeIn;">
+      <div class=" container">
         <div class="row">
           <div class="col-lg-3 col-6">
             Desde
@@ -132,7 +133,8 @@
     <div class="container">
       <h2 class="title-section">Nuestras Habitaciones</h2>
       <div class="slick-room">
-        <div class="item-room">
+        <div class="item-room wow animated fadeInRight"
+          style="visibility: visible; animation-delay:.3s; animation-name: fadeInRight;">
           <div class="img-room" , style="background-image:url('assets/img/room-1.jpg')">
           </div>
           <div class="details-room">
@@ -176,7 +178,8 @@
             <a class="btn-general btn-red" href="">Ver Detalles</a>
           </div>
         </div>
-        <div class="item-room">
+        <div class="item-room wow animated fadeInRight"
+          style="visibility: visible; animation-delay:.3s; animation-name: fadeInRight;">
           <div class="img-room" , style="background-image:url('assets/img/junior.jpg')">
           </div>
           <div class="details-room">
@@ -235,9 +238,10 @@
           </p>
         </div>
         <div class="col-lg-6">
-          <div class="slick-services">
+          <div class="slick-services wow animated fadeInUp"
+            style="visibility: visible; animation-delay:.3s; animation-name: fadeInUp;">
 
-            <div class="item-service">
+            <div class="item-service ">
               <div class="row height-service">
                 <div class="col-lg-3 services-flex">
                   <img class="icon-service" src="assets/img/pool.svg" alt="">
@@ -342,19 +346,27 @@
       <h2 class="title-section">Galería</h2>
       <div class="row">
         <div class="col-lg-6">
-          <img class="img-gallery" src="assets/img/9-min.JPG" alt="">
+          <img class="img-gallery wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;" src="assets/img/9-min.JPG" alt="">
         </div>
         <div class="col-lg-6">
-          <img class="img-gallery" src="assets/img/41.jpg" alt="">
+          <img class="img-gallery wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;" src=" assets/img/41.jpg" alt="">
         </div>
         <div class="col-lg-4">
-          <img class="img-gallery" src="assets/img/22-min.JPG" alt="">
+          <img class="img-gallery wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;" src=" assets/img/22-min.JPG"
+            alt="">
         </div>
         <div class="col-lg-4">
-          <img class="img-gallery" src="assets/img/1-min.jpg" alt="">
+          <img class="img-gallery wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;" src=" assets/img/1-min.jpg"
+            alt="">
         </div>
         <div class="col-lg-4">
-          <img class="img-gallery" src="assets/img/14-min.JPG" alt="">
+          <img class="img-gallery wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;" src=" assets/img/14-min.JPG"
+            alt="">
         </div>
       </div>
       <div class="box-btn">
@@ -363,11 +375,12 @@
     </div>
   </section>
 
-  <!-- <section class="events" id="events">
+  <section class="events" id="events">
     <div class="container padding-top-bottom">
-      <div class="item-event">
-        <img class="img-event" src="assets/img/events.jpg" alt="">
-        <div class="info-event">
+      <div class="item-event wow animated slideInUp"
+        style="visibility: visible; animation-delay:.3s; animation-name: slideInUp;">
+        <img class=" img-event" src="assets/img/events.jpg" alt="">
+        <div class="info-event event-desktop">
           <h2 class="title-section">Eventos</h2>
 
           <p class="description-event">
@@ -381,10 +394,20 @@
           <a class="btn-general btn-red" href="">Solicitar Información</a>
 
         </div>
+        <div class="info-event info-event-responsive">
+          <h2 class="title-section">Eventos</h2>
+
+          <p class="description-event">
+            Nuestros salones son ideales para crear hermosas decoraciones y hacer únicos sus eventos. Reserve con
+            nosotros y celebre sus momentos por todo lo alto.
+          </p>
+          <a class="btn-general btn-red" href="">Solicitar Información</a>
+
+        </div>
 
       </div>
     </div>
-  </section> -->
+  </section>
   <section class="space">
     <div class="container padding-top-bottom">
       <div class="row">
@@ -393,18 +416,22 @@
           <h2 class="title-section">Acerca de nuestros <br> Salones</b></h2>
           <p class="subtitle-space">Male bring land. Dominion over can yielding his moveth under him is. Multiply which
             firmamen</p>
-          <img src="assets/img/space2.jpg" alt="" class="img-space">
-          <img src="assets/img/space3.jpg" alt="" class="img-space">
+          <img src="assets/img/space2.jpg" alt="" class="img-space  wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;">
+          <img src=" assets/img/space3.jpg" alt="" class="img-space  wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;">
         </div>
-        <div class="col-lg-6">
-          <img src="assets/img/space4.jpg" alt="" class="img-space">
-          <img src="assets/img/space1.jpg" alt="" class="img-space space-last">
+        <div class=" col-lg-6">
+          <img src="assets/img/space4.jpg" alt="" class="img-space  wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;">
+          <img src=" assets/img/space1.jpg" alt="" class="img-space space-last  wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;">
         </div>
       </div>
     </div>
   </section>
   <!-- FOOTER -->
-  <footer id="footer">
+  <footer id=" footer">
     <div class="container ">
       <div class="row padding-top-bottom">
 
@@ -459,7 +486,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-<script src="assets/js/main.js"></script>
+<script type="text/javascript" src="assets/js/wow.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
 
 </html>

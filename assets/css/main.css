@@ -312,6 +312,10 @@ header {
   width: 5rem;
 }
 
+.info-event-responsive {
+  display: none!important;
+}
+
 /* SECTION GALLERY */
 
 .img-gallery {
