@@ -57,3 +57,22 @@ wow = new WOW(
   }
 );
 wow.init();
+
+
+$(document).ready(function () {
+  //we need to get the button
+  $('.button-up').click(function () {
+    $('body, html').animate({
+      scrollTop: '0px'
+    }, 100); //animation time in ms
+  });
+
+  //condicional para visualizar el button
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 0) {
+      $('.button-up').slideDown(300);
+    } else {
+      $('.button-up').slideUp(300);
+    }
+  });
+});

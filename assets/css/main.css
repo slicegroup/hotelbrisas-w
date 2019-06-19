@@ -34,6 +34,14 @@ header {
   font-size: 1rem;
    border-radius: .5rem;
   font-weight: 600;
+  border: 1px solid #f35314;
+  transition: .3s;
+}
+
+.btn-general:hover {
+  transition: .3s;
+  background-color: transparent!important;
+  color: #fff;
 }
 
 
@@ -60,9 +68,15 @@ header {
 }
 
 .nav-custom {
-  color: #fff!important;
+  color: #fff !important;
   margin-left: 1.5rem;
   font-weight: 600;
+  transition: .5s;
+}
+
+.nav-custom:hover {
+  transition: .5s;
+  color: #f35314 !important;
 }
 
 
@@ -200,6 +214,15 @@ header {
   color: #f35314;
 }
 
+.slick-room .slick-next-arrow i, .slick-room .slick-prev-arrow i {
+  transition: .3s;
+}
+
+.slick-room .slick-next-arrow i:hover, .slick-room .slick-prev-arrow i:hover {
+  color:#35322e;
+  transition: .3s;
+}
+
 .slick-room .slick-next-arrow {
   right: -4rem;
 }
@@ -322,11 +345,17 @@ header {
   width: 100%;
   height: 20rem;
   object-fit: cover;
-  padding: 1rem 0;
+  transition: .5s;
 }
 
-.img-gallery:hover {
-  
+.gallery-hidden {
+  overflow: hidden;
+  transition: .5s!;
+  margin: 1rem 0;
+}
+
+.gallery .btn-general:hover, .events .btn-general:hover, .booking .btn-general:hover {
+  color: #35322e;
 }
 
 .box-btn {
@@ -334,6 +363,13 @@ header {
   justify-content: center;
   margin-top: 2rem;
 }
+
+.img-gallery:hover {
+  transition: .5s;
+  transform: scale(1.2);
+}
+
+/* SECTION SERVICES */
 
 .slick-services {
   margin-bottom: 0!important;
@@ -417,20 +453,78 @@ justify-content: center;
 
 /* SPACE */
 
+.item-space {
+  position: relative;
+  overflow: hidden;
+  transition: .7s;
+  margin: 2rem 0;
+}
+
+.title-space {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.description-space {
+  position: absolute;
+  background-color: #000000d1;
+  width: 100%;
+  padding: 1rem;
+  color: #fff;
+  transition: .7s;
+  bottom: 0;
+}
+
+.detail-space{
+  position: absolute;
+  bottom: -10rem;
+  width: 100%;
+  left: 0;
+  transition: .7s;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.detail-space:hover {
+  transition: .7s;
+}
+
+.description-space:hover {
+  transition: .7s;
+
+}
+
+.description-space:hover .detail-space {
+  bottom: 0;
+  opacity: 1;
+  overflow: visible;
+  transition: .7s;
+  color: #fff;
+  padding: 1rem;
+  z-index: 999;
+  background-color: #35322e;
+}
+
+.detail-space .title-space {
+  margin-bottom: .5rem;
+}
 .space .title-section {
   margin-bottom: 1rem;
   text-align: initial;
 }
-
 .img-space {
   width: 100%;
   height: auto;
-  padding: 1rem 0;
 }
 
-.space-last {
-  height: 38rem;
+.colspace-2 .item-space:last-child {
+  height: 34.9rem;
 }
+
+/* .space-last {
+  height: 38rem;
+} */
 
 /* FOOTER */
 
@@ -474,8 +568,35 @@ footer ul {
   margin-right: 1.5rem;
 }
 
+.social a {
+  transition: .3s;
+
+}
+
+.social a:hover {
+  color:#f35314;
+  transition: .3s;
+}
+
 .phone i {
   margin-right: .5rem;
+}
+
+.phone span {
+  color: #fff;
+}
+
+.phone a {
+  transition: .3s;
+}
+
+.phone a:hover {
+  transition: .3s;
+  color: #f35314;
+}
+
+.ubication {
+  color: #fff;
 }
 
 
@@ -504,4 +625,25 @@ footer ul {
 .feed-instagram {
   display: flex;
   justify-content: flex-end;
+}
+
+/* SLIDES TO SCROLL */
+
+.btn-scroll {
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: .5rem;
+  color: #fff;
+  position: fixed;
+  background-color: #f3581b;
+  bottom: 4rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-scroll i {
+  font-size: 1.5rem;
 }
