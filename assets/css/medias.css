@@ -1,0 +1,65 @@
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  html {
+    font-size: 11px;
+  }
+
+  /* BOOKING */
+
+  .booking-section {
+    transform: translateY(-4rem);
+    position: initial;
+  }
+
+  .booking {
+    width: 93%;
+    padding: 1.5rem 1rem;
+  }
+
+  .booking .btn-general {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  /* ROOM */
+
+  .item-room {
+    display: initial!important;
+    height: 100vh;
+  }
+  
+  .img-room, .details-room {
+    width: 100%
+  }
+
+  .img-room {
+    height: 30%;
+  }
+
+  .details-room {
+    height: 70%;
+  }
+
+  .details-room {
+    padding: 2rem 1rem;
+    position: initial;
+  }
+
+  .item-room .price, .item-room .title-room {
+    text-align: center;
+  }
+
+  .slick-room .slick-next-arrow, .slick-room .slick-prev-arrow {
+    padding-bottom: 3rem;
+    align-items: flex-end;
+  }
+
+  .slick-room .slick-next-arrow {
+    right: 0;
+  }
+
+  .slick-room .slick-prev-arrow {
+    left: 75%;  }
+
+
+}

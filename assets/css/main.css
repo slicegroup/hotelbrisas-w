@@ -36,6 +36,7 @@ header {
   font-weight: 600;
 }
 
+
 .title-section{
   text-align: center;
   margin-bottom: 4rem;
@@ -94,6 +95,7 @@ header {
   font-size: 3rem;
   font-weight: 600;
   margin:1rem 0;
+  text-align: center;
 }
 
 .btn-banner {
@@ -281,8 +283,14 @@ header {
   /* height: 10rem!important; */
 }
 
+.height-service {
+  min-height: 12rem;
+  display: flex;
+  align-items: center;
+}
+
 .subtitle-service {
-  margin-left: 13rem;
+  margin-left: 16rem;
   margin-right: 6rem;
 }
 
