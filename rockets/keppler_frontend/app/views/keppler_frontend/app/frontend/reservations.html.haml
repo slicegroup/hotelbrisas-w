@@ -178,16 +178,22 @@
 		//Calcula el precio a total a pagar
 		TotalPrice = function(){
 			// QuantityRooms me permite saber cuantas habitaciones hay activas en la reserva
-			var QuantityRooms = $(".select-rooms").length;
+			//var QuantityRooms = $(".select-rooms").length;
 			var price_night = 0;
 
+			$('#form-rooms .col-12 .nested-fields .row .container-room-price').each(function(){
+				text_price = $("#" + this.id).text();
+				price_night = price_night + parseInt(text_price);
+			});
+			
 			// Dependiendo de la cantidad de habitacion las recorro y obtengo su precio actual
 			// lo guardo en un acumulador multiplicado por el numero de noches
-			for (var i = 1; i <= QuantityRooms; i++) {
-			text_price = $("#container-room-price-" + i).text();
-			price_night = price_night + parseInt(text_price);
-			}
+			//for (var i = 1; i <= QuantityRooms; i++) {
+			//text_price = $("#container-room-price-" + i).text();
+			//price_night = price_night + parseInt(text_price);
+			//}
 
+			$("#price-night").text("BsS." + price_night)
 			$("#price-total").text("BsS." + (dias * price_night))
 			$("#total_prices").val(dias * price_night);
 		}
@@ -230,8 +236,7 @@
 					$.ajax({
 						url: "/reservations/room/" + TargetVal + "/" + TargetID,
 						success:function() {
-							console.log("success");
-							$('#quantity-people-room-' + IdTargetRoom + ' option:eq(0)').prop('selected', 0).trigger('change');
+							setTimeout($('#quantity-people-room-' + IdTargetRoom + ' option:eq(0)').prop('selected', 0).trigger('change'), 100);
 						},
 						error: function() {
 							swal("Oops...", "Error al cargar la habitación, intente nuevamente", "error");
@@ -246,22 +251,17 @@
 					var IdTargetRoom = parseInt($(this).attr('id').split("-")[3]);
 					var people_room_price = $("#quantity-people-room-" + IdTargetRoom).val();
 					$( "#container-room-price-" + IdTargetRoom ).remove();
-					$( "#container-room-" + IdTargetRoom ).append('<div class=col id=container-room-price-'+IdTargetRoom+'>'+people_room_price+'</div>');
+					$( "#container-room-" + IdTargetRoom ).append('<div class="col container-room-price" id=container-room-price-'+IdTargetRoom+'>'+people_room_price+'</div>');
 
-					var price_night = 0;
-					for (var i = 1; i <= count; i++) {
-						text_price = $("#container-room-price-" + i).text();
-						price_night = price_night + parseInt(text_price);
-					}
-
-					let f1 = $('#CheckInDatePicker').val();
-					let f2 = $('#CheckOutDatePicker').val();
-					dias = (restaFechas(f1,f2));
-					$("#price-night").text("BsS." + price_night)
-					$("#price-total").text("BsS." + (dias * price_night))
-					$("#total_prices").val(dias * price_night);
-					
+					//calcular precio total a pagar
+					TotalPrice(); 	
 				});
+
+				//Recalcular precio total al destruir una habitacion
+				$("#destroy_room").click(function() {
+					setTimeout(function(){ TotalPrice();}, 300); 
+				});
+
 			}, 500); 
 		});
 	});
