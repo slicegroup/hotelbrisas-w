@@ -177,10 +177,12 @@
 
 		//Calcula el precio a total a pagar
 		TotalPrice = function(){
-			// QuantityRooms me permite saber cuantas habitaciones hay activas en la reserva
+			
 			//var QuantityRooms = $(".select-rooms").length;
 			var price_night = 0;
 
+			// Me permite saber cuantas habitaciones hay activas en la reserva
+			// Las recorro y tomo su precio actual y lo voy acumulando
 			$('#form-rooms .col-12 .nested-fields .row .container-room-price').each(function(){
 				text_price = $("#" + this.id).text();
 				price_night = price_night + parseInt(text_price);
@@ -258,8 +260,8 @@
 				});
 
 				//Recalcular precio total al destruir una habitacion
-				$("#destroy_room").click(function() {
-					setTimeout(function(){ TotalPrice();}, 300); 
+				$(".remove_fields").click(function() {
+					setTimeout(function(){TotalPrice();}, 250); 
 				});
 
 			}, 500); 
