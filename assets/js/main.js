@@ -76,3 +76,27 @@ $(document).ready(function () {
     }
   });
 });
+
+
+
+$('.slider-for').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.slider-nav'
+});
+$('.slider-nav').slick({
+  slidesToShow: 4,
+  prevArrow: '<div class="slick-prev-arrow"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>',//$('.slick-prev-arrow'),
+  nextArrow: '<div class="slick-next-arrow"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>',//$('.slick-next-arrow'),
+  slidesToScroll: 1,
+  asNavFor: '.slider-for',
+  dots: false,
+  arrows: true,
+  focusOnSelect: true
+});
+
+
+
+
