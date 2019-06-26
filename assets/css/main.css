@@ -355,7 +355,7 @@ header {
   margin: 1rem 0;
 }
 
-.gallery .btn-general:hover, .events .btn-general:hover, .booking .btn-general:hover {
+.gallery .btn-general:hover, .events .btn-general:hover, .booking .btn-general:hover, .multi_step_form .btn-general:hover {
   color: #35322e;
 }
 
