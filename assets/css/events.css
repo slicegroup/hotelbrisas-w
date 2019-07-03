@@ -28,7 +28,7 @@
 }
 .multi_step_form #msform fieldset {
   border: 0;
-  padding: 0 10rem;
+  /* padding: 0 10rem; */
   position: relative;
   width: 100%;
   left: 0;
@@ -328,3 +328,78 @@
 .multi_step_form .title-service {
   margin: 2rem 0;
 }
+
+/* FORM EVENTS */
+
+input[type=checkbox] + label {
+  display: flex;
+  align-items: center;
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0.2em;
+ }
+ 
+ input[type=checkbox] {
+  display: none;
+ }
+ 
+ .form-flex input[type=checkbox] + label:before {
+  content: "\2714";
+  border: 0.1em solid #ccc;
+  border-radius: 0.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center; width: 2rem;
+  height: 2rem;
+  /* padding-left: 0.2em;
+  padding-bottom: 0.3em; */
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: .2s;
+  margin-right: 15px;
+ }
+ 
+ .form-flex input[type=checkbox] + label:active:before {
+  transform: scale(0);
+ }
+ 
+ .form-flex input[type=checkbox]:checked + label:before {
+  background-color:#f3581b ;
+  border-color: #f3581b;
+  color: #fff;
+ }
+ 
+ .form-flex input[type=checkbox]:disabled + label:before {
+  transform: scale(1);
+  border-color: #aaa;
+ }
+ 
+ .form-flex input[type=checkbox]:checked:disabled + label:before {
+  transform: scale(1);
+  background-color: #bfb;
+  border-color: #bfb;
+ }
+ 
+ .form-flex {
+   display: flex;
+     justify-content: center;
+ }
+ 
+ .input-check input[type=checkbox]:checked + label img {
+   filter: grayscale(0); 
+   opacity: 1;
+  }
+ 
+  .input-check input[type=checkbox] + label img {
+   filter: grayscale(50);
+   opacity: .4;
+  }
+ 
+  .input-check label {
+   display: flex;
+   flex-direction: column;
+  }
+  .input-check img {
+   width: 5rem;
+  }
