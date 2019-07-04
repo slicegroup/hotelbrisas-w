@@ -101,17 +101,20 @@
               <input type="tel" class="form-control" placeholder="Teléfono">
             </div>
             <div class="form-group col-lg-6">
-              <input type="date" class="form-control" placeholder="Fecha del Evento">
+              <input type="text" class="form-control" placeholder="Fecha del Evento" onfocus="(this.type='date')"
+                onblur="(this.type='text')">
             </div>
           </div>
           <h2 class="title-service">Datos del Evento</h2>
           <!-- <h6>We will send you a SMS. Input the code to verify.</h6> -->
           <div class="form-row">
             <div class="form-group col-lg-6">
-              <input type="date" id="" class="form-control" placeholder="Fecha de Inicio">
+              <input type="text" id="" class="form-control" placeholder="Fecha de Inicio" , onfocus="(this.type='date')"
+                onblur="(this.type='text')">
             </div>
             <div class="form-group col-lg-6">
-              <input type="date" id="" class="form-control" placeholder="Fecha de Fin">
+              <input type="text" id="" class="form-control" placeholder="Fecha de Fin" , onfocus="(this.type='date')"
+                onblur="(this.type='text')">
             </div>
             <div class="form-group col-lg-6">
               <input type="text" class="form-control" placeholder="Motivo/Colores">
@@ -191,6 +194,10 @@
                 <label for="check-14">Ron</label>
               </div>
             </div>
+            <div class="col-lg-12 form-flex">
+              <h2 class="title-service">Decoración del evento</h2>
+
+            </div>
             <div class="form-group col-lg-3 input-check">
               <input id="check-15" name="categories-8" type="checkbox" value="#"></input>
               <label class="" for="check-15">
@@ -254,7 +261,29 @@
                 Iluminación
               </label>
             </div>
+            <div class="form-group col-lg-3 input-check">
+              <input id="check-24" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-24">
+                <img src="assets/img/podium.svg" alt="">
+                Podium
+              </label>
+            </div>
+            <div class="form-group col-lg-3 input-check">
+              <input id="check-25" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-25">
+                <img src="assets/img/canopy.svg" alt="">
+                Toldo
+              </label>
+            </div>
+            <div class="form-group col-lg-3 input-check">
+              <input id="check-26" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-26">
+                <img src="assets/img/eye-mask.svg" alt="">
+                Hora loca
+              </label>
+            </div>
           </div>
+
           <button type="button" class="btn-general btn-red previous previous_button">Back</button>
           <button type="button" class="next btn-general btn-red">Continue</button>
         </fieldset>
@@ -266,7 +295,12 @@
           </div>
           <div class="form-group col-lg-12">
             <textarea name="" id="" cols="30" rows="10" placeholder="Observaciones"></textarea>
+            <div class="form-flex conditones">
+              <input id="check-30" name="categories-8" type="checkbox" value="#"></input>
+              <label for="check-30">Terminos y condiciones</label>
+            </div>
           </div>
+
           <button type="button" class="btn-general btn-red previous previous_button">Back</button>
           <a href="#" class="btn-general btn-red">Finish</a>
         </fieldset>

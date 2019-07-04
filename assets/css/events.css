@@ -7,7 +7,7 @@
   text-align: center;
   position: relative;
   padding-top: 50px;
-  min-height: 64rem;
+  min-height: 70rem;
   /* max-width: 810px; */
   margin: 0 auto;
   background: #ffffff;
@@ -402,4 +402,13 @@ input[type=checkbox] + label {
   }
   .input-check img {
    width: 5rem;
+  }
+
+  .previous_button {
+    margin-top: 2rem;
+    margin-right: 2rem;
+  }
+
+  .conditones {
+    margin-top: 2rem;
   }
