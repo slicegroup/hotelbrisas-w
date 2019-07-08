@@ -18,44 +18,66 @@
 </head>
 
 <body>
-  <header>
+  <header class="">
     <!-- START NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light container">
-      <a class="navbar-brand" href="#">
-        <img class="logo-navbar" src="assets/img/Logo Brisas BLANCO.png" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse navbar-align" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link nav-custom" href="#"> Inicio <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-custom" href="#room"> Habitaciones</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-custom" href="#services">Servicios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-custom" href="#gallery">Galería</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-custom" href="#events">Eventos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-custom" href="#">Salones</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-custom" href="#footer"> Contáctanos</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+
+    <div class="container">
+
+      <nav class="navbar navbar-expand-lg  navbar-dark ">
+        <a class="navbar-brand mr-auto mr-lg-0" href="#">
+          <img class="logo-navbar" src="assets/img/Logo Brisas BLANCO.png" alt="">
+        </a>
+
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+          <div class="btn-nav">
+            <img class="logo-navbar" src="assets/img/Logo Brisas BLANCO.png" alt="">
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link nav-custom" href="#"> Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#room"> Habitaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#services">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#gallery">Galería</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#events">Eventos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#">Salones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#footer"> Contáctanos</a>
+            </li>
+          </ul>
+          <ul>
+            <li class="social  social-nav">
+              <a href="https://www.instagram.com/hotelbrisas/" , target="_blank"><i class="fa fa-instagram"
+                  aria-hidden="true"></i>
+              </a> <a href="https://www.facebook.com/hotelbrisasparaguana/" , target="_blank"><i class="fa fa-facebook"
+                  aria-hidden="true"></i>
+              </a> <a href="https://twitter.com/Hotelbrisas" , target="_blank"><i class="fa fa-twitter"
+                  aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- END NAVBAR -->
   </header>
-  <!-- END NAVBAR -->
 
   <!-- MEDIA BANNER -->
   <section class="banner-room">
@@ -226,9 +248,8 @@
   <button class="button-up btn-scroll">
     <i class="fa fa-angle-up ir-arriba" aria-hidden="true"></i>
   </button>
-
-
   <!-- END FOOTER -->
+
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

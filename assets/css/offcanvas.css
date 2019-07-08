@@ -27,6 +27,10 @@ body {
     font-size: 1.5rem;
   }
 
+  .social-nav {
+    display: initial;
+  }
+
   .btn-nav img {
     display: initial;
   }
