@@ -22,7 +22,7 @@ header {
   position: absolute;
   padding-top: 1rem;
   padding-bottom: 1rem; 
-  z-index: 1;
+  z-index: 9999999;
   width: 100%;
 }
 
@@ -77,6 +77,34 @@ header {
 .nav-custom:hover {
   transition: .5s;
   color: #f35314 !important;
+}
+.navbar-toggler i {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.navbar-nav {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  height: 90%;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.btn-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1.5rem;
+
+}
+
+.btn-nav img {
+  width: 10rem;
+  height: 4rem;
+  display: none;
 }
 
 
@@ -638,6 +666,7 @@ footer ul {
   color: #fff;
   position: fixed;
   background-color: #f3581b;
+  z-index: 1;
   bottom: 4rem;
   right: 1rem;
   display: flex;
@@ -656,7 +685,7 @@ footer ul {
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 25rem;
+  height: 30rem;
 }
 
 .details-single-room .slider-nav img, .details-single-room .slider-for img {
@@ -724,4 +753,7 @@ footer ul {
 /* .description-room  {
   margin-bottom: 3rem;
 } */
+
+
+
 

@@ -7,10 +7,10 @@
   text-align: center;
   position: relative;
   padding-top: 50px;
-  min-height: 70rem;
+  /* min-height: 60rem; */
   /* max-width: 810px; */
   margin: 0 auto;
-  background: #ffffff;
+  /* background: #ffffff; */
   z-index: 1;
 }
 .multi_step_form #msform .tittle {
