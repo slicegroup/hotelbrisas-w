@@ -101,6 +101,19 @@
     padding-top: 8rem;
   }
 
+  /* VIEW FORM-EVENTS */
+
+  .previous_button {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .box-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   
 }
 
