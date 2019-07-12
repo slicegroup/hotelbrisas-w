@@ -1,0 +1,38 @@
+es:
+  keppler:
+    sidebar-menu:
+      keppler-booking: Keppler booking
+      keppler-booking-submenu:
+        orders: Orders
+        reservations: Reservations
+        images: Images
+        prices-rooms: Prices rooms
+        rooms: Rooms
+    permissions:
+    models:
+      singularize:
+        order: order
+        reservation: reservation
+        image: image
+        prices_room: prices room
+        room: room
+      pluralize:
+        orders: orders
+        reservations: reservations
+        images: images
+        prices_rooms: prices rooms
+        rooms: rooms
+    modules:
+      admin/orders: Orders
+      admin/reservations: Reservations
+      admin/images: Images
+      admin/prices-rooms: Prices rooms
+      admin/rooms: Rooms
+    messages:
+    actions:
+  activerecord:
+    attributes:
+    errors:
+      messages:
+  errors:
+  helpers:

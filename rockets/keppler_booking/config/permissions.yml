@@ -1,0 +1,35 @@
+modules:
+  orders:
+    name: Order
+    model: KepplerBookingOrder
+    actions: [
+      'index', 'create', 'update', 'destroy', 'download', 'upload', 'clone'
+    ]
+
+  reservations:
+    name: Reservation
+    model: KepplerBookingReservation
+    actions: [
+      'index', 'create', 'update', 'destroy', 'download', 'upload', 'clone'
+    ]
+
+  images:
+    name: Image
+    model: KepplerBookingImage
+    actions: [
+      'index', 'create', 'update', 'destroy', 'download', 'upload', 'clone'
+    ]
+
+  prices_rooms:
+    name: PricesRoom
+    model: KepplerBookingPricesRoom
+    actions: [
+      'index', 'create', 'update', 'destroy', 'download', 'upload', 'clone'
+    ]
+
+  rooms:
+    name: Room
+    model: KepplerBookingRoom
+    actions: [
+      'index', 'create', 'update', 'destroy', 'download', 'upload', 'clone'
+    ]

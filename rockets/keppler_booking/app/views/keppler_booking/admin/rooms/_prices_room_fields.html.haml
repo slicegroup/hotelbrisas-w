@@ -1,0 +1,10 @@
+.nested-fields.col-lg-12
+	.row
+		.col-lg-4
+			= f.input :amount_people, label: "Cantidad de Personas", wrapper_html: { class: "" }
+		.col-lg-4
+			= f.input :price, label: "Precio", wrapper_html: { class: "" }
+		.col-lg-4
+			%br
+			= link_to_remove_association f do
+				%i.icon-trash
