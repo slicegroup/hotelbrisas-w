@@ -1,0 +1,351 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{charset: "UTF-8"}
+    %meta{content: "width=device-width, initial-scale=1.0", name:"viewport"}
+    %title Hotel Brisas de Paraguaná
+  %body
+    = render 'keppler_frontend/app/partials/navbar'
+    %section.banner-room
+      .mask-banner
+        %h2.title-banner.container Solicitud de Eventos
+    / END BANNER
+    / Multi step form
+    %section.multi_step_form
+      .container.padding-top-bottom
+        %form#msform
+          / Tittle
+          /
+            <div class="tittle">
+            <h2>Verification Process</h2>
+            <p>In order to use this service, you have to complete this verification process</p>
+            </div>
+          / progressbar
+          %ul#progressbar
+            %li.active Informaci&#xF3;n Principal
+            %li Detalles del Evento
+            %li Datos extras
+          / fieldsets
+          %fieldset
+            %h2.title-service Datos Personales
+            / <h6>We will send you a SMS. Input the code to verify.</h6>
+            .form-row
+              .form-group.col-lg-6.col-sm-6.col-sm-6
+                %input.form-control{:id => "", :placeholder => "Nombre y Apellido", :type => "text"}
+              .form-group.col-lg-6.col-sm-6
+                %input.form-control{:placeholder => "Cedula/Rif", :type => "text"}
+              .form-group.col-lg-6.col-sm-6
+                %input.form-control{:placeholder => "Nombre de la Empresa", :type => "text"}
+              .form-group.col-lg-6.col-sm-6
+                %input.form-control{:placeholder => "Correo Electrónico", :type => "mail"}
+              .form-group.col-lg-6.col-sm-6
+                %input.form-control{:placeholder => "Teléfono", :type => "tel"}
+              .form-group.col-lg-6.col-sm-6
+                %input.form-control{:onblur => "(this.type='text')", :onfocus => "(this.type='date')", :placeholder => "Fecha del Evento", :type => "text"}
+            %h2.title-service Datos del Evento
+            / <h6>We will send you a SMS. Input the code to verify.</h6>
+            .form-row
+              .form-group.col-lg-6.col-sm-6
+                %input.form-control{:id => "", :placeholder => "Fecha de Inicio", :type => "text", onfocus: "(this.type='date')", onblur: "(this.type='text')"}
+              .form-group.col-lg-6.col-sm-6
+                %input.form-control{:id => "", :placeholder => "Fecha de Fin", :type => "text", onfocus: "(this.type='date')", onblur: "(this.type='text')"}
+              .form-group.col-lg-6.col-sm-6
+                %input.form-control{:placeholder => "Motivo/Colores", :type => "text"}
+              .form-group.col-lg-6.col-sm-6
+                %input.form-control{:placeholder => "Tipo de Evento", :type => "text"}
+              .form-group.col-lg-6.col-sm-6
+                %input.form-control{:placeholder => "Cantidad de Personas", :type => "number"}
+              .form-group.col-lg-6.col-sm-6
+                %select.product_select
+                  %option{"data-display" => "Hora de Inicio"} Hora de Inicio
+                  %option 2. Choose A Question
+                  %option 3. Choose A Question
+              .form-group.col-lg-6.col-sm-6
+                %select.product_select
+                  %option{"data-display" => "Hora de Inicio"} Hora de Fin
+                  %option 2. Choose A Question
+                  %option 3. Choose A Question
+              .form-group.col-lg-6.col-sm-6
+                %select.product_select
+                  %option{"data-display" => "Seleccione un salón"} Seleccione un sal&#xF3;n
+                  %option 2. Choose A Question
+                  %option 3. Choose A Question
+              .form-group.col-lg-12
+                %textarea{:cols => "30", :id => "", :name => "", :placeholder => "Descripción del Evento", :rows => "10"}
+            %button.btn-general.btn-red.previous_button{:type => "button"} Back
+            %button.next.btn-general.btn-red{:type => "button"} Continue
+          %fieldset
+            %h2.title-service Bebida/Comida
+            .form-row
+              .form-flex.col-lg-6.col-sm-6
+                .form-group
+                  %input#check-1{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                  %label{:for => "check-1"}
+                    Pasapalos fríos
+                  %input#check-2{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                  %label{:for => "check-2"} Pasapalos calientes
+                  %input#check-3{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                  %label{:for => "check-3"} Men&#xFA; plateado
+                  %input#check-4{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                  %label{:for => "check-4"} Estaciones tem&#xE1;ticas
+                  %input#check-5{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                  %label{:for => "check-5"} Tipo buffe
+                  %input#check-6{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                  %label{:for => "check-6"} Coffe Break matutino
+                  %input#check-7{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                  %label{:for => "check-7"} Coffe Break vespertino
+              .col-lg-6.form-flex.col-sm-6
+                .form-group
+                  %input#check-8{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                  %label{:for => "check-8"}
+                    Mesa de quesos
+                  %input#check-9{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                  %label{:for => "check-9"} Descorche de cocteles
+                  %input#check-10{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                  %label{:for => "check-10"} Descorche de whisky
+                  %input#check-11{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                  %label{:for => "check-11"} Des. Vino/Champagne
+                  %input#check-12{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                  %label{:for => "check-12"} Des. Vodka/Ron
+                  %input#check-13{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                  %label{:for => "check-13"} Barra coctelera
+                  %input#check-14{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                  %label{:for => "check-14"} Ron
+              .col-lg-12.form-flex
+                %h2.title-service Decoración del evento
+              .form-group.col-lg-3.input-check.col-6.col-md-4
+                %input#check-15{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-15"}
+                  %img{:alt => "", :src => "assets/img/flower.svg"}
+                    Arreglos Florales
+              .form-group.col-lg-3.input-check.col-6.col-md-4
+                %input#check-16{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-16"}
+                  %img{:alt => "", :src => "assets/img/music-player.svg"}
+                    Sonido
+              .form-group.col-lg-3.input-check.col-6.col-md-4
+                %input#check-17{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-17"}
+                  %img{:alt => "", :src => "assets/img/magic-wand.svg"}
+                    Show de m&#xE1;gia
+              .form-group.col-lg-3.input-check.col-6.col-md-4
+                %input#check-18{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-18"}
+                  %img{:alt => "", :src => "assets/img/dj.svg"}
+                    Dj
+              .form-group.col-lg-3.input-check.col-6.col-md-4
+                %input#check-19{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-19"}
+                  %img{:alt => "", :src => "assets/img/dance.svg"}
+                    Show de baile
+              .form-group.col-lg-3.input-check.col-6.col-md-4
+                %input#check-20{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-20"}
+                  %img{:alt => "", :src => "assets/img/castle.svg"}
+                    Inflables
+              .form-group.col-lg-3.input-check.col-6.col-md-4
+                %input#check-21{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-21"}
+                  %img{:alt => "", :src => "assets/img/band.svg"}
+                    Grupo musical
+              .form-group.col-lg-3.input-check.col-6.col-md-4
+                %input#check-22{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-22"}
+                  %img{:alt => "", :src => "assets/img/holiday.svg"}
+                    Globos
+              .form-group.col-lg-3.input-check.col-6.col-md-4
+                %input#check-23{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-23"}
+                  %img{:alt => "", :src => "assets/img/spotlights.svg"}
+                    Iluminación
+              .form-group.col-lg-3.input-check.col-6.col-md-4
+                %input#check-24{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-24"}
+                  %img{:alt => "", :src => "assets/img/podium.svg"}
+                    Podium
+              .form-group.col-lg-3.input-check.col-6.col-md-4
+                %input#check-25{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-25"}
+                  %img{:alt => "", :src => "assets/img/canopy.svg"}
+                    Toldo
+              .form-group.col-lg-3.input-check.col-6.col-md-4
+                %input#check-26{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-26"}
+                  %img{:alt => "", :src => "assets/img/eye-mask.svg"}
+                    Hora loca
+            %button.btn-general.btn-red.previous.previous_button{:type => "button"} Back
+            %button.next.btn-general.btn-red{:type => "button"} Continue
+          %fieldset
+            %h2.title-service Montaje del Evento
+            .row
+              .form-group.col-lg-2.input-check.col-6.col-md-4
+                %input#check-27{:name => "categories-27", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-27"}
+                  %img{:alt => "", :src => "assets/img/banquete.svg"}
+                    Banquete
+              .form-group.col-lg-2.input-check.col-6.col-md-4
+                %input#check-28{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-28"}
+                  %img{:alt => "", :src => "assets/img/auditor.svg"}
+                    Auditorio
+              .form-group.col-lg-2.input-check.col-6.col-md-4
+                %input#check-30{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-30"}
+                  %img{:alt => "", :src => "assets/img/reu.svg"}
+                    Reuni&#xF3;n
+              .form-group.col-lg-2.input-check.col-6.col-md-4
+                %input#check-31{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-31"}
+                  %img{:alt => "", :src => "assets/img/school.svg"}
+                    Escuela
+              .form-group.col-lg-2.input-check.col-6.col-md-4
+                %input#check-32{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-32"}
+                  %img{:alt => "", :src => "assets/img/coctel.svg"}
+                    C&#xF3;ctel
+              .form-group.col-lg-2.input-check.col-6.col-md-4
+                %input#check-33{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-33"}
+                  %img{:alt => "", :src => "assets/img/type-u.svg"}
+                    Tipo U
+            %h2.title-service Información Extra
+            / <h6>Please update your account with security questions</h6>
+            .form-group.col-lg-12
+              %textarea{:cols => "30", :id => "", :name => "", :placeholder => "Otros Servicios", :rows => "10"}
+            .form-group.col-lg-12
+              %textarea{:cols => "30", :id => "", :name => "", :placeholder => "Observaciones", :rows => "10"}
+              .form-flex.conditones
+                %input#check-30{:name => "categories-8", :type => "checkbox", :value => "#"}/
+                %label{:for => "check-30"} Términos y condiciones
+            %button.btn-general.btn-red.previous.previous_button{:type => "button"} Back
+            %a.btn-general.btn-red{:href => "#"} Finish
+:javascript
+  (function ($) {
+    "use strict";
+
+    //* Form js
+    function verificationForm() {
+      //jQuery time
+      var current_fs, next_fs, previous_fs; //fieldsets
+      var left, opacity, scale; //fieldset properties which we will animate
+      var animating; //flag to prevent quick multi-click glitches
+
+      $(".next").click(function () {
+        $("html, body").animate({ scrollTop: 400 }, "fast");
+        if (animating) return false;
+        animating = true;
+
+        current_fs = $(this).parent();
+        next_fs = $(this).parent().next();
+
+        //activate next step on progressbar using the index of next_fs
+        $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+        //show the next fieldset
+        next_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({
+          opacity: 0
+        }, {
+            step: function (now, mx) {
+              //as the opacity of current_fs reduces to 0 - stored in "now"
+              //1. scale current_fs down to 80%
+              scale = 1 - (1 - now) * 0.2;
+              //2. bring next_fs from the right(50%)
+              left = (now * 50) + "%";
+              //3. increase opacity of next_fs to 1 as it moves in
+              opacity = 1 - now;
+              current_fs.css({
+                'transform': 'scale(' + scale + ')',
+                // // 'position': 'absolute',
+              });
+              next_fs.css({
+                'left': left,
+                'opacity': opacity,
+              });
+            },
+            duration: 800,
+            complete: function () {
+              current_fs.hide();
+              animating = false;
+            },
+            //this comes from the custom easing plugin
+            easing: 'easeInOutBack'
+          });
+      });
+
+      $(".previous").click(function () {
+        $("html, body").animate({ scrollTop: 400 }, "fast");
+        if (animating) return false;
+        animating = true;
+
+        current_fs = $(this).parent();
+        previous_fs = $(this).parent().prev();
+
+        //de-activate current step on progressbar
+        $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+        //show the previous fieldset
+        previous_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({
+          opacity: 0
+        }, {
+            step: function (now, mx) {
+              //as the opacity of current_fs reduces to 0 - stored in "now"
+              //1. scale previous_fs from 80% to 100%
+              scale = 0.8 + (1 - now) * 0.2;
+              //2. take current_fs to the right(50%) - from 0%
+              left = ((1 - now) * 50) + "%";
+              //3. increase opacity of previous_fs to 1 as it moves in
+              opacity = 1 - now;
+              current_fs.css({
+                'left': left
+              });
+              previous_fs.css({
+                'transform': 'scale(' + scale + ')',
+                'opacity': opacity
+              });
+            },
+            duration: 800,
+            complete: function () {
+              current_fs.hide();
+              animating = false;
+            },
+            //this comes from the custom easing plugin
+            easing: 'easeInOutBack'
+          });
+      });
+
+      $(".submit").click(function () {
+        return false;
+      })
+    };
+
+    //* Add Phone no select
+    function phoneNoselect() {
+      if ($('#msform').length) {
+        $("#phone").intlTelInput();
+        $("#phone").intlTelInput("setNumber", "+880");
+      };
+    };
+    //* Select js
+    function nice_Select() {
+      if ($('.product_select').length) {
+        $('select').niceSelect();
+      };
+    };
+    /*Function Calls*/
+    verificationForm();
+    phoneNoselect();
+    nice_Select();
+  })(jQuery);
+
+
+  $(function () {
+    'use strict'
+
+    $('[data-toggle="offcanvas"]').on('click', function () {
+      $('.offcanvas-collapse').toggleClass('open')
+    })
+  })

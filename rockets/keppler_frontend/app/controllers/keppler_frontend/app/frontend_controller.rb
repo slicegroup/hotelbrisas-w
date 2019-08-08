@@ -9,6 +9,10 @@ module KepplerFrontend
       @reservation = KepplerBooking::Reservation.new()
     end
 
+    def product_details
+      
+    end
+
     def create_reservation
       @reservation = KepplerBooking::Reservation.new(reservation_params)
 

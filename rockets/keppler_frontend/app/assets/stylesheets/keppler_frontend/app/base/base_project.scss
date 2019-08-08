@@ -9,7 +9,6 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
 
   @include respond-to(xs) {
     font-size: 1.2rem;

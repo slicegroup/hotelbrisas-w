@@ -1,5 +1,6 @@
 KepplerFrontend::Engine.routes.draw do
   root to: 'app/frontend#keppler', as: :keppler
+  get '/form_events', to: 'app/frontend#form_events', as: :form_events
   get "/reservaciones", to: 'app/frontend#reservations'
   post "/reservaciones", to: 'app/frontend#create_reservation', as: 'create_reservation'
 
