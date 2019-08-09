@@ -9,7 +9,7 @@ module KepplerFrontend
       @reservation = KepplerBooking::Reservation.new()
     end
 
-    def product_details
+    def single_room
       
     end
 
