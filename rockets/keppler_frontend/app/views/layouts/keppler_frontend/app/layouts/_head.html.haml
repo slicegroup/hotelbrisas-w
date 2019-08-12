@@ -2,21 +2,23 @@
 = render 'layouts/keppler_frontend/app/layouts/meta_tags'
 
 // Stylesheets
+%link{href: "https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap", rel: "stylesheet"}/
+%link{crossorigin: "anonymous", href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", integrity: "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", rel: "stylesheet"}
+%link{href: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}
+%link{href: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css", rel: "stylesheet", type: "text/css"}
+%link{href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css", rel: "stylesheet"}
 = stylesheet_link_tag 'keppler_frontend/app/application', media: 'all', 'data-turbolinks-track': 'reload' , async: true
 
 = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Patua+One', async: true
 = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css', async: true
 
 // Javascripts
+%script{src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"}
+%script{crossorigin: "anonymous", integrity: "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1", src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"}
+%script{crossorigin: "anonymous", integrity: "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM", src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"}
+%script{src: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
 = javascript_include_tag 'keppler_frontend/app/application', 'data-turbolinks-track': 'reload'
 = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js', 'data-turbolinks-track': 'reload' , async: true
 
 // Google Analytics
 = render 'layouts/keppler_frontend/app/layouts/google_analytics'
-
-
--# %link{ rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css', integrity: 'sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ', crossorigin: 'anonymous' }
--# %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.2.0/css/solid.css", :integrity => "sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z", :rel => "stylesheet"}/
--# %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.2.0/css/regular.css", :integrity => "sha384-zkhEzh7td0PG30vxQk1D9liRKeizzot4eqkJ8gB3/I+mZ1rjgQk+BSt2F6rT2c+I", :rel => "stylesheet"}/
--# %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.2.0/css/brands.css", :integrity => "sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE", :rel => "stylesheet"}/
--# %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css", :integrity => "sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6", :rel => "stylesheet"}/

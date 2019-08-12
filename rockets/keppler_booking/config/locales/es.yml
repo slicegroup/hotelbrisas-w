@@ -3,35 +3,36 @@ es:
     sidebar-menu:
       keppler-booking: Keppler booking
       keppler-booking-submenu:
-        orders: Orders
-        reservations: Reservations
+        orders: Ordenes
+        reservations: Reservaciones
         images: Images
-        prices-rooms: Prices rooms
-        rooms: Rooms
+        prices-rooms: Precios de la habitaciónes
+        rooms: Habitaciones
     permissions:
     models:
       singularize:
-        order: order
-        reservation: reservation
-        image: image
-        prices_room: prices room
-        room: room
+        order: Ordenes
+        reservation: Reservación
+        image: Imagen
+        prices_room: Precios de la habitación
+        room: Habitación
       pluralize:
         orders: orders
-        reservations: reservations
+        reservations: Reservaciones
         images: images
-        prices_rooms: prices rooms
-        rooms: rooms
+        prices_rooms: Precios de la habitaciónes
+        rooms: Habitaciones
     modules:
-      admin/orders: Orders
-      admin/reservations: Reservations
+      admin/orders: Ordenes
+      admin/reservations: Reservaciones
       admin/images: Images
-      admin/prices-rooms: Prices rooms
-      admin/rooms: Rooms
+      admin/prices-rooms: Precios de la habitaciónes
+      admin/rooms: Habitaciones
     messages:
     actions:
   activerecord:
     attributes:
+      rooms: Habitaciones
     errors:
       messages:
   errors:

@@ -1,0 +1,38 @@
+%header#navbar
+  / START NAVBAR
+  .container
+    %nav.navbar.navbar-expand-lg.navbar-dark
+      %a.navbar-brand.mr-auto.mr-lg-0{:href => "#"}
+        %img.logo-navbar{:alt => "", :src => "assets/keppler_frontend/app/LogoBrisasBLANCO.png"}/
+      %button.navbar-toggler.p-0.border-0{"data-toggle" => "offcanvas", :type => "button"}
+        %i.fa.fa-bars{"aria-hidden" => "true"}
+      #navbarsExampleDefault.navbar-collapse.offcanvas-collapse
+        .btn-nav
+          %img.logo-navbar{:alt => "", :src => "assets/keppler_frontend/app/LogoBrisasBLANCO.png"}/
+          %button.navbar-toggler.p-0.border-0{"data-toggle" => "offcanvas", :type => "button"}
+            %i.fa.fa-times{"aria-hidden" => "true"}
+        %ul.navbar-nav
+          %li.nav-item.active
+            %a.nav-link.nav-custom{:href => "/"}
+              Inicio
+              %span.sr-only (current)
+          %li.nav-item
+            %a.nav-link.nav-custom{:href => "/#room"} Habitaciones
+          %li.nav-item
+            %a.nav-link.nav-custom{:href => "/#services"} Servicios
+          %li.nav-item
+            %a.nav-link.nav-custom{:href => "/#gallery"} Galería
+          %li.nav-item
+            %a.nav-link.nav-custom{:href => "/#events"} Eventos
+          %li.nav-item
+            %a.nav-link.nav-custom{:href => "/#"} Salones
+          %li.nav-item
+            %a.nav-link.nav-custom{:href => "#footer"} Contáctanos
+        %ul
+          %li.social.social-nav
+            %a{:href => "https://www.instagram.com/hotelbrisas/", :target => "_blank"}
+              %i.fa.fa-instagram{"aria-hidden" => "true"}
+            %a{:href => "https://www.facebook.com/hotelbrisasparaguana/", :target => "_blank"}
+              %i.fa.fa-facebook{"aria-hidden" => "true"}
+            %a{:href => "https://twitter.com/Hotelbrisas", :target => "_blank"}
+              %i.fa.fa-twitter{"aria-hidden" => "true"}

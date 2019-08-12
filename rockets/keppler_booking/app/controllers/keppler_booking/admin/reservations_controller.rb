@@ -13,7 +13,6 @@ module KepplerBooking
 
       # GET /bookings
       def index
-        @reservations2 = Reservation.where(name: "hugo")
         respond_to_formats(@reservations2)
         redirect_to_index(@objects)
       end
@@ -95,7 +94,7 @@ module KepplerBooking
       # Only allow a trusted parameter "white list" through.
       def reservation_params
         params.require(:reservation).permit(
-          :name, :email, :adults, :kids, :babies, :origin, :motive, :checkin, :checkout, :payment, :observations, :total_price, orders_attributes: [:id, :room_id, :quantity, :quantity_people, :_destroy]
+          :name, :email, :adults, :kids, :babies, :origin, :motive, :checkin, :checkout, :payment, :status, :observations, :total_price, orders_attributes: [:id, :room_id, :quantity, :quantity_people, :_destroy]
         )
       end
     end

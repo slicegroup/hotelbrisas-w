@@ -33,3 +33,13 @@
                           = image_tag image.url if image.url
                       - else 
                         = sanitize raw value
+            %table.table
+              %tbody
+                %tr.list-row
+                  %th.display-label= t("activerecord.attributes.rooms")
+                
+                - @reservation.orders.each do |attribute, value|
+                  %tr.list-row
+                    %td.display-value.fs-body-1.tc-black-2
+                      #{KepplerBooking::Room.find(attribute.room_id).name}  - #{sanitize raw attribute.quantity_people} Persona(s)
+

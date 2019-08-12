@@ -16,3 +16,15 @@
 //= require moment 
 //= require fullcalendar
 //= require fullcalendar/locale-all
+
+/* $(document).ready(function() {
+  return $('#calendar').fullCalendar({
+    editable: false,
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay'
+    }
+  });
+}); */
+
