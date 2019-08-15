@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/medias.css">
+  <link rel="stylesheet" href="assets/css/offcanvas.css">
+
+  <title>Hotel Brisas</title>
+</head>
+
+<body>
+  <header class="">
+    <!-- START NAVBAR -->
+
+    <div class="container">
+
+      <nav class="navbar navbar-expand-lg  navbar-dark ">
+        <a class="navbar-brand mr-auto mr-lg-0" href="#">
+          <img class="logo-navbar" src="assets/img/Logo Brisas BLANCO.png" alt="">
+        </a>
+
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+          <div class="btn-nav">
+            <img class="logo-navbar" src="assets/img/Logo Brisas BLANCO.png" alt="">
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link nav-custom" href="#"> Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#room"> Habitaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#services">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#gallery">Galería</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#events">Eventos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#">Salones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#footer"> Contáctanos</a>
+            </li>
+          </ul>
+          <ul>
+            <li class="social  social-nav">
+              <a href="https://www.instagram.com/hotelbrisas/" , target="_blank"><i class="fa fa-instagram"
+                  aria-hidden="true"></i>
+              </a> <a href="https://www.facebook.com/hotelbrisasparaguana/" , target="_blank"><i class="fa fa-facebook"
+                  aria-hidden="true"></i>
+              </a> <a href="https://twitter.com/Hotelbrisas" , target="_blank"><i class="fa fa-twitter"
+                  aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- END NAVBAR -->
+  </header>
+  <!-- BANNER HOME -->
+  <section class="banner-home">
+    <div class="single-banner">
+      <div class="item-banner" , style="background-image:url('assets/img/1.1-min.JPG')">
+        <div class="mask-banner">
+          <p class="banner-p container">Lorem Ipsum</p>
+          <h2 class="title-banner container">Excelencia y calidad</h2>
+          <a class="btn-general btn-banner" href="">Reservar Ahora</a>
+        </div>
+      </div>
+      <div class="item-banner" , style="background-image:url('assets/img/8-min.JPG')">
+        <div class="mask-banner">
+          <p class="banner-p container">Lorem Ipsum</p>
+          <h2 class="title-banner container">Excelencia y calidad</h2>
+          <a class="btn-general btn-banner" href="">Reservar Ahora</a>
+        </div>
+      </div>
+      <div class="item-banner" , style="background-image:url('assets/img/1.1-min.JPG')">
+        <div class="mask-banner">
+          <p class="banner-p container">Lorem Ipsum</p>
+          <h2 class="title-banner container">Excelencia y calidad</h2>
+          <a class="btn-general btn-banner" href="">Reservar Ahora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END BANNER HOME -->
+
+  <!-- WIDGET BOOKING -->
+  <section class="booking-section">
+    <div class=" booking animated fadeIn" style="visibility: visible; animation-delay: 1.5s; animation-name: fadeIn;">
+      <div class=" container">
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            Desde
+            <div class="input-date">
+              <input type="date">
+              <!-- <p class="">dd/mm/aa <i class="fa fa-calendar" aria-hidden="true"></i></p> -->
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            Hasta
+            <div class="input-date">
+              <input type="date">
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="row">
+              <div class="col-lg-6 col-6">
+                Niños
+                <div class="input-date">
+                  <input type="number" min="0">
+                </div>
+              </div>
+              <div class="col-lg-6 col-6">
+                Adultos
+                <div class="input-date">
+                  <input type="number" min="0">
+                  <!-- <p>1<i class="fa fa-angle-down" aria-hidden="true"></i></p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 flex-booking">
+            <a class="btn-general " href="">Ver disponibilidad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- END WIDGET BOOKING -->
+  <!-- SECTION ROOM -->
+  <section class="room" id="room">
+    <div class="container">
+      <h2 class="title-section">Nuestras Habitaciones</h2>
+      <div class="slick-room">
+        <div class="item-room wow animated fadeInRight"
+          style="visibility: visible; animation-delay:.3s; animation-name: fadeInRight;">
+          <div class="img-room" , style="background-image:url('assets/img/room-1.jpg')">
+          </div>
+          <div class="details-room">
+            <h3 class="title-room">Matrimonial Standard</h3>
+            <p class="price">145.800 Bs <span>/Noche</span> </p>
+            <ul class="list-room">
+              <li>
+                <div class="row">
+                  <div class="col-lg-6 col-5">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    Capacidad:
+                  </div>
+                  <div class="col-lg-6 col-7">
+                    Máximo 2 personas
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-lg-6 col-5">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    Cama:
+                  </div>
+                  <div class="col-lg-6 col-7">
+                    1 Cama Queen
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-lg-6 col-5">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    Servicios:
+                  </div>
+                  <div class="col-lg-6 col-7">
+                    Wifi + Tv por cable + Nevera...
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <a class="btn-general btn-red" href="">Ver Detalles</a>
+          </div>
+        </div>
+        <div class="item-room wow animated fadeInRight"
+          style="visibility: visible; animation-delay:.3s; animation-name: fadeInRight;">
+          <div class="img-room" , style="background-image:url('assets/img/junior.jpg')">
+          </div>
+          <div class="details-room">
+            <h3 class="title-room">Junior Suite</h3>
+            <p class="price">378.000 Bs <span>/Noche</span> </p>
+            <ul class="list-room">
+              <li>
+                <div class="row">
+                  <div class="col-lg-6 col-5">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    Capacidad:
+                  </div>
+                  <div class="col-lg-6 col-7">
+                    Máximo 6 personas
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-lg-6 col-5">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    Cama:
+                  </div>
+                  <div class="col-lg-6 col-7">
+                    2 matrimoniales y 2 individuales
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-lg-6 col-5">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    Servicios:
+                  </div>
+                  <div class="col-lg-6 col-7">
+                    Wifi + Tv por cable + Nevera...
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <a class="btn-general btn-red" href="">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END ROOM -->
+  <section class="services" id="services">
+    <img class="img-service" src="assets/img/service.jpg" alt="">
+    <div class="container padding-top-bottom">
+      <div class="row">
+        <div class="col-lg-6 services-flex">
+          <h2 class="title-section">Conoce nuestros <br> Servicios</h2>
+          <p class="subtitle-service">
+            Las mejores habitaciones que combinan confort y exclusividad ¡Ven a disfrutarlas!
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <div class="slick-services wow animated fadeInUp"
+            style="visibility: visible; animation-delay:.3s; animation-name: fadeInUp;">
+
+            <div class="item-service ">
+              <div class="row height-service">
+                <div class="col-lg-3 services-flex">
+                  <img class="icon-service" src="assets/img/pool.svg" alt="">
+                </div>
+                <div class="col-lg-9">
+                  <div class="text-service">
+                    <h2 class="title-service">Acceso a la Piscina
+                    </h2>
+                    <p class="description-service">Además de comodidad, también le ofrecemos diversión. Nuestra área de
+                      piscina es ideal para compartir en familia y disfrutar de deliciosos snacks.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item-service">
+              <div class="row height-service">
+                <div class="col-lg-3 services-flex">
+                  <img class="icon-service" src="assets/img/parking.svg" alt="">
+                </div>
+                <div class="col-lg-9">
+                  <div class="text-service">
+                    <h2 class="title-service">Taxi Privado
+                    </h2>
+                    <p class="description-service">Siempre estamos preparados para ofrecerle lo mejor; por ello,
+                      ponemos
+                      a su disposición el servicio de taxi privado para atenderle en su salida del hotel, con la
+                      confianza y garantía que usted necesita.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="item-service">
+              <div class="row height-service">
+                <div class="col-lg-3 services-flex">
+                  <img class="icon-service" src="assets/img/weightlifter.svg" alt="">
+                </div>
+                <div class="col-lg-9">
+                  <div class="text-service">
+                    <h2 class="title-service">Acceso al Gimnasio
+                    </h2>
+                    <p class="description-service">Con nosotros puedes verte y sentirte bien al mismo tiempo, el acceso
+                      a
+                      nuestro gimnasio te permitirá mantenerte en forma y continuar con tu rutina..</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="item-service">
+              <div class="row height-service">
+                <div class="col-lg-3 services-flex">
+                  <img class="icon-service" src="assets/img/receptionist.svg" alt="">
+                </div>
+                <div class="col-lg-9">
+                  <div class="text-service">
+                    <h2 class="title-service">Servicio 24 horas
+                    </h2>
+                    <p class="description-service">Con nosotros puedes verte y sentirte bien al mismo tiempo, el acceso
+                      a
+                      nuestro gimnasio te permitirá mantenerte en forma y continuar con tu rutina..</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="item-service">
+              <div class="row height-service">
+                <div class="col-lg-3 services-flex">
+                  <img class="icon-service" src="assets/img/room-service.svg" alt="">
+                </div>
+                <div class="col-lg-9">
+                  <div class="text-service">
+                    <h2 class="title-service">Servicio a la Habitación
+                    </h2>
+                    <p class="description-service">Pensamos en su tranquilidad y le ofrecemos nuestro servicio de room
+                      service, brindándole una variedad de opciones de deliciosos platillos preparados en nuestro
+                      restaurante y que podrá degustar desde la comodidad de su habitación.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="item-service">
+              <div class="row height-service">
+                <div class="col-lg-3 services-flex">
+                  <img class="icon-service" src="assets/img/wifi.svg" alt="">
+                </div>
+                <div class="col-lg-9">
+                  <div class="text-service">
+                    <h2 class="title-service">Wifi Gratis
+                    </h2>
+                    <p class="description-service">
+                      Porque sabemos que para hacer buenos negocios necesita estar conectado, tenemos disponible la red
+                      WiFi en nuestras instalaciones para hacer su estadía más productiva.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="gallery" id="gallery">
+    <div class="container padding-top-bottom">
+      <h2 class="title-section">Galería</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="gallery-hidden wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;">
+            <img class="img-gallery w" src="assets/img/9-min.JPG" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="gallery-hidden wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;">
+            <img class="img-gallery " src=" assets/img/41.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="gallery-hidden wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;">
+            <img class="img-gallery " src=" assets/img/22-min.JPG" alt="">
+          </div>
+        </div>
+        <div class="col-lg-4 ">
+          <div class="gallery-hidden wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;">
+            <img class="img-gallery " src=" assets/img/1-min.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="gallery-hidden wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;">
+            <img class="img-gallery " src=" assets/img/14-min.JPG" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="box-btn">
+        <a class="btn-general btn-red" href="">Ver Más</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="events" id="events">
+    <div class="container padding-top-bottom">
+      <div class="item-event wow animated slideInUp"
+        style="visibility: visible; animation-delay:.3s; animation-name: slideInUp;">
+        <img class=" img-event" src="assets/img/events.jpg" alt="">
+        <div class="info-event event-desktop">
+          <h2 class="title-section">Eventos</h2>
+
+          <p class="description-event">
+            Hotel Brisas Paraguaná es reconocido por contar con la mayor variedad de salones para la realización de
+            reuniones, banquetes y convenciones, con nosotros puede organizar sus eventos con la comodidad de saber que
+            tenemos todo lo que necesita para que su celebración sea memorable.
+
+            Nuestros salones son ideales para crear hermosas decoraciones y hacer únicos sus eventos. Reserve con
+            nosotros y celebre sus momentos por todo lo alto.
+          </p>
+          <a class="btn-general btn-red" href="">Solicitar Información</a>
+
+        </div>
+        <div class="info-event info-event-responsive">
+          <h2 class="title-section">Eventos</h2>
+
+          <p class="description-event">
+            Nuestros salones son ideales para crear hermosas decoraciones y hacer únicos sus eventos. Reserve con
+            nosotros y celebre sus momentos por todo lo alto.
+          </p>
+          <a class="btn-general btn-red" href="">Solicitar Información</a>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="space">
+    <div class="container padding-top-bottom">
+      <div class="row">
+
+        <div class="col-lg-6">
+          <h2 class="title-section">Acerca de nuestros <br> Salones</b></h2>
+          <p class="subtitle-space">Male bring land. Dominion over can yielding his moveth under him is. Multiply which
+            firmamen</p>
+          <div class="item-space wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;">
+            <img src="assets/img/space2.jpg" alt="" class="img-space  ">
+            <div class=" description-space">
+              <p class="title-space">Salon de Fiestas 1</p>
+              <div class="detail-space">
+                <p class="title-space">Salon de Fiestas 1</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, praesentium recusandae. Soluta, natus.
+                  Mollitia, nulla saepe? Ipsam</p>
+              </div>
+            </div>
+          </div>
+          <div class="item-space  wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;">
+            <img src=" assets/img/space3.jpg" alt="" class="img-space ">
+            <div class=" description-space">
+              <p class="title-space">Salon de Fiestas 1</p>
+              <div class="detail-space">
+                <p class="title-space">Salon de Fiestas 1</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, praesentium recusandae. Soluta, natus.
+                  Mollitia, nulla saepe? Ipsam</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=" col-lg-6 colspace-2">
+          <div class="item-space wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;">
+            <img src="assets/img/space4.jpg" alt="" class="img-space  ">
+            <div class=" description-space">
+              <p class="title-space">Salon de Fiestas 1</p>
+              <div class="detail-space">
+                <p class="title-space">Salon de Fiestas 1</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, praesentium recusandae. Soluta, natus.
+                  Mollitia, nulla saepe? Ipsam</p>
+              </div>
+            </div>
+          </div>
+          <div class="item-space   wow animated zoomIn"
+            style="visibility: visible; animation-delay:.3s; animation-name: zoomIn;">
+            <img src=" assets/img/space1.jpg" alt="" class="img-space space-last">
+            <div class=" description-space">
+              <p class="title-space">Salon de Fiestas 1</p>
+              <div class="detail-space">
+                <p class="title-space">Salon de Fiestas 1</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, praesentium recusandae. Soluta, natus.
+                  Mollitia, nulla saepe? Ipsam</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer id=" footer">
+    <div class="container ">
+      <div class="row padding-top-bottom">
+
+        <div class="col-lg-4">
+          <h2 class="title-section">Contáctanos</h2>
+          <ul>
+            <li class="phone">
+              <a href="tel:+584146950188">
+                <i class="fa fa-phone" aria-hidden="true"></i>+58 4146950188
+              </a> <span>/</span>
+              <a href="tel:+582694206163">
+                <i class="fa fa-phone" aria-hidden="true"></i>+58 2694206163
+              </a>
+            </li>
+            <li class="ubication">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              Av. Prieto Figueroa con Av. Manuelita Saenz. Península de
+              Paraguaná, Edo. Falcón, Venezuela.
+            </li>
+            <li class="social ">
+              <a href="https://www.instagram.com/hotelbrisas/" , target="_blank"><i class="fa fa-instagram"
+                  aria-hidden="true"></i>
+              </a> <a href="https://www.facebook.com/hotelbrisasparaguana/" , target="_blank"><i class="fa fa-facebook"
+                  aria-hidden="true"></i>
+              </a> <a href="https://twitter.com/Hotelbrisas" , target="_blank"><i class="fa fa-twitter"
+                  aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4 services-flex">
+          <img src="assets/img/Logo Brisas BLANCO.png" alt="" class="logo-footer">
+        </div>
+        <div class="col-lg-4  feed-instagram">
+          <img src="assets/img/instag.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="powered">
+      <p>Diseño y desarrollo por
+        <a href="">Slice Group</a>
+      </p>
+    </div>
+  </footer>
+  <button class="button-up btn-scroll">
+    <i class="fa fa-angle-up ir-arriba" aria-hidden="true"></i>
+  </button>
+  <!-- END FOOTER -->
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="assets/js/wow.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript" src="assets/js/offcanvas.js"></script>
+
+</html>
