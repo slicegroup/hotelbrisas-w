@@ -1,6 +1,14 @@
 menu:
+  services_hotel:
+    name: services hotel
+    url_path: /admin/booking/services_hotels
+    icon: rocket
+    current: ['/admin/booking/services_hotels']
+    model: KepplerBooking::ServicesHotel
+    environment: all
+    position: 3
   keppler_booking:
-    name: Keppler Booking
+    name: Booking
     current: ['/']
     url_path: /
     icon: rocket
@@ -8,6 +16,13 @@ menu:
     environment: all
     position: 4
     submenu:
+      - services_room:
+          name: services room
+          url_path: /admin/booking/services_rooms
+          icon: layers
+          current: ['/admin/booking/services_rooms']
+          model: KepplerBooking::ServicesRoom
+
       #- order:
           #name: orders
           #url_path: /admin/booking/orders

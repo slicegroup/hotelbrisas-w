@@ -22,5 +22,9 @@ module KepplerBooking
     def self.index_attributes
       %i[name description_small cover permalink]
     end
+
+    def services
+      service_ids.map{|s| ServicesRoom.find(s)}
+    end
   end
 end

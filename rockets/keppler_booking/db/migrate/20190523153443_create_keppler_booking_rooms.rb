@@ -4,21 +4,10 @@ class CreateKepplerBookingRooms < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :description_small
       t.text :description_big
-      t.text :note
       t.string :cover
       t.string :permalink
-      t.boolean :air_conditioner
-      t.boolean :tv
-      t.boolean :refrigerator
-      t.boolean :bathroom
-      t.boolean :carpet
-      t.boolean :phone
+      t.string :services_ids, array: true, default: []
       t.boolean :lock
-      t.boolean :closet
-      t.boolean :table
-      t.boolean :internet
-      t.boolean :room_service
-      t.boolean :breakfast
       t.boolean :public
       t.integer :position
       t.datetime :deleted_at

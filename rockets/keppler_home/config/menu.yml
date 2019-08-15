@@ -1,0 +1,10 @@
+menu:
+  keppler_home:
+    name: Home banner
+    current: ['/admin/home/banners']
+    url_path: /admin/home/banners
+    icon: rocket
+    model: KepplerHome::Banner
+    environment: all
+    position: 4
+    submenu:

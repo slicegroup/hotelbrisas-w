@@ -9,21 +9,13 @@
     / BANNER HOME
     %section.banner-home
       .single-banner
-        .item-banner{:style => "background-image:url('assets/keppler_frontend/app/1.1-min.JPG')"}
-          .mask-banner
-            %p.banner-p.container Lorem Ipsum
-            %h2.title-banner.container Excelencia y calidad
-            %a.btn-general.btn-banner{:href => ""} Reservar Ahora
-        .item-banner{:style => "background-image:url('assets/keppler_frontend/app/8-min.JPG')"}
-          .mask-banner
-            %p.banner-p.container Lorem Ipsum
-            %h2.title-banner.container Excelencia y calidad
-            %a.btn-general.btn-banner{:href => ""} Reservar Ahora
-        .item-banner{:style => "background-image:url('assets/keppler_frontend/app/1.1-min.JPG')"}
-          .mask-banner
-            %p.banner-p.container Lorem Ipsum
-            %h2.title-banner.container Excelencia y calidad
-            %a.btn-general.btn-banner{:href => ""} Reservar Ahora
+        - @banners.each do |banner|
+          .item-banner{:style => "background-image:url('#{banner.image.url}')"}
+            .mask-banner
+              %p.banner-p.container= banner&.subtitle
+              %h2.title-banner.container= banner&.title
+              - unless banner.title.eql?('')
+                %a.btn-general.btn-banner{:href => ""} Reservar Ahora
     / END BANNER HOME
     / WIDGET BOOKING
     %section.booking-section
@@ -58,7 +50,7 @@
       .container
         %h2.title-section Nuestras Habitaciones
         .slick-room
-          .item-room.wow.animated.fadeInRight{:style => "visibility: visible; animation-delay:.3s; animation-name: fadeInRight;"}
+          .item-room.fadeInRight{:style => "visibility: visible; animation-delay:.3s; animation-name: fadeInRight;"}
             .img-room{:style => "background-image:url('assets/keppler_frontend/app/room-1.jpg')"}
             .details-room
               %h3.title-room Matrimonial Standard
@@ -88,7 +80,7 @@
                     .col-lg-6.col-7
                       Wifi + Tv por cable + Nevera...
               %a.btn-general.btn-red{:href => ""} Ver Detalles
-          .item-room.wow.animated.fadeInRight{:style => "visibility: visible; animation-delay:.3s; animation-name: fadeInRight;"}
+          .item-room.fadeInRight{:style => "visibility: visible; animation-delay:.3s; animation-name: fadeInRight;"}
             .img-room{:style => "background-image:url('assets/keppler_frontend/app/junior.jpg')"}
             .details-room
               %h3.title-room Junior Suite
@@ -131,7 +123,7 @@
             %p.subtitle-service
               Las mejores habitaciones que combinan confort y exclusividad ¡Ven a disfrutarlas!
           .col-lg-6
-            .slick-services.wow.animated.fadeInUp{:style => "visibility: visible; animation-delay:.3s; animation-name: fadeInUp;"}
+            .slick-services.fadeInUp{:style => "visibility: visible; animation-delay:.3s; animation-name: fadeInUp;"}
               .item-service
                 .row.height-service
                   .col-lg-3.services-flex
@@ -207,25 +199,25 @@
         %h2.title-section Galería
         .row
           .col-lg-6
-            .gallery-hidden.wow.animated.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
+            .gallery-hidden.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
               %img.img-gallery{:alt => "", :src => "assets/keppler_frontend/app/9-min.JPG"}/
           .col-lg-6
-            .gallery-hidden.wow.animated.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
+            .gallery-hidden.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
               %img.img-gallery{:alt => "", :src => "assets/keppler_frontend/app/41.jpg"}/
           .col-lg-4
-            .gallery-hidden.wow.animated.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
+            .gallery-hidden.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
               %img.img-gallery{:alt => "", :src => "assets/keppler_frontend/app/22-min.JPG"}/
           .col-lg-4
-            .gallery-hidden.wow.animated.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
+            .gallery-hidden.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
               %img.img-gallery{:alt => "", :src => "assets/keppler_frontend/app/1-min.jpg"}/
           .col-lg-4
-            .gallery-hidden.wow.animated.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
+            .gallery-hidden.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
               %img.img-gallery{:alt => "", :src => "assets/keppler_frontend/app/14-min.JPG"}/
         .box-btn
           %a.btn-general.btn-red{:href => ""} Ver Más
     %section#events.events
       .container.padding-top-bottom
-        .item-event.wow.animated.slideInUp{:style => "visibility: visible; animation-delay:.3s; animation-name: slideInUp;"}
+        .item-event.slideInUp{:style => "visibility: visible; animation-delay:.3s; animation-name: slideInUp;"}
           %img.img-event{:alt => "", :src => "assets/keppler_frontend/app/events.jpg"}/
           .info-event.event-desktop
             %h2.title-section Eventos
@@ -248,7 +240,7 @@
             %p.subtitle-space
               Male bring land. Dominion over can yielding his moveth under him is. Multiply which
               firmamen
-            .item-space.wow.animated.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
+            .item-space.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
               %img.img-space{:alt => "", :src => "assets/keppler_frontend/app/space2.jpg"}/
               .description-space
                 %p.title-space Salon de Fiestas 1
@@ -257,7 +249,7 @@
                   %p
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, praesentium recusandae. Soluta, natus.
                     Mollitia, nulla saepe? Ipsam
-            .item-space.wow.animated.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
+            .item-space.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
               %img.img-space{:alt => "", :src => "assets/keppler_frontend/app/space3.jpg"}/
               .description-space
                 %p.title-space Salon de Fiestas 1
@@ -267,7 +259,7 @@
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, praesentium recusandae. Soluta, natus.
                     Mollitia, nulla saepe? Ipsam
           .col-lg-6.colspace-2
-            .item-space.wow.animated.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
+            .item-space.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
               %img.img-space{:alt => "", :src => "assets/keppler_frontend/app/space4.jpg"}/
               .description-space
                 %p.title-space Salon de Fiestas 1
@@ -276,7 +268,7 @@
                   %p
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, praesentium recusandae. Soluta, natus.
                     Mollitia, nulla saepe? Ipsam
-            .item-space.wow.animated.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
+            .item-space.zoomIn{:style => "visibility: visible; animation-delay:.3s; animation-name: zoomIn;"}
               %img.img-space.space-last{:alt => "", :src => "assets/keppler_frontend/app/space1.jpg"}/
               .description-space
                 %p.title-space Salon de Fiestas 1

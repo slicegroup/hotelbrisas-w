@@ -8,6 +8,7 @@ module KepplerBooking
     class RoomsController < ::Admin::AdminController
       layout 'keppler_booking/admin/layouts/application'
       before_action :set_room, only: %i[show edit update destroy]
+      before_action :set_services, only: %i[create edit update new]
       before_action :index_variables
       include ObjectQuery
 
@@ -81,6 +82,10 @@ module KepplerBooking
 
       private
 
+      def set_services
+        @services = KepplerBooking::ServicesRoom.all
+      end
+
       def index_variables
         @q = Room.ransack(params[:q])
         @rooms = @q.result(distinct: true)
@@ -97,7 +102,7 @@ module KepplerBooking
       # Only allow a trusted parameter "white list" through.
       def room_params
         params.require(:room).permit(
-          :name, :description_small, :description_big, :note, :cover, :permalink, :air_conditioner, :tv, :refrigerator, :bathroom, :carpet, :phone, :lock, :closet, :table, :internet, :public, :room_service, :breakfast, images_attributes: [:id, :img, :_destroy], prices_rooms_attributes: [:id, :price, :amount_people, :_destroy]
+          :name, :description_small, :description_big, :price, :note, :cover, :permalink, :lock, {service_ids: []}, :public, images_attributes: [:id, :img, :_destroy], prices_rooms_attributes: [:id, :price, :amount_people, :_destroy]
         )
       end
     end

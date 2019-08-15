@@ -33,6 +33,15 @@ PATH
       rails (= 5.2.0)
 
 PATH
+  remote: rockets/keppler_home
+  specs:
+    keppler_home (0.1.0)
+      haml_rails
+      pundit
+      rails (= 5.2.0)
+      simple_form
+
+PATH
   remote: rockets/keppler_languages
   specs:
     keppler_languages (0.1.0)
@@ -623,6 +632,7 @@ DEPENDENCIES
   keppler_capsules!
   keppler_frontend!
   keppler_ga_dashboard!
+  keppler_home!
   keppler_languages!
   loofah (>= 2.2.3)
   mini_magick (= 4.8.0)

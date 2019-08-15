@@ -22,7 +22,7 @@
           .box-body.no-padding
             %table.table
               %tbody
-                - @room.as_json(except: %w[position deleted_at]).each do |attribute, value|
+                - @room.as_json(except: %w[position deleted_at service_ids]).each do |attribute, value|
                   %tr.list-row
                     %th.display-label= t("activerecord.attributes.#{attribute}")
                     %td.display-value.fs-body-1.tc-black-2
@@ -33,6 +33,12 @@
                           = image_tag image.url if image.url
                       - else 
                         = sanitize raw value
+                %tr.list-row
+                  %th.display-label= t("activerecord.attributes.services")
+                  %td.display-value.fs-body-1.tc-black-2
+                    - @room.services.each_with_index do |s, i|
+                      = i.zero? ? '' : '-'
+                      = s.name
       
             %table.table
               %tbody

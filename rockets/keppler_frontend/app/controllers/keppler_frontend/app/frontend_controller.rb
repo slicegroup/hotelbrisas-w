@@ -13,6 +13,10 @@ module KepplerFrontend
       
     end
 
+    def keppler
+      @banners = KepplerHome::Banner.actives
+    end
+
     def create_reservation
       @reservation = KepplerBooking::Reservation.new(reservation_params)
 

@@ -17,6 +17,12 @@ es:
     navigation:
       last_session: Ultima sesión
     sidebar-menu:
+      booking-submenu:
+        services-room: Servicios de Habitación
+        reservations: Reservaciones
+        rooms: Habitaciones
+      services-hotel: Servicios del Hotel
+      booking: Reservaciones
       about: Información
       seo: Seo
       seo-submenu:
@@ -36,6 +42,7 @@ es:
         admins: Administradores
       roles: Roles
       keppler-design: 'Diseño Keppler'
+      home-banner: Banners Home
       keppler-design-submenu:
         frontend-templates: 'Plantillas y Temas'
         admin-appearance: 'Apariencia de Keppler'

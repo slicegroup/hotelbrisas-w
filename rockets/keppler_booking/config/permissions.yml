@@ -1,4 +1,18 @@
 modules:
+  services_rooms:
+    name: ServicesRoom
+    model: KepplerBookingServicesRoom
+    actions: [
+      'index', 'create', 'update', 'destroy', 'download', 'upload', 'clone'
+    ]
+
+  services_hotels:
+    name: ServicesHotel
+    model: KepplerBookingServicesHotel
+    actions: [
+      'index', 'create', 'update', 'destroy', 'download', 'upload', 'clone'
+    ]
+
   orders:
     name: Order
     model: KepplerBookingOrder

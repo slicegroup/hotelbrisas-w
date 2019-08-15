@@ -3,6 +3,8 @@ en:
     sidebar-menu:
       keppler-booking: Keppler booking
       keppler-booking-submenu:
+        services-room: Services room
+        services-hotel: Services hotel
         orders: Orders
         reservations: Reservations
         images: Images
@@ -11,18 +13,24 @@ en:
     permissions:
     models:
       singularize:
+        services_room: services room
+        services_hotel: services hotel
         order: order
         reservation: reservation
         image: image
         prices_room: prices room
         room: room
       pluralize:
+        services_rooms: services rooms
+        services_hotels: services hotels
         orders: orders
         reservations: reservations
         images: images
         prices_rooms: prices rooms
         rooms: rooms
     modules:
+      admin/services-room: Services room
+      admin/services-hotel: Services hotel
       admin/orders: Orders
       admin/reservations: Reservations
       admin/images: Images

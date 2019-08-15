@@ -3,6 +3,8 @@ es:
     sidebar-menu:
       keppler-booking: Keppler booking
       keppler-booking-submenu:
+        services-room: Services room
+        services-hotel: Services hotel
         orders: Ordenes
         reservations: Reservaciones
         images: Images
@@ -11,18 +13,24 @@ es:
     permissions:
     models:
       singularize:
+        services_room: services room
+        services_hotel: services hotel
         order: Ordenes
         reservation: Reservación
         image: Imagen
         prices_room: Precios de la habitación
         room: Habitación
       pluralize:
+        services_rooms: services rooms
+        services_hotels: services hotels
         orders: orders
         reservations: Reservaciones
         images: images
         prices_rooms: Precios de la habitaciónes
         rooms: Habitaciones
     modules:
+      admin/services-room: Services room
+      admin/services-hotel: Services hotel
       admin/orders: Ordenes
       admin/reservations: Reservaciones
       admin/images: Images
@@ -32,6 +40,7 @@ es:
     actions:
   activerecord:
     attributes:
+      icon: Ícono
       rooms: Habitaciones
     errors:
       messages:

@@ -26,7 +26,7 @@
                   .col-xs-12
                     = f.input :description_big, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } }
                   .col-xs-12
-                    = f.input :note, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } }
+                    %input#userinput.form-control{pattern: "[0-9]*", type: "text"}
                   .col-xs-12
                     = f.input :cover, as: :keppler_file # , max_size: 225
                   .col-xs-12
@@ -39,33 +39,38 @@
                   .col-xs-12								
                     = f.simple_fields_for :prices_rooms do |c|
                       = render 'prices_room_fields', :f => c
-                  .col-xs-2
-                    = f.input :air_conditioner, as: :keppler_boolean
-                  .col-xs-2
-                    = f.input :tv, as: :keppler_boolean
-                  .col-xs-2
-                    = f.input :refrigerator, as: :keppler_boolean
-                  .col-xs-2
-                    = f.input :bathroom, as: :keppler_boolean
-                  .col-xs-2
-                    = f.input :carpet, as: :keppler_boolean
-                  .col-xs-2
-                    = f.input :phone, as: :keppler_boolean
+                  .col-xs-12
+                    %label.control-label.ckeditor.required{for: "room_description_big"}
+                      Servicios
+                    %select.js-example-basic-multiple.form-control{multiple: "multiple", name: "room[service_ids][]"}
+                      - @services.each do |s|
+                        %option{value: s.id, selected: @room.service_ids.include?("#{s.id}") ? true : false}= s.name
                   .col-xs-2
                     = f.input :lock, as: :keppler_boolean
-                  .col-xs-2
-                    = f.input :closet, as: :keppler_boolean
-                  .col-xs-2
-                    = f.input :table, as: :keppler_boolean
-                  .col-xs-2
-                    = f.input :internet, as: :keppler_boolean
-                  .col-xs-2
-                    = f.input :room_service, as: :keppler_boolean
-                  .col-xs-2
-                    = f.input :breakfast, as: :keppler_boolean
                   .col-xs-2
                     = f.input :public, as: :keppler_boolean 
                   .col-xs-12
                     .pull-right
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'
                       = f.button :submit, t('keppler.actions.save_and_add_another'), name: '_add_other'
+:javascript
+  $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+  });
+  document.getElementById("userinput").onchange =function (){    
+
+    //number-format the user input
+    this.value = parseFloat(this.value.replace(/,/g, ""))
+                    .toFixed(2)
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+:scss
+  .select2-selection__choice{
+    color: black !important;
+  }
+  .select2-selection{
+    border-radius: 15px !important;
+    padding: 1px !important;
+    border-color: #d2d6de !important;
+  }
