@@ -2,8 +2,8 @@ KepplerFrontend::Engine.routes.draw do
   root to: 'app/frontend#keppler', as: :keppler
   get '/form_events', to: 'app/frontend#form_events', as: :form_events
   get '/single_room', to: 'app/frontend#single_room', as: :single_room
-  get "/reservaciones", to: 'app/frontend#reservations'
-  post "/reservaciones", to: 'app/frontend#create_reservation', as: 'create_reservation'
+  get '/gallery', to: 'app/frontend#gallery' 
+  post '/reservaciones', to: 'app/frontend#create_reservation', as: 'create_reservation'
 
   #ajax find room
   get '/reservations/room/:room_id/:target_id', to: 'app/frontend#reservations_find_room', as: :reservations_find_room
