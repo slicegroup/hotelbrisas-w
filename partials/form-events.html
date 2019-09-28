@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Brisas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+  <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.2/css/intlTelInput.css'>
+  <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css'> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="assets/css/events.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/medias.css">
+  <link rel="stylesheet" href="assets/css/offcanvas.css">
+</head>
+
+<body>
+  <header class="">
+    <!-- START NAVBAR -->
+
+    <div class="container">
+
+      <nav class="navbar navbar-expand-lg  navbar-dark ">
+        <a class="navbar-brand mr-auto mr-lg-0" href="#">
+          <img class="logo-navbar" src="assets/img/Logo Brisas BLANCO.png" alt="">
+        </a>
+
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+          <div class="btn-nav">
+            <img class="logo-navbar" src="assets/img/Logo Brisas BLANCO.png" alt="">
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link nav-custom" href="#"> Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#room"> Habitaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#services">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#gallery">Galería</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#events">Eventos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#">Salones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-custom" href="#footer"> Contáctanos</a>
+            </li>
+          </ul>
+          <ul>
+            <li class="social  social-nav">
+              <a href="https://www.instagram.com/hotelbrisas/"><i class="fa fa-instagram" aria-hidden="true"></i>
+              </a> <a href="https://www.facebook.com/hotelbrisasparaguana/"><i class="fa fa-facebook"
+                  aria-hidden="true"></i>
+              </a> <a href="https://twitter.com/Hotelbrisas"><i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- END NAVBAR -->
+
+  <!-- MEDIA BANNER -->
+  <section class="banner-room">
+    <div class="mask-banner">
+      <h2 class="title-banner container">Solicitud de Eventos</h2>
+    </div>
+  </section>
+  <!-- END BANNER -->
+
+  <!-- Multi step form -->
+  <section class="multi_step_form">
+    <div class="container padding-top-bottom">
+      <form id="msform">
+        <!-- Tittle -->
+        <!-- <div class="tittle">
+          <h2>Verification Process</h2>
+          <p>In order to use this service, you have to complete this verification process</p>
+        </div> -->
+        <!-- progressbar -->
+        <ul id="progressbar">
+          <li class="active">Información Principal</li>
+          <li>Detalles del Evento</li>
+          <li>Datos extras</li>
+        </ul>
+        <!-- fieldsets -->
+        <fieldset>
+          <h2 class="title-service">Datos Personales</h2>
+          <!-- <h6>We will send you a SMS. Input the code to verify.</h6> -->
+          <div class="form-row">
+            <div class="form-group col-lg-6 col-sm-6 col-sm-6">
+              <input type="text" id="" class="form-control" placeholder="Nombre y Apellido">
+            </div>
+            <div class="form-group col-lg-6 col-sm-6">
+              <input type="text" class="form-control" placeholder="Cedula/Rif">
+            </div>
+            <div class="form-group col-lg-6 col-sm-6">
+              <input type="text" class="form-control" placeholder="Nombre de la Empresa">
+            </div>
+            <div class="form-group col-lg-6 col-sm-6">
+              <input type="mail" class="form-control" placeholder="Correo Electrónico">
+            </div>
+            <div class="form-group col-lg-6 col-sm-6">
+              <input type="tel" class="form-control" placeholder="Teléfono">
+            </div>
+            <div class="form-group col-lg-6 col-sm-6">
+              <input type="text" class="form-control" placeholder="Fecha del Evento" onfocus="(this.type='date')"
+                onblur="(this.type='text')">
+            </div>
+          </div>
+          <h2 class="title-service">Datos del Evento</h2>
+          <!-- <h6>We will send you a SMS. Input the code to verify.</h6> -->
+          <div class="form-row">
+            <div class="form-group col-lg-6 col-sm-6">
+              <input type="text" id="" class="form-control" placeholder="Fecha de Inicio" , onfocus="(this.type='date')"
+                onblur="(this.type='text')">
+            </div>
+            <div class="form-group col-lg-6 col-sm-6">
+              <input type="text" id="" class="form-control" placeholder="Fecha de Fin" , onfocus="(this.type='date')"
+                onblur="(this.type='text')">
+            </div>
+            <div class="form-group col-lg-6 col-sm-6">
+              <input type="text" class="form-control" placeholder="Motivo/Colores">
+            </div>
+            <div class="form-group col-lg-6 col-sm-6">
+              <input type="text" class="form-control" placeholder="Tipo de Evento">
+            </div>
+            <div class="form-group col-lg-6 col-sm-6">
+              <input type="number" class="form-control" placeholder="Cantidad de Personas">
+            </div>
+            <div class="form-group col-lg-6 col-sm-6">
+              <select class="product_select">
+                <option data-display="Hora de Inicio">Hora de Inicio</option>
+                <option>2. Choose A Question</option>
+                <option>3. Choose A Question</option>
+              </select>
+            </div>
+            <div class="form-group col-lg-6 col-sm-6">
+              <select class="product_select">
+                <option data-display="Hora de Inicio">Hora de Fin</option>
+                <option>2. Choose A Question</option>
+                <option>3. Choose A Question</option>
+              </select>
+            </div>
+            <div class="form-group col-lg-6 col-sm-6">
+              <select class="product_select">
+                <option data-display="Seleccione un salón">Seleccione un salón</option>
+                <option>2. Choose A Question</option>
+                <option>3. Choose A Question</option>
+              </select>
+            </div>
+            <div class="form-group col-lg-12">
+              <textarea name="" placeholder="Descripción del Evento" id="" cols="30" rows="10"></textarea>
+            </div>
+          </div>
+          <button type="button" class="btn-general btn-red previous_button">Back</button>
+          <button type="button" class="next btn-general btn-red">Continue</button>
+        </fieldset>
+        <fieldset>
+          <h2 class="title-service">Bebida/Comida</h2>
+          <div class="form-row">
+            <div class="form-flex col-lg-6 col-sm-6">
+              <div class="form-group ">
+                <input id="check-1" name="categories-8" type="checkbox" value="#"></input>
+                <label for="check-1">Pasapalos fríos
+                </label>
+                <input id="check-2" name="categories-8" type="checkbox" value="#"></input>
+                <label for="check-2">Pasapalos calientes</label>
+                <input id="check-3" name="categories-8" type="checkbox" value="#"></input>
+                <label for="check-3">Menú plateado</label>
+                <input id="check-4" name="categories-8" type="checkbox" value="#"></input>
+                <label for="check-4">Estaciones temáticas</label>
+                <input id="check-5" name="categories-8" type="checkbox" value="#"></input>
+                <label for="check-5">Tipo buffe</label>
+                <input id="check-6" name="categories-8" type="checkbox" value="#"></input>
+                <label for="check-6">Coffe Break matutino</label>
+                <input id="check-7" name="categories-8" type="checkbox" value="#"></input>
+                <label for="check-7">Coffe Break vespertino</label>
+              </div>
+            </div>
+            <div class="col-lg-6 form-flex col-sm-6">
+              <div class="form-group">
+                <input id="check-8" name="categories-8" type="checkbox" value="#"></input>
+                <label for="check-8">Mesa de quesos
+                </label>
+                <input id="check-9" name="categories-8" type="checkbox" value="#"></input>
+                <label for="check-9">Descorche de cocteles</label>
+                <input id="check-10" name="categories-8" type="checkbox" value="#"></input>
+                <label for="check-10">Descorche de whisky</label>
+                <input id="check-11" name="categories-8" type="checkbox" value="#"></input>
+                <label for="check-11">Des. Vino/Champagne</label>
+                <input id="check-12" name="categories-8" type="checkbox" value="#"></input>
+                <label for="check-12">Des. Vodka/Ron</label>
+                <input id="check-13" name="categories-8" type="checkbox" value="#"></input>
+                <label for="check-13">Barra coctelera</label>
+                <input id="check-14" name="categories-8" type="checkbox" value="#"></input>
+                <label for="check-14">Ron</label>
+              </div>
+            </div>
+            <div class="col-lg-12 form-flex">
+              <h2 class="title-service">Decoración del evento</h2>
+
+            </div>
+            <div class="form-group col-lg-3 input-check  col-6 col-md-4">
+              <input id="check-15" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-15">
+                <img src="assets/img/flower.svg" alt="">
+                Arreglos Florales
+              </label>
+            </div>
+            <div class="form-group col-lg-3 input-check  col-6 col-md-4">
+              <input id="check-16" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-16">
+                <img src="assets/img/music-player.svg" alt="">
+                Sonido
+              </label>
+            </div>
+            <div class="form-group col-lg-3 input-check  col-6 col-md-4">
+              <input id="check-17" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-17">
+                <img src="assets/img/magic-wand.svg" alt="">
+                Show de mágia
+              </label>
+            </div>
+            <div class="form-group col-lg-3 input-check  col-6 col-md-4">
+              <input id="check-18" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-18">
+                <img src="assets/img/dj.svg" alt="">
+                Dj
+              </label>
+            </div>
+            <div class="form-group col-lg-3 input-check  col-6 col-md-4">
+              <input id="check-19" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-19">
+                <img src="assets/img/dance.svg" alt="">
+                Show de baile
+              </label>
+            </div>
+            <div class="form-group col-lg-3 input-check  col-6 col-md-4">
+              <input id="check-20" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-20">
+                <img src="assets/img/castle.svg" alt="">
+                Inflables
+              </label>
+            </div>
+            <div class="form-group col-lg-3 input-check  col-6 col-md-4">
+              <input id="check-21" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-21">
+                <img src="assets/img/band.svg" alt="">
+                Grupo musical
+              </label>
+            </div>
+            <div class="form-group col-lg-3 input-check  col-6 col-md-4">
+              <input id="check-22" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-22">
+                <img src="assets/img/holiday.svg" alt="">
+                Globos
+              </label>
+            </div>
+            <div class="form-group col-lg-3 input-check  col-6 col-md-4">
+              <input id="check-23" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-23">
+                <img src="assets/img/spotlights.svg" alt="">
+                Iluminación
+              </label>
+            </div>
+            <div class="form-group col-lg-3 input-check  col-6 col-md-4">
+              <input id="check-24" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-24">
+                <img src="assets/img/podium.svg" alt="">
+                Podium
+              </label>
+            </div>
+            <div class="form-group col-lg-3 input-check  col-6 col-md-4">
+              <input id="check-25" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-25">
+                <img src="assets/img/canopy.svg" alt="">
+                Toldo
+              </label>
+            </div>
+            <div class="form-group col-lg-3 input-check  col-6 col-md-4">
+              <input id="check-26" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-26">
+                <img src="assets/img/eye-mask.svg" alt="">
+                Hora loca
+              </label>
+            </div>
+          </div>
+
+          <button type="button" class="btn-general btn-red previous previous_button">Back</button>
+          <button type="button" class="next btn-general btn-red">Continue</button>
+        </fieldset>
+        <fieldset>
+          <h2 class="title-service">Montaje del Evento</h2>
+          <div class="row">
+
+            <div class="form-group col-lg-2 input-check  col-6 col-md-4">
+              <input id="check-27" name="categories-27" type="checkbox" value="#"></input>
+              <label class="" for="check-27">
+                <img src="assets/img/banquete.svg" alt="">
+                Banquete
+              </label>
+            </div>
+            <div class="form-group col-lg-2 input-check  col-6 col-md-4">
+              <input id="check-28" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-28">
+                <img src="assets/img/auditor.svg" alt="">
+                Auditorio
+              </label>
+            </div>
+            <div class="form-group col-lg-2 input-check  col-6 col-md-4">
+              <input id="check-30" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-30">
+                <img src="assets/img/reu.svg" alt="">
+                Reunión
+              </label>
+            </div>
+            <div class="form-group col-lg-2 input-check  col-6 col-md-4">
+              <input id="check-31" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-31">
+                <img src="assets/img/school.svg" alt="">
+                Escuela
+              </label>
+            </div>
+            <div class="form-group col-lg-2 input-check  col-6 col-md-4">
+              <input id="check-32" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-32">
+                <img src="assets/img/coctel.svg" alt="">
+                Cóctel
+              </label>
+            </div>
+            <div class="form-group col-lg-2 input-check  col-6 col-md-4">
+              <input id="check-33" name="categories-8" type="checkbox" value="#"></input>
+              <label class="" for="check-33">
+                <img src="assets/img/type-u.svg" alt="">
+                Tipo U
+              </label>
+            </div>
+          </div>
+
+          <h2 class="title-service">Información Extra</h2>
+          <!-- <h6>Please update your account with security questions</h6> -->
+          <div class="form-group col-lg-12">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Otros Servicios"></textarea>
+          </div>
+          <div class="form-group col-lg-12">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Observaciones"></textarea>
+            <div class="form-flex conditones">
+              <input id="check-30" name="categories-8" type="checkbox" value="#"></input>
+              <label for="check-30">Terminos y condiciones</label>
+            </div>
+          </div>
+
+          <button type="button" class="btn-general btn-red previous previous_button">Back</button>
+          <a href="#" class="btn-general btn-red">Finish</a>
+        </fieldset>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id=" footer">
+    <div class="container ">
+      <div class="row padding-top-bottom">
+
+        <div class="col-lg-4">
+          <h2 class="title-section">Contáctanos</h2>
+          <ul>
+            <li class="phone">
+              <a href="tel:+584146950188">
+                <i class="fa fa-phone" aria-hidden="true"></i>+58 4146950188
+              </a> <span>/</span>
+              <a href="tel:+582694206163">
+                <i class="fa fa-phone" aria-hidden="true"></i>+58 2694206163
+              </a>
+            </li>
+            <li class="ubication">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              Av. Prieto Figueroa con Av. Manuelita Saenz. Península de
+              Paraguaná, Edo. Falcón, Venezuela.
+            </li>
+            <li class="social">
+              <a href=""><i class="fa fa-instagram" aria-hidden="true"></i>
+              </a> <a href=""><i class="fa fa-facebook" aria-hidden="true"></i>
+              </a> <a href=""><i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4 services-flex">
+          <img src="assets/img/Logo Brisas BLANCO.png" alt="" class="logo-footer">
+        </div>
+        <div class="col-lg-4  feed-instagram">
+          <img src="assets/img/instag.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="powered">
+      <p>Diseño y desarrollo por
+        <a href="https://slicegroup.co">Slice Group</a>
+      </p>
+    </div>
+  </footer>
+  <button class="button-up btn-scroll">
+    <i class="fa fa-angle-up ir-arriba" aria-hidden="true"></i>
+  </button>
+  <!-- END FOOTER -->
+
+  <!-- End Multi step form -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+  <script src='assets/js/offcanvas.js'></script>
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.2/js/intlTelInput.js'></script> -->
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'></script> -->
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js'></script> -->
+  <script>
+
+    ; (function ($) {
+      "use strict";
+
+      //* Form js
+      function verificationForm() {
+        //jQuery time
+        var current_fs, next_fs, previous_fs; //fieldsets
+        var left, opacity, scale; //fieldset properties which we will animate
+        var animating; //flag to prevent quick multi-click glitches
+
+        $(".next").click(function () {
+          $("html, body").animate({ scrollTop: 400 }, "fast");
+          if (animating) return false;
+          animating = true;
+
+          current_fs = $(this).parent();
+          next_fs = $(this).parent().next();
+
+          //activate next step on progressbar using the index of next_fs
+          $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+          //show the next fieldset
+          next_fs.show();
+          //hide the current fieldset with style
+          current_fs.animate({
+            opacity: 0
+          }, {
+              step: function (now, mx) {
+                //as the opacity of current_fs reduces to 0 - stored in "now"
+                //1. scale current_fs down to 80%
+                scale = 1 - (1 - now) * 0.2;
+                //2. bring next_fs from the right(50%)
+                left = (now * 50) + "%";
+                //3. increase opacity of next_fs to 1 as it moves in
+                opacity = 1 - now;
+                current_fs.css({
+                  'transform': 'scale(' + scale + ')',
+                  // // 'position': 'absolute',
+                });
+                next_fs.css({
+                  'left': left,
+                  'opacity': opacity,
+                });
+              },
+              duration: 800,
+              complete: function () {
+                current_fs.hide();
+                animating = false;
+              },
+              //this comes from the custom easing plugin
+              easing: 'easeInOutBack'
+            });
+        });
+
+        $(".previous").click(function () {
+          $("html, body").animate({ scrollTop: 400 }, "fast");
+          if (animating) return false;
+          animating = true;
+
+          current_fs = $(this).parent();
+          previous_fs = $(this).parent().prev();
+
+          //de-activate current step on progressbar
+          $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+          //show the previous fieldset
+          previous_fs.show();
+          //hide the current fieldset with style
+          current_fs.animate({
+            opacity: 0
+          }, {
+              step: function (now, mx) {
+                //as the opacity of current_fs reduces to 0 - stored in "now"
+                //1. scale previous_fs from 80% to 100%
+                scale = 0.8 + (1 - now) * 0.2;
+                //2. take current_fs to the right(50%) - from 0%
+                left = ((1 - now) * 50) + "%";
+                //3. increase opacity of previous_fs to 1 as it moves in
+                opacity = 1 - now;
+                current_fs.css({
+                  'left': left
+                });
+                previous_fs.css({
+                  'transform': 'scale(' + scale + ')',
+                  'opacity': opacity
+                });
+              },
+              duration: 800,
+              complete: function () {
+                current_fs.hide();
+                animating = false;
+              },
+              //this comes from the custom easing plugin
+              easing: 'easeInOutBack'
+            });
+        });
+
+        $(".submit").click(function () {
+          return false;
+        })
+      };
+
+      //* Add Phone no select
+      function phoneNoselect() {
+        if ($('#msform').length) {
+          $("#phone").intlTelInput();
+          $("#phone").intlTelInput("setNumber", "+880");
+        };
+      };
+      //* Select js
+      function nice_Select() {
+        if ($('.product_select').length) {
+          $('select').niceSelect();
+        };
+      };
+      /*Function Calls*/
+      verificationForm();
+      phoneNoselect();
+      nice_Select();
+    })(jQuery);
+
+
+    $(function () {
+      'use strict'
+
+      $('[data-toggle="offcanvas"]').on('click', function () {
+        $('.offcanvas-collapse').toggleClass('open')
+      })
+    })
+  </script>
+</body>
+
+</html>
