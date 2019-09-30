@@ -27,7 +27,27 @@
 //   });
 // });
 //
+$(function() {
+  $('.pop-up').hide();
+  $('.pop-up').fadeIn(1000);
 
+      $('.close-button').click(function (e) {
+
+      $('.pop-up').fadeOut(700);
+      $('#overlay').removeClass('blur-in');
+      $('#overlay').addClass('blur-out');
+      e.stopPropagation();
+
+    });
+ });
+// if (/iP(hone|od|ad)/.test(navigator.platform)) {
+//   $("*").css({
+//     cursor: "pointer"
+//   });
+// }
+// $(".preloader")
+//   .delay(3500)
+//   .fadeOut(600);
 
 wow = new WOW(
   {
@@ -69,6 +89,7 @@ $('.slick-services').slick({
         slidesToShow: 1,
         vertical: false,
         verticalSwiping: false,
+        dots: true,
         slidesToScroll: 1,
       }
     },

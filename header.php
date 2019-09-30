@@ -22,6 +22,9 @@
 </head>
 
 <body>
+
+  
+
   <?php $current_file =  $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
      $url_page = 'localhost/hotel-nuevo/';
              ?>     <!-- START NAVBAR -->

@@ -16,12 +16,102 @@
     transform: translateY(-4rem);
   }
 
+  .box{
+    width: 85%;}
+
+.box img{
+  width: 100%;
+  height: 100%;}
+
+  .pop-up{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .room {
+    padding-top: 28rem!important;
+  }
+  .fa.fa-times{
+    color: #fff!important;
+  }
+  .services .slick-dots {
+    display: block!important;
+    right: 9rem !important;
+    top: 90%!important;
+  }
+    .booking-section {
+
+    bottom: -20rem!important;}
+
   .booking .btn-general {
     width: 100%;
     text-align: center;
     margin-top: 1rem;
   }
 
+  footer .title-section {
+    text-align: center!important;
+}
+
+  .feed-instagram{
+    justify-content: center!important;
+    display: flex;
+  }
+
+  .hb-form-table{
+    display: block!important;
+  }
+
+  .hotel-booking-search form{
+    display: block!important;
+  }
+  .n-scroll a {
+    color: #fff
+  }
+
+  .subtitle-service{
+    margin-left:0 !important;
+    margin-right: 0!important;
+  }
+
+  .n-scroll .reservar a {
+    color: #ffffff !important;
+    padding-top: 8px;
+  }
+  .services .title-section {
+      text-align: center!important;
+  }
+
+  .info-event {
+    box-shadow: none!important;
+    background-color: transparent!important;
+    position:inherit!important;
+    width: auto!important;
+    padding: 3rem!important;
+    bottom: -5rem!important;
+    height: 260px!important;
+    text-align: center!important;
+    display: flex!important;
+    flex-direction: column!important;
+    justify-content: center!important;
+}
+
+.events .title-section {
+    text-align: center!important;
+}
+
+.subtitle-space{
+  text-align: center;
+}
+
+.space .title-section {
+    text-align: center!important;
+}
+
+.img-event{
+  display: none;
+}
   /* ROOM */
 
   .room {
@@ -36,7 +126,7 @@
     display: initial!important;
     min-height: 50rem;
   }
-  
+
   .img-room, .details-room {
     width: 100%
   }
@@ -68,7 +158,7 @@
   }
 
   .slick-room .slick-prev-arrow {
-    left: 75%;  
+    left: 75%;
   }
 
   /* EVENTS */
@@ -114,11 +204,11 @@
     align-items: center;
   }
 
-  
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 997px) {
-  
+
   html {
     font-size: 14px;
   }
@@ -174,32 +264,31 @@
     text-align: center;
     color: #f35314;
   }
-  
+
   .subtitle-service {
-    margin: 0;
     text-align: center;
   }
-  
+
   .services .slick-dots {
     flex-direction: initial;
     right: initial;
     width: 100%;
     height: initial;
   }
-  
+
   .services .slick-dots li button::before {
     width: 1.5rem;
     height: 1rem;
   }
-  
+
   .item-service .services-flex{
     align-items: center;
   }
-  
+
   .text-service {
     text-align: center;
   }
-  
+
   .img-service {
     display: none;
   }
@@ -213,7 +302,7 @@
     display: initial!important;
   }
   /* FOOTER */
-  
+
   footer ul, footer .title-section {
     text-align: center;
   }
@@ -225,4 +314,52 @@
   .feed-instagram {
     justify-content: center;
   }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hotel-booking-search form {
+    display: block!important;
+}
+
+.booking{
+  width: 100%!important;
+}
+.pop-up{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hb-form-table{
+  display: block!important;
+}
+.room {
+    padding-top: 14rem!important;
+}
+.subtitle-service{
+  margin-left:0!important;
+    margin-right:0!important;
+    text-align: center!important;
+}
+.services .title-section{
+  text-align: center!important;
+}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+  .hotel-booking-search form {
+    display: block!important;
+}
+
+.booking{
+  width: 100%!important;
+}
+.pop-up{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hb-form-table{
+  display: initial!important;
+}
+
+
 }

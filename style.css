@@ -37,7 +37,7 @@ header {
   position: fixed;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  z-index: 9999999;
+  z-index: 99;
   width: 100%;
 }
 .page-gallery{
@@ -67,6 +67,7 @@ header {
   color: #fff;
 }
 
+/* PRELOADER */
 
 .title-section{
   text-align: center;
@@ -81,13 +82,327 @@ header {
   padding-bottom: 5rem;
 }
 
+
+.cover {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+/* Pop Up */
+
+.blur-in {
+    -webkit-animation: blur 2s forwards;
+    -moz-animation: blur 2s forwards;
+    -o-animation: blur 2s forwards;
+    animation: blur 2s forwards;
+}
+
+.blur-out {
+    -webkit-animation: blur-out 2s forwards;
+    -moz-animation: blur-out 2s forwards;
+    -o-animation: blur-out 2s forwards;
+    animation: blur-out 2s forwards;
+}
+
+@-webkit-keyframes blur {
+    0% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+
+    100% {
+        -webkit-filter: blur(4px);
+        -moz-filter: blur(4px);
+        -o-filter: blur(4px);
+        -ms-filter: blur(4px);
+        filter: blur(4px);
+    }
+}
+
+@-moz-keyframes blur {
+    0% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+
+    100% {
+        -webkit-filter: blur(4px);
+        -moz-filter: blur(4px);
+        -o-filter: blur(4px);
+        -ms-filter: blur(4px);
+        filter: blur(4px);
+    }
+}
+
+@-o-keyframes blur {
+    0% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+
+    100% {
+        -webkit-filter: blur(4px);
+        -moz-filter: blur(4px);
+        -o-filter: blur(4px);
+        -ms-filter: blur(4px);
+        filter: blur(4px);
+    }
+}
+
+@keyframes blur {
+    0% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+
+    100% {
+        -webkit-filter: blur(4px);
+        -moz-filter: blur(4px);
+        -o-filter: blur(4px);
+        -ms-filter: blur(4px);
+        filter: blur(4px);
+    }
+}
+
+@-webkit-keyframes blur-out {
+    0% {
+        -webkit-filter: blur(4px);
+        -moz-filter: blur(4px);
+        -o-filter: blur(4px);
+        -ms-filter: blur(4px);
+        filter: blur(4px);
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+}
+
+@-moz-keyframes blur-out {
+    0% {
+        -webkit-filter: blur(4px);
+        -moz-filter: blur(4px);
+        -o-filter: blur(4px);
+        -ms-filter: blur(4px);
+        filter: blur(4px);
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+}
+
+@-o-keyframes blur-out {
+    0% {
+        -webkit-filter: blur(4px);
+        -moz-filter: blur(4px);
+        -o-filter: blur(4px);
+        -ms-filter: blur(4px);
+        filter: blur(4px);
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+}
+
+@keyframes blur-out {
+    0% {
+        -webkit-filter: blur(4px);
+        -moz-filter: blur(4px);
+        -o-filter: blur(4px);
+        -ms-filter: blur(4px);
+        filter: blur(4px);
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+}
+
+.content {
+    width: 650px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+
+
+.pop-up {
+    position: absolute;
+    /* margin: 5% auto; */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.4196078431372549);
+}
+.box {
+    background-color: whitesmoke;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    position: relative;
+    -webkit-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+        height: 300px;
+}
+
+.button {
+    margin 0 auto;
+  background-color: #FF8566;
+    margin-bottom: 33px;
+}
+
+.button:hover {
+    background-color: #7CCF29;
+    -webkit-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+}
+
+.close-button {
+    transition: all 0.5s ease;
+    position: absolute;
+    background-color: tomato;
+    padding: 1.5px 7px;
+    left: 0;
+    margin-left: -10px;
+    margin-top: -9px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    color: white;
+    -webkit-box-shadow: -4px -2px 6px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: -4px -2px 6px 0px rgba(0,0,0,0.1);
+    box-shadow: -3px 1px 6px 0px rgba(0,0,0,0.1);
+}
+
+.close-button:hover {
+    background-color: tomato;
+
+}
+.close-button img{
+  cursor: pointer;
+}
+img.emoji {
+
+   margin-top: 30%!important;
+}
+.mask-pop{
+  background: blue;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+/* Fin Pop Up */
+
+
+.preloader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #fff;
+  z-index: 9999999;
+}
+.preloader img {
+  position: absolute;
+  color: #f35314;
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  top: calc(50% - 20px);
+  right: calc(50% - 25px);
+}
+.preloader::before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  z-index: 999999;
+  top: calc(50% - 50px);
+  right: calc(50% - 50px);
+  z-index: 99;
+  border: 4px solid #fff;
+  border-right: 4px solid #f35314;
+  border-left: 4px solid #f35314;
+  border-radius: 100%;
+  -webkit-animation-name: rodar;
+          animation-name: rodar;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes rodar {
+  0%, 100% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(360deg) scale(1.2);
+            transform: rotate(360deg) scale(1.2);
+  }
+}
+
+@keyframes rodar {
+  0%, 100% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(360deg) scale(1.2);
+            transform: rotate(360deg) scale(1.2);
+  }
+}
+
+
 /* NAVBAR */
 .navscroll{
   transition: background-color 500ms, color 500ms;
 }
 .n-scroll{
   background: white !important;
-  z-index: 99999;
+  z-index: 99;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.16), 0 1px 3px 0 rgba(0,0,0,.12);
   transition: background-color 500ms, color 500ms;
 }
@@ -102,7 +417,7 @@ header {
   width: 10rem;
 }
 .n-scroll a{
-  color: #35322e !important;
+  color: #35322e;
 }
 .n-scroll i{
  color: #35322e !important;
@@ -141,7 +456,6 @@ header {
   align-items: center;
   justify-content: center;
   height: 85%;
- rgba(0,0,0,.12);
 }
 
 .navbar-collapse {
@@ -214,22 +528,22 @@ header {
 transition: opacity 400ms ease-in;
 }
 .close {
-	background: #606061;
-	color: #FFFFFF;
-	line-height: 25px;
-	position: absolute;
-	right: -12px;
-	text-align: center;
-	top: -10px;
-	width: 24px;
-	text-decoration: none;
-	font-weight: bold;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	border-radius: 12px;
-	-moz-box-shadow: 1px 1px 3px #000;
-	-webkit-box-shadow: 1px 1px 3px #000;
-	box-shadow: 1px 1px 3px #000;
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
 }
 .close:hover {
     background: #f3581b;
@@ -1101,16 +1415,16 @@ display: none;
 .hb-form-table{
   display: flex;
 }
-#hb_widget_search-3 .hotel-booking-search form ul{
+#hb_widget_search-4 .hotel-booking-search form ul{
   display: block !important;
 }
-#hb_widget_search-3 .hotel-booking-search form ul li label{
+#hb_widget_search-4 .hotel-booking-search form ul li label{
   display: block !important;
 }
-#hb_widget_search-3 .hotel-booking-search form {
+#hb_widget_search-4 .hotel-booking-search form {
   display: block !important;
 }
-#hb_widget_search-3 h3{
+#hb_widget_search-4 h3{
 display: contents;
 }
 
@@ -1127,6 +1441,11 @@ display: contents;
     font-size: 14px;
     font-weight: 600;
     color: #fff;
+}
+.hotel-booking-search button:hover{
+    transition: .3s;
+    background-color: transparent!important;
+    color: #35322e;
 }
 #hotel-booking-results .hb-search-results>.hb-room .hb-room-thumbnail img {
     margin-top: 2rem;
@@ -1150,7 +1469,6 @@ form p {
   transition: .3s;
   padding: .7rem 1.5rem;
   font-size: 1rem;
-  height: auto;
   border-radius: .5rem;
   font-weight: 600;
   border: 1px solid #f35314;
@@ -1178,6 +1496,8 @@ justify-content: center;
     color: #f3581b;
 }
 .status-publish a{
+  width: -webkit-fill-available;
+  object-fit: cover;
   color: transparent;
 }
 .hb_related_other_room {
@@ -1234,8 +1554,10 @@ display: none;
       text-align: center;
 
   }
-  .woocommerce-info::before {
-display: none }
+.woocommerce-info::before {
+    display: none
+}
+
 .showcoupon:hover{
   color: #f35314;
 }
