@@ -18,13 +18,6 @@ get_header();
 	<img src="<?php echo get_template_directory_uri(); ?>/assets/img/hotel.svg" alt="">
 </div> -->
 
-<div class="row pop-up">
-  <div class="box small-6 large-centered">
-    <a href="#" class="close-button">&#10006;</a>
-    <a href="#">
-  <img  src="<?php echo get_template_directory_uri(); ?>/assets/img/events.jpg"></a>
-  </div>
-</div>
   <!-- BANNER HOME -->
 	<?php get_template_part('partials/banner') ?>
   <!-- END BANNER HOME -->

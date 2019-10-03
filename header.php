@@ -23,7 +23,7 @@
 
 <body>
 
-  
+
 
   <?php $current_file =  $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
      $url_page = 'localhost/hotel-nuevo/';
@@ -33,7 +33,7 @@
           <div class="container">
 
             <nav class="navbar navbar-expand-lg  navbar-dark ">
-              <a class="navbar-brand mr-auto mr-lg-0" href="#">
+              <a class="navbar-brand mr-auto mr-lg-0" href="<?php echo bloginfo('url');?>">
                 <img class="logo-navbar" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo Brisas GRIS.png" alt="">
 
               </a>
@@ -46,8 +46,8 @@
                 <div class="btn-nav">
                   <img class="logo-navbar" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo Brisas GRIS.png" alt="">
 
-                  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                  <button class="navbar-toggler color p-0 border-0" type="button" data-toggle="offcanvas">
+                    <i class="fa fa-times color " aria-hidden="true"></i>
                   </button>
                 </div>
 										<ul class="navbar-nav">

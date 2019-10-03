@@ -256,6 +256,9 @@
   .services .padding-top-bottom {
     padding-bottom: 0;
   }
+  .n-scroll a {
+    color: #fff !important;
+  }
 }
 
 
@@ -264,7 +267,9 @@
     text-align: center;
     color: #f35314;
   }
-
+  .n-scroll a {
+    color: #fff !important;
+  }
   .subtitle-service {
     text-align: center;
   }
@@ -314,34 +319,31 @@
   .feed-instagram {
     justify-content: center;
   }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .hotel-booking-search form {
+  .nav-link{
+    color: #ffffff;
+  }
+  .booking{
+    width: 85%!important;
+  }
+  .pop-up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hb-form-table{
     display: block!important;
-}
-
-.booking{
-  width: 100%!important;
-}
-.pop-up{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hb-form-table{
-  display: block!important;
-}
-.room {
-    padding-top: 14rem!important;
-}
-.subtitle-service{
-  margin-left:0!important;
-    margin-right:0!important;
+  }
+  .room {
+      padding-top: 14rem!important;
+  }
+  .subtitle-service{
+    margin-left:0!important;
+      margin-right:0!important;
+      text-align: center!important;
+  }
+  .services .title-section{
     text-align: center!important;
-}
-.services .title-section{
-  text-align: center!important;
-}
+  }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
@@ -349,17 +351,22 @@
     display: block!important;
 }
 
-.booking{
-  width: 100%!important;
-}
-.pop-up{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hb-form-table{
-  display: initial!important;
-}
+  .booking{
+    width: 100%!important;
+  }
+  .pop-up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hb-form-table{
+    display: initial!important;
+  }
 
 
+}
+@media screen and (min-width: 991px){
+  .n-scroll a{
+    color: #35322e !important;
+  }
 }

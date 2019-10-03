@@ -258,8 +258,7 @@ header {
 
 
 .pop-up {
-    position: absolute;
-    /* margin: 5% auto; */
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
@@ -412,13 +411,14 @@ img.emoji {
 .none-a{
   display: none;
 }
+#navbarsExampleDefault i{
+  color: #fff !important;
+}
 .no-none{
   display: inherit;
   width: 10rem;
 }
-.n-scroll a{
-  color: #35322e;
-}
+
 .n-scroll i{
  color: #35322e !important;
 }
@@ -578,8 +578,11 @@ transition: opacity 400ms ease-in;
   font-weight: 600;
   margin:1rem 0;
   text-align: center;
+  text-transform: capitalize;
 }
-
+option:hover{
+  background: blue;
+}
 .btn-banner {
   border: 2PX solid #f35314;
   color: #fff;
@@ -1207,17 +1210,6 @@ footer ul {
   margin-bottom: 3rem;
 } */
 
- .mphb-room-type-images #mphb-flexslider-gallery-2 {
-   display: none;
-
- }
-
- .mphb-room-type {
-   margin-top: 0 !important;
-     margin-bottom: 4rem;
-     width: 50%;
-     padding: 0 22px;
- }
 
  .gallery-item{
      width: 36rem !important;
@@ -1232,33 +1224,7 @@ footer ul {
  .flex-direction-nav{
    display: none;
  }
- .mphb-book-button{
-   display: none;
- }
 
- .mphb-view-details-button{
-     background: #f35314;
-     color: #fff;
-     width: 10rem;
-     text-align: center;
-     padding: .7rem 1.5rem;
-     font-size: 1rem;
-     border: 1px solid #f35314 !important;
-     border-radius: .5rem !important;
-     font-weight: 600;
-     transition: .3s;
- }
- .mphb-view-details-button:hover{
-   background-color: transparent!important;
-   color: #35322e;
-   transition: .3s;
- }
- .mphb_sc_search-form{
-   display: flex;
- }
- .mphb-required-fields-tip{
-   display: none;
- }
 input{
   padding: .5rem 1rem;
     border: 1px solid #c2c2c2;
@@ -1292,49 +1258,6 @@ background: #FFF;
     border-radius: .5rem;
     color: #fff;
     background-color: #f35314;
-}
-.mphb_sc_search-check-in-date{
-    width: 20rem !important;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-
-  .mphb_sc_search-check-out-date{
-    width: 20rem !important;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-.mphb_sc_search-adults{
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.mphb_sc_search-children{
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.mphb_sc_search-form{
-  display: flex;
-    align-items: flex-end;
-}
-.mphb_sc_search-submit-button-wrapper input{
-  font-weight: bold;
-
-}
-.mphb_sc_search-submit-button-wrapper{
-  padding-right: 15px;
-padding-left: 15px;
-}
-#mphb_adults-mphb-search-form-5d7cf0cf7758c{
-  width: 5rem;
-}
-#mphb_children-mphb-search-form-5d7cf0cf7758c{
-  width: 5rem;
-}
-.clone{
-  dispay: none;
-}
-.mphb_sc_rooms-wrapper {
-	display: flex;
 }
 .entry-header{
 	position: inherit !important;
@@ -1408,6 +1331,30 @@ display: none;
 .hotel-booking-search h3{
   display: none;
 }
+.hb_button {
+    color: #fff !important;
+    padding: .7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: .5rem;
+    font-weight: 600;
+    border: 1px solid #f35314;
+    transition: .3s;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+
+}
+.hb_button:hover {
+    background: #fff;
+    color: #35322e !important;
+}
+.hb_package_title label {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: #35322e;
+}
 #hotel-booking-results .hb-search-results>.hb-room .hb-room-thumbnail img {
     object-fit: contain;
     max-width: 20rem;
@@ -1431,7 +1378,24 @@ display: contents;
 .hotel-booking-search form{
   display: flex;
 }
-
+.ui-datepicker .ui-widget-header, .ui-datepicker .ui-datepicker-header {
+    background: #f5f5f5 !important;
+    color: #ffffff !important;
+}
+.ui-datepicker.ui-widget .ui-datepicker-calendar th {
+    color: #35322e;
+    }
+.ui-datepicker td .ui-state-hover, .ui-datepicker thead {
+    background: #f3581b !important;
+    color: #ffffff !important;
+}
+.ui-datepicker.ui-widget .ui-datepicker-calendar .ui-state-default:hover {
+  color: #fff;
+  background: #f3581b !important;
+}
+.ui-datepicker thead {
+    background: #005c9000 !important;
+}
 .background{
    margin-top: 12rem;
    margin-bottom: 5rem;
@@ -1496,10 +1460,10 @@ justify-content: center;
     color: #f3581b;
 }
 .status-publish a{
-  width: -webkit-fill-available;
   object-fit: cover;
   color: transparent;
 }
+
 .hb_related_other_room {
   display: none;
 }
@@ -1514,14 +1478,60 @@ justify-content: center;
   font-weight: 500;
   color: #35322e;
   text-align: center;
-
 }
+.frm_form_fields .frm_fields_container {
+  display: grid !important;
+}
+.frm_style_formidable-style.with_frm_style .form-field input:not([type=file]):focus {
+  border-color: #f35314c2;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(243, 83, 20, 0.76);
+}
+
+.frm_form_field.frm_three_col .frm_checkbox {
+    margin: 1rem;
+}
+
+.frm_style_formidable-style.with_frm_style select:focus{
+  border-color: #f35314c2;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(243, 83, 20, 0.76);
+}
+
+.frm_style_formidable-style.with_frm_style textarea:focus{
+  border-color: #f35314c2;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(243, 83, 20, 0.76);
+}
+.frm_style_formidable-style.with_frm_style select{
+  color: #a1a1a1;
+}
+.frm_style_formidable-style.with_frm_style div.frm_description{
+  color: #a1a1a1;
+}
+.frm_form_field.frm_two_col .frm_checkbox {
+    margin: 1rem;
+}
+.frm_form_field.frm_half {
+    width: 100%;
+}
+.horizontal_radio{
+  text-align: center;
+}
+.frm_style_formidable-style.with_frm_style .horizontal_radio .frm_checkbox{
+  margin: 1rem;
+}
+.with_frm_style .frm_radio input[type=radio]{
+  width: 2rem;
+  height: 18px;
+  border-color: transparent !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(243, 83, 20, 0) !important;
+  }
+
 .with_frm_style .vertical_radio .frm_radio label {
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
-margin-bottom: 1rem;
-font-weight: 500;
-color: #35322e;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #35322e;
+  text-align: center;
 }
 .multi_step_form .title-service {
     text-align: center;
