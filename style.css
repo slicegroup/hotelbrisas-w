@@ -123,6 +123,7 @@ header {
   position: absolute;
   z-index: 1;
 }
+
 /* Pop Up */
 
 .blur-in {
@@ -288,9 +289,6 @@ header {
   margin: 0 auto;
   padding-top: 100px;
 }
-
-
-
 .pop-up {
   position: fixed;
   left: 0;
