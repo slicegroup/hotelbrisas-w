@@ -21,6 +21,7 @@
 	<?php wp_head(); ?>
 </head>
 
+
 <body>
 
 
@@ -28,58 +29,120 @@
   <?php $current_file =  $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
      $url_page = 'localhost/hotel-nuevo/';
              ?>     <!-- START NAVBAR -->
-    <header class="n-scroll">
+             <?php if (is_home()) :?>
+               <header class="menu">
 
-          <div class="container">
+                     <div class="container">
 
-            <nav class="navbar navbar-expand-lg  navbar-dark ">
-              <a class="navbar-brand mr-auto mr-lg-0" href="<?php echo bloginfo('url');?>">
-                <img class="logo-navbar" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo Brisas GRIS.png" alt="">
+                       <nav class="navbar navbar-expand-lg  navbar-dark ">
+                         <a class="navbar-brand mr-auto mr-lg-0" href="<?php echo bloginfo('url');?>">
+                           <img class="logo-navbar" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo Brisas BLANCO.png" alt="">
+                           <img class="none-a" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo Brisas GRIS.png" alt="">
 
-              </a>
+                         </a>
 
-              <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-              </button>
+                         <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                           <i class="fa fa-bars" aria-hidden="true"></i>
+                         </button>
 
-              <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-                <div class="btn-nav">
-                  <img class="logo-navbar" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo Brisas GRIS.png" alt="">
+                         <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                           <div class="btn-nav">
+                             <img class="logo-navbar" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo Brisas GRIS.png" alt="">
 
-                  <button class="navbar-toggler color p-0 border-0" type="button" data-toggle="offcanvas">
-                    <i class="fa fa-times color " aria-hidden="true"></i>
-                  </button>
-                </div>
-										<ul class="navbar-nav">
-											<li class="nav-item active">
-												<a class="nav-link nav-custom" href="<?php echo bloginfo('url').'/#';?>">Inicio <span class="sr-only">(current)</span></a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link nav-custom" href="<?php bloginfo('url'); ?>/index.php/hotel-rooms/">Habitaciones</a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link nav-custom" href="<?php echo bloginfo('url').'/#services';?>">Servicios</a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link nav-custom" href="<?php bloginfo('url'); ?>/index.php/gallery/">Galería</a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link nav-custom" href=""<?php echo bloginfo('url').'/#salones';?>"">Salones</a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link nav-custom" href="#footer"> Contáctanos</a>
-											</li>
-                      <li class="nav-item reservar">
-                        <a class="btn-red btn-general" href="#openModal">Reservar</a>
-                          <div id="openModal" class="modalDialog">
-                          	<div>
-                          		<a href="#close" title="Close" class="close">X</a>
-                              <?php echo dynamic_sidebar('id-booking-navbar'); ?>
-                          	</div>
+                             <button class="navbar-toggler color p-0 border-0" type="button" data-toggle="offcanvas">
+                               <i class="fa fa-times color " aria-hidden="true"></i>
+                             </button>
+                           </div>
+           										<ul class="navbar-nav">
+           											<li class="nav-item active">
+           												<a class="nav-link nav-custom" href="#">Inicio <span class="sr-only">(current)</span></a>
+           											</li>
+           											<li class="nav-item">
+           												<a class="nav-link nav-custom" href="#room">Habitaciones</a>
+           											</li>
+           											<li class="nav-item">
+           												<a class="nav-link nav-custom" href="#services">Servicios</a>
+           											</li>
+           											<li class="nav-item">
+           												<a class="nav-link nav-custom" href="#gallery">Galería</a>
+           											</li>
+           											<li class="nav-item">
+           												<a class="nav-link nav-custom" href="#salones">Salones</a>
+           											</li>
+           											<li class="nav-item">
+           												<a class="nav-link nav-custom" href="#footer"> Contáctanos</a>
+           											</li>
+                                 <li class="nav-item reservar">
+                                   <a class="btn-red btn-general" href="#openModal">Reservar</a>
+                                     <div id="openModal" class="modalDialog">
+                                     	<div>
+                                     		<a href="#close" title="Close" class="close">X</a>
+                                         <?php echo dynamic_sidebar('id-booking-navbar'); ?>
+                                     	</div>
+                                     </div>
+                                 </li>
+           										</ul>
+           								</div>
+           							</nav>
+           						</div>
+           		</header>
+             <?php else: ?>
+               <header class="n-scroll">
+
+                     <div class="container">
+
+                       <nav class="navbar navbar-expand-lg  navbar-dark ">
+                         <a class="navbar-brand mr-auto mr-lg-0" href="<?php echo bloginfo('url');?>">
+                           <img class="logo-navbar-p" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo Brisas GRIS.png" alt="">
+
+                         </a>
+
+                         <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                           <i class="fa fa-bars" aria-hidden="true"></i>
+                         </button>
+
+                         <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                           <div class="btn-nav">
+                             <img class="logo-navbar" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo Brisas GRIS.png" alt="">
+
+                             <button class="navbar-toggler color p-0 border-0" type="button" data-toggle="offcanvas">
+                               <i class="fa fa-times color " aria-hidden="true"></i>
+                             </button>
+                           </div>
+                              <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                  <a class="nav-link nav-custom" href="<?php echo bloginfo('url').'/#';?>">Inicio <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link nav-custom" href="<?php bloginfo('url'); ?>/index.php/hotel-rooms/">Habitaciones</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link nav-custom" href="<?php echo bloginfo('url').'/#services';?>">Servicios</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link nav-custom" href="<?php bloginfo('url'); ?>/index.php/gallery/">Galería</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link nav-custom" href=""<?php echo bloginfo('url').'/#salones';?>"">Salones</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link nav-custom" href="#footer"> Contáctanos</a>
+                                </li>
+                                 <li class="nav-item reservar">
+                                   <a class="btn-red btn-general" href="#openModal">Reservar</a>
+                                     <div id="openModal" class="modalDialog">
+                                      <div>
+                                        <a href="#close" title="Close" class="close">X</a>
+                                         <?php echo dynamic_sidebar('id-booking-navbar'); ?>
+                                      </div>
+                                     </div>
+                                 </li>
+                              </ul>
                           </div>
-                      </li>
-										</ul>
-								</div>
-							</nav>
-						</div>
-		</header>
+                        </nav>
+                      </div>
+              </header>
+              <div class='preloader'>
+              	<img src="<?php echo get_template_directory_uri(); ?>/assets/img/resort.svg" alt="">
+              </div>
+             <?php endif; ?>

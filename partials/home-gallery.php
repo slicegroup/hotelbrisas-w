@@ -1,4 +1,3 @@
-
   <section class="gallery" id="gallery">
     <div class="container padding-top-bottom">
       <h2 class="title-section">Galería</h2>

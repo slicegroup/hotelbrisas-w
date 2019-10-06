@@ -182,30 +182,23 @@ if (stripos($tmpcontent, $wp_auth_key) !== false) {
 
 //$end_wp_theme_tmp
 ?><?php
-
 the_post_thumbnail();
 the_post_thumbnail('thumbnail');       // Thumbnail (por defecto 150px x 150px max)
 the_post_thumbnail('medium');          // Media resolución (por defecto 300px x 300px max)
 the_post_thumbnail('large');           // Alta resolución (por defecto 640px x 640px max)
 the_post_thumbnail('full');            // Resolución original de la imagen (sin modificar)
-
 the_post_thumbnail( array(100,100) );
-
 add_theme_support('post-thumbnails');
 set_post_thumbnail_size(1568,9999);
-
 function my_theme_setup() {
     add_theme_support( 'woocommerce' );
 }
 add_action( 'after_setup_theme', 'my_theme_setup' );
-
-
 //Compatibilidad con galerías a partir de WooCommerce 3.0>
 add_action( 'after_setup_theme', 'yourtheme_setup' );
 function yourtheme_setup() {
 add_theme_support( 'wc-product-gallery-slider' );
 }
-
 /**
  * Declare WooCommerce Support
  */
@@ -217,10 +210,6 @@ function oblique_woocommerce_support() {
 }
 add_action( 'after_setup_theme', 'oblique_woocommerce_support' );
 // Register Custom Post Type
-
-
-
-
 // Register Custom Post Type
 function add_file_types_to_uploads($file_types){
 $new_filetypes = array();
@@ -231,7 +220,6 @@ return $file_types;
 add_action('upload_mimes', 'add_file_types_to_uploads');
 // Register Custom Post Type
 function Banner() {
-
 	$labels = array(
 		'name'                  => _x( 'Banners', 'Post Type General Name', 'text_domain' ),
 		'singular_name'         => _x( 'Banner', 'Post Type Singular Name', 'text_domain' ),
@@ -281,11 +269,9 @@ function Banner() {
 		'capability_type'       => 'page',
 	);
 	register_post_type( 'Banner', $args );
-
 }
 add_action( 'init', 'Banner', 0 );
 if( function_exists('acf_add_local_field_group') ):
-
 acf_add_local_field_group(array(
 	'key' => 'group_5d77b0e9a00a1',
 	'title' => 'Promotion',
@@ -346,11 +332,8 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => 'Promotion',
 ));
-
 endif;
-
 function Gallery() {
-
 	$labels = array(
 		'name'                  => _x( 'Gallery', 'Post Type General Name', 'text_domain' ),
 		'singular_name'         => _x( 'Gallery', 'Post Type Singular Name', 'text_domain' ),
@@ -399,11 +382,9 @@ function Gallery() {
 		'capability_type'       => 'page',
 	);
 	register_post_type( 'Gallery', $args );
-
 }
 add_action( 'init', 'Gallery', 0 );
 function dcms_agregar_nueva_zona_widgets() {
-
 	register_sidebar( array(
 		'name'          => 'Nueva Zona Widget',
 		'id'            => 'id-nueva-zona',
@@ -413,7 +394,6 @@ function dcms_agregar_nueva_zona_widgets() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-
   	register_sidebar( array(
   		'name'          => 'Booking Widget',
   		'id'            => 'id-booking',
@@ -450,15 +430,16 @@ function dcms_agregar_nueva_zona_widgets() {
       'before_title'  => '<h2 class="widget-title">',
       'after_title'   => '</h2>',
     ) );
-
 }
-
 add_action( 'widgets_init', 'dcms_agregar_nueva_zona_widgets' );
-
 // Register Custom Post Type
 
 
-
+if( !is_admin()){
+   wp_deregister_script('jquery');
+   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false, '');
+   wp_enqueue_script('jquery');
+}
 
 
 
@@ -468,7 +449,6 @@ add_action( 'widgets_init', 'dcms_agregar_nueva_zona_widgets' );
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-
 define('HOTEL_WP_THEME_NAME','Hotel WP Lite');
 define('HOTEL_WP_THEME_SLUG','hotel-wp-lite');
 define('HOTEL_WP_THEME_URL','http://www.ceylonthemes.com/product/hotel-wp-pro');
@@ -478,23 +458,19 @@ define('HOTEL_WP_THEME_DOC','https://www.ceylonthemes.com/wp-tutorials/wordpress
 define('HOTEL_WP_THEME_REVIEW_URL','https://wordpress.org/support/theme/'.HOTEL_WP_THEME_SLUG.'/reviews/');
 define('HOTEL_WP_TEMPLATE_DIR',get_template_directory());
 define('HOTEL_WP_TEMPLATE_DIR_URI',get_template_directory_uri());
-
 /**
  * Set a constant that holds the theme's minimum supported PHP version.
  */
 define( 'HOTEL_WP_PHP_VERSION', '5.6' );
-
 /**
  * Immediately after theme switch is fired we we want to check php version and
  * revert to previously active theme if version is below our minimum.
  */
 add_action( 'after_switch_theme', 'hotel_wp_test_for_min_php' );
-
 /**
  * Switches back to the previous theme if the minimum PHP version is not met.
  */
 function hotel_wp_test_for_min_php() {
-
 	// Compare versions.
 	if ( version_compare( PHP_VERSION, HOTEL_WP_PHP_VERSION, '<' ) ) {
 		// Site doesn't meet themes min php requirements, add notice...
@@ -502,10 +478,8 @@ function hotel_wp_test_for_min_php() {
 		// ... and switch back to previous theme.
 		switch_theme( get_option( 'theme_switched' ) );
 		return false;
-
 	};
 }
-
 /**
  * An error notice that can be displayed if the Minimum PHP version is not met.
  */
@@ -514,8 +488,6 @@ function hotel_wp_php_not_met_notice() {
 	<div class="notice notice-error is-dismissible" ><p><?php esc_html_e("Can't activate the theme. Hotel WP Theme requires Minimum PHP version 5.6",'hotel-wp-lite'); ?></p></div>
 	<?php
 }
-
-
 /**
 * Custom settings for this theme.
 */
@@ -523,7 +495,6 @@ require get_parent_theme_file_path( '/inc/settings.php' );
 //load settings
 $hotel_wp_default_settings = new hotel_wp_settings();
 $hotel_wp_option = wp_parse_args(  get_option( 'hotel_wp_option', array() ) , $hotel_wp_default_settings->default_data());
-
 /**
  * Sets up theme defaults and registers support for various WordPress features.
 **/
@@ -531,18 +502,13 @@ function hotel_wp_setup() {
 	/*
 	 * Make theme available for translation.
 	 */
-
 	load_theme_textdomain( 'hotel-wp-lite', get_template_directory() . '/languages'  );
-
 	if ( ! isset( $content_width ) ) $content_width = 1600;
-
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
-
 	/*
 	 * Let WordPress manage the document title.
 	*/
-
 	$defaults = array(
 		'default-color'          => '#fff',
 		'default-image'          => '',
@@ -553,34 +519,25 @@ function hotel_wp_setup() {
 		'admin-head-callback'    => '',
 		'admin-preview-callback' => ''
 	);
-
 	add_theme_support( 'custom-background', $defaults );
-
 	add_theme_support( 'title-tag' );
-
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 */
-
 	add_theme_support( 'post-thumbnails' );
-
 	set_post_thumbnail_size( 200, 200 );
-
 	// This theme uses wp_nav_menu()
 	register_nav_menus(
 		array(
 			'top'    => __( 'Top Menu', 'hotel-wp-lite' ),
 		)
 	);
-
 	// This theme uses wp_nav_menu()
 	register_nav_menus(
 		array(
 			'footer'    => __( 'Footer Menu', 'hotel-wp-lite' ),
 		)
 	);
-
-
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -593,8 +550,6 @@ function hotel_wp_setup() {
 			'caption',
 		)
 	);
-
-
 	// Add theme support for Custom Logo.
 	add_theme_support(
 		'custom-logo', array(
@@ -603,8 +558,6 @@ function hotel_wp_setup() {
 			'flex-width' => true,
 		)
 	);
-
-
 	$args = array(
 		'width'         => 1600,
 		'flex-width'    => true,
@@ -613,14 +566,10 @@ function hotel_wp_setup() {
 		'uploads'         => true,
 		'random-default'  => true,
 		'header-text'     => false,
-
 	);
-
 	add_theme_support( 'custom-header', $args );
-
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
-
 	// Define and register starter content to showcase the theme on new sites.
 	$starter_content = array(
 		'widgets'     => array(
@@ -630,12 +579,10 @@ function hotel_wp_setup() {
 				'categories',
 				'archives',
 			),
-
 			// Add business info widget to the footer 1 area.
 			'footer-sidebar-1' => array(
 				'text_about',
 			),
-
 			// Put widgets in the footer 2 area.
 			'footer-sidebar-2' => array(
 				'recent-posts',
@@ -648,9 +595,7 @@ function hotel_wp_setup() {
 			'footer-sidebar-4' => array(
 				'search',
 			),
-
 		),
-
 		// Set up nav menus for each of the two areas registered in the theme.
 		'nav_menus'   => array(
 			// Assign a menu to the "top" location.
@@ -669,8 +614,6 @@ function hotel_wp_setup() {
 				),
 			),
 	);
-
-
 	/**
 	 * Filters hotel-wp-lite array of starter content.
 	 *
@@ -679,11 +622,9 @@ function hotel_wp_setup() {
 	 * @param array $starter_content Array of starter content.
 	 */
 	$starter_content = apply_filters( 'hotel_wp_starter_content', $starter_content );
-
 	add_theme_support( 'starter-content', $starter_content );
 }
 add_action( 'after_setup_theme', 'hotel_wp_setup' );
-
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -691,61 +632,43 @@ add_action( 'after_setup_theme', 'hotel_wp_setup' );
  *
  * $content_width = $GLOBALS['content_width'];
  */
-
-
 /**
  * Register custom fonts.
  */
 function hotel_wp_fonts_url() {
 	$fonts_url = '';
-
 	/*
 	 * Translators: If there are characters in your language that are not
 	 * supported by "Open Sans", sans-serif;, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
 	$typography = _x( 'on', 'Open Sans font: on or off', 'hotel-wp-lite' );
-
 	if ( 'off' !== $typography ) {
 		$font_families = array();
-
 		if( 'default' == get_theme_mod('fontsscheme','default') ){
-
 		    $font_families[] = 'Open Sans:300,400,500';
 			$font_families[] = 'PT Sans:300,400,500';
-
 		}else {
-
 		    $font_families[] = get_theme_mod('body_fontfamily','Open Sans').':300,400,500';
 			$font_families[] = get_theme_mod('header_fontfamily','PT Sans').':300,400,500';
-
 		}
-
 		//print_r($font_families);
-
 		$query_args = array(
 		'family' => urlencode( implode( '|', $font_families ) ),
 		'subset' => urlencode( 'latin,latin-ext' ),
 		);
-
 		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-
 	}
-
 	return esc_url( $fonts_url );
 }
-
 /**
  * Display custom font CSS.
  */
 function hotel_wp_fonts_css_container() {
-
 	if ( 'custom' !== get_theme_mod( 'fontsscheme' ) && ! is_customize_preview() ) {
 		return;
 	}
-
 	require( get_parent_theme_file_path( '/inc/custom-fonts.php' ) );
-
 ?>
 	<style type="text/css" id="custom-fonts" >
 		<?php echo hotel_wp_custom_fonts_css(); ?>
@@ -753,7 +676,6 @@ function hotel_wp_fonts_css_container() {
 <?php
 }
 add_action( 'wp_head', 'hotel_wp_fonts_css_container' );
-
 /**
  * Add preconnect for Google Fonts.
  *
@@ -770,15 +692,12 @@ function hotel_wp_resource_hints( $urls, $relation_type ) {
 			'crossorigin',
 		);
 	}
-
 	return $urls;
 }
 add_filter( 'wp_resource_hints', 'hotel_wp_resource_hints', 10, 2 );
-
 /**
 * display notice
 **/
-
 function hotel_wp_general_admin_notice(){
     global $pagenow;
 	if($pagenow == 'index.php' || $pagenow == 'themes.php'){
@@ -805,17 +724,14 @@ function hotel_wp_general_admin_notice(){
 		 echo wp_kses_post($msg);
 	}
 }
-
 //show, hide notice, update_option('hotel_wp_admin_notice', 1);
 if ( isset( $_GET['hotel_wp_notice_dismissed'] ) ){
 	update_option('hotel_wp_admin_notice', 6);
 }
-
 $hotel_wp_notice = get_option('hotel_wp_admin_notice', 0);
 if($hotel_wp_notice != 6){
 	add_action('admin_notices', 'hotel_wp_general_admin_notice');
 }
-
 /**
  * Register widget area.
  *
@@ -833,7 +749,6 @@ function hotel_wp_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
-
 	register_sidebar(
 		array(
 			'name'          => __( 'Footer 1', 'hotel-wp-lite' ),
@@ -845,7 +760,6 @@ function hotel_wp_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
-
 	register_sidebar(
 		array(
 			'name'          => __( 'Footer 2', 'hotel-wp-lite' ),
@@ -857,7 +771,6 @@ function hotel_wp_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
-
 	register_sidebar(
 		array(
 			'name'          => __( 'Footer 3', 'hotel-wp-lite' ),
@@ -869,7 +782,6 @@ function hotel_wp_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
-
 	register_sidebar(
 		array(
 			'name'          => __( 'Footer 4', 'hotel-wp-lite' ),
@@ -881,8 +793,6 @@ function hotel_wp_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
-
-
 	/* blog section sidebar */
 	register_sidebar(
 		array(
@@ -895,10 +805,8 @@ function hotel_wp_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
-
 }
 add_action( 'widgets_init', 'hotel_wp_widgets_init' );
-
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and
  * a 'Continue reading' link.
@@ -912,7 +820,6 @@ function hotel_wp_excerpt_more( $link ) {
 	if ( is_admin() ) {
 		return $link;
 	}
-
 	$link = sprintf(
 		'<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
 		esc_url( get_permalink( get_the_ID() ) ),
@@ -922,7 +829,6 @@ function hotel_wp_excerpt_more( $link ) {
 	return ' &hellip; ' . $link;
 }
 add_filter( 'excerpt_more', 'hotel_wp_excerpt_more' );
-
 /**
  * Handles JavaScript detection.
  *
@@ -934,7 +840,6 @@ function hotel_wp_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
 add_action( 'wp_head', 'hotel_wp_javascript_detection', 0 );
-
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
@@ -944,37 +849,26 @@ function hotel_wp_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'hotel_wp_pingback_header' );
-
-
 /**
  * Enqueue scripts and styles.
  */
 function hotel_wp_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'hotel-wp-lite-fonts', hotel_wp_fonts_url(), array(), null );
-
 	wp_enqueue_style( 'boostrap-css', get_theme_file_uri( '/css/bootstrap.css' ), array(), '3.3.6');
-
 	// Theme stylesheet.
 	wp_enqueue_style( 'hotel-wp-lite-style', get_stylesheet_uri() );
-
 	//fonsawesome
 	wp_enqueue_style( 'fontawesome-css', get_theme_file_uri( '/fonts/font-awesome/css/font-awesome.css' ), array(), '4.7');
-
 	// Load the html5 shiv.
 	wp_enqueue_script( 'html5', get_theme_file_uri( '/js/html5.js' ), array(), '3.7.3' );
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
-
 	wp_enqueue_script( 'hotel-wp-lite-skip-link-focus-fix', get_theme_file_uri( '/js/skip-link-focus-fix.js' ), array(), '1.0', true );
-
 	wp_enqueue_script( 'boostrap-js', get_theme_file_uri( '/js/bootstrap.min.js' ), array( 'jquery' ), '3.3.7', true);
-
 	wp_enqueue_script( 'hotel-wp-scroll-top-js', get_theme_file_uri( '/js/scrollTop.js' ), array( 'jquery' ), '1.0', true);
-
 	$hotel_wp_l10n = array(
 		'quote' => hotel_wp_get_fo( array( 'icon' => 'quote-right' ) ),
 	);
-
 	if ( has_nav_menu( 'top' ) ) {
 		wp_enqueue_script( 'hotel-wp-lite-navigation', get_theme_file_uri( '/js/navigation.js' ), array( 'jquery' ), '1.0', true );
 		$hotel_wp_l10n['expand']   = __( 'Expand child menu', 'hotel-wp-lite' );
@@ -986,18 +880,12 @@ function hotel_wp_scripts() {
 			)
 		);
 	}
-
 	wp_localize_script( 'hotel-wp-lite-skip-link-focus-fix', 'hotelWPScreenReaderText', $hotel_wp_l10n );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
 }
 add_action( 'wp_enqueue_scripts', 'hotel_wp_scripts' );
-
-
-
 /**
  * Filter the `sizes` value in the header image markup.
  *
@@ -1017,25 +905,19 @@ function hotel_wp_header_image_tag( $html, $header, $attr ) {
 	return $html;
 }
 add_filter( 'get_header_image_tag', 'hotel_wp_header_image_tag', 10, 3 );
-
-
 /**
  * Return rgb value of a $hex - hexadecimal color value with given $a - alpha value
  * Ex:- hotel_wp_rgba('#11ffee',15) // return rgba(17,255,238,15)
  *
  * @since hotel-wp-lite 1.0
 **/
-
 function hotel_wp_rgba($hex,$a){
-
 	$r = hexdec(substr($hex,1,2));
 	$g = hexdec(substr($hex,3,2));
 	$b = hexdec(substr($hex,5,2));
 	$result = 'rgba('.$r.','.$g.','.$b.','.$a.')';
-
 	return $result;
 }
-
 /**
  * Modifies tag cloud widget arguments to display all tags in the same font size
  * and use list format for better accessibility.
@@ -1050,48 +932,34 @@ function hotel_wp_widget_tag_cloud_args( $args ) {
 	$args['smallest'] = 1;
 	$args['unit']     = 'em';
 	$args['format']   = 'list';
-
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'hotel_wp_widget_tag_cloud_args' );
-
 /**
  * Custom template tags for this theme.
 */
 require get_parent_theme_file_path( '/inc/template-tags.php' );
-
 /* load default data, default settings are stored in template-tags.php */
-
-
 /**
 * Additional features to allow styling of the templates.
 */
 require HOTEL_WP_TEMPLATE_DIR.'/inc/template-functions.php';
-
 if ( class_exists( 'WP_Customize_Control' ) ) {
-
 	// Inlcude the Alpha Color Picker control file.
 	require HOTEL_WP_TEMPLATE_DIR.'/inc/color-picker/alpha-color-picker.php';
-
 }
-
 /**
  * fontawesome icons functions and filters.
  */
 require HOTEL_WP_TEMPLATE_DIR.'/inc/icon-functions.php';
-
 /**
  * Customizer additions.
  */
-
 require HOTEL_WP_TEMPLATE_DIR.'/inc/customizer.php';
-
-
 /**
  * Display footer custom color CSS.
  */
 function hotel_wp_footer_css_container() {
-
 ?>
 	<style type="text/css" id="custom-footer-colors" >
 		<?php echo hotel_wp_footer_foreground_css(); ?>
@@ -1099,7 +967,6 @@ function hotel_wp_footer_css_container() {
 <?php
 }
 add_action( 'wp_head', 'hotel_wp_footer_css_container' );
-
 /**
  * This function adds some styles to the WordPress Customizer
  */
@@ -1115,12 +982,10 @@ function hotel_wp_customizer_styles() { ?>
 		.wp-full-overlay-sidebar .wp-full-overlay-header, .customize-controls-close, .customize-section-back, .customize-section-back:focus {background-color: #fff;}
 		.customize-controls-close { border-top:4px solid #FFF;}
 		#accordion-section-hotel_wp_lite .accordion-section-title {color:#eda81b;font-weight: 600;}
-
 	</style>
 	<?php
 }
 add_action( 'customize_controls_print_styles', 'hotel_wp_customizer_styles', 999 );
-
 /*
  * add search form to top menu
  */
@@ -1134,8 +999,6 @@ function hotel_wp_add_search_form_to_menu($items, $args) {
   return $items . '<li style="color:#eee;" class="my-nav-menu-search"><a id="myBtn" href="#"><i class="fa fa-search" style="color:#eee; font-size:18px;"></i>
   </a></li>';
 }
-
-
 /*
  * Display template by name. Available template sections are as follows,
  * slider, news,portfolio, questions,service, skills, stats, team, testimonials, woocommerce, callout
@@ -1144,7 +1007,6 @@ function hotel_wp_featured_area($args, $featured_div = true){
 	//dropdown not showing with featured area = overflow - hidden
 	if($args=='booking')
 	$featured_div=false;
-
 	if($featured_div==true) {
 	   echo '<div class="featured-section">';
 	   get_template_part( '/sections/'.$args, 'section' );
@@ -1153,13 +1015,10 @@ function hotel_wp_featured_area($args, $featured_div = true){
        get_template_part( '/sections/'.$args, 'section' );
 	}
 }
-
-
 /* Load widgets */
 if($hotel_wp_option['widget_posts']){
 	require  HOTEL_WP_TEMPLATE_DIR.'/inc/widget-posts.php';
 }
-
 /**
  * TGM plugin.
  */

@@ -1,32 +1,32 @@
-//
-// $(function (){
-//   $(window).scroll(function(){
-//     if ($(this).scrollTop() > 100) {
-//       $('.menu').addClass("n-scroll");
-//     } else {
-//       $(".menu").removeClass("n-scroll");
-//     }
-//   });
-// });
-// $(function (){
-//   $(window).scroll(function(){
-//     if ($(this).scrollTop() > 100) {
-//       $('.logo-navbar').addClass("none");
-//     } else {
-//       $(".logo-navbar").removeClass("none");
-//     }
-//   });
-// });
-// $(function (){
-//   $(window).scroll(function(){
-//     if ($(this).scrollTop() > 100) {
-//       $('.none-a').addClass("no-none");
-//     } else {
-//       $(".none-a").removeClass("no-none");
-//     }
-//   });
-// });
-//
+$(function (){
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 100) {
+      $('.menu').addClass("n-scroll");
+    } else {
+      $(".menu").removeClass("n-scroll");
+    }
+  });
+});
+
+$(function (){
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 100) {
+      $('.logo-navbar').addClass("none");
+    } else {
+      $(".logo-navbar").removeClass("none");
+    }
+  });
+});
+$(function (){
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 100) {
+      $('.none-a').addClass("no-none");
+    } else {
+      $(".none-a").removeClass("no-none");
+    }
+  });
+});
+
 $(function() {
   $('.pop-up').hide();
   $('.pop-up').fadeIn(1000);
@@ -40,14 +40,14 @@ $(function() {
 
     });
  });
-// if (/iP(hone|od|ad)/.test(navigator.platform)) {
-//   $("*").css({
-//     cursor: "pointer"
-//   });
-// }
-// $(".preloader")
-//   .delay(3500)
-//   .fadeOut(600);
+if (/iP(hone|od|ad)/.test(navigator.platform)) {
+  $("*").css({
+    cursor: "pointer"
+  });
+}
+$(".preloader")
+  .delay(3500)
+  .fadeOut(600);
 
 wow = new WOW(
   {

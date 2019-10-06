@@ -6,12 +6,10 @@
     <div class="item-banner" , style="background-image:url('<?php echo get_the_post_thumbnail_url();?>')">
       <div class="mask-banner">
         <h2 class="title-banner container"><?php the_title(); ?></h2>
-
         <?php $args = get_post_custom( $post_id); ?>
         <?php if ($args['promotion_link'][0] == true ): ?>
           <a class="btn-general btn-banner" target="_blank" href="<?php echo $args['promotion_link'] [0]?>"><?php echo $args['button_title'] [0]?></a>
         <?php endif; ?>
-
       </div>
     </div>
     <?php endwhile; ?>

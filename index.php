@@ -14,9 +14,7 @@
 
 get_header();
 ?>
-<!-- <div class='preloader'>
-	<img src="<?php echo get_template_directory_uri(); ?>/assets/img/hotel.svg" alt="">
-</div> -->
+
 
   <!-- BANNER HOME -->
 	<?php get_template_part('partials/banner') ?>

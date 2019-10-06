@@ -346,13 +346,13 @@
   }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
+@media screen and (min-width: 1350px) and (max-width: 1366px) {
   .hotel-booking-search form {
-    display: block!important;
+    display: flex!important;
 }
 
   .booking{
-    width: 100%!important;
+    width: 85%!important;
   }
   .pop-up{
     display: flex;
@@ -360,13 +360,89 @@
     align-items: center;
   }
   .hb-form-table{
-    display: initial!important;
+    display: flex!important;
   }
-
-
 }
+@media screen and (min-width: 1090px) and (max-width: 1349px) {
+  .hotel-booking-search form {
+    display: block!important;
+    }
+    .booking{
+      width: 85%!important;
+    }
+    .pop-up{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hb-form-table{
+      display: flex!important;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1089px) {
+  .hb-form-field {
+      display: grid !important;
+  }
+  .hb-form-table {
+    display: block !important;
+  }
+  .hotel-booking-search form {
+      display: block !important;
+  }
+  .booking {
+      width: 35% !important;
+      text-align: center;
+  }
+    .room {
+    padding-top: 30rem !important;
+  }
+  .booking-section {
+    bottom: -20rem !important;
+  }
+}
+
+@media screen and (min-width: 770) and (max-width: 1215px) {
+  .hb_room_carousel_container .hb_room{
+  }
+  .rooms .hb_room .media img {
+    height: 15rem !important;
+  }
+  .hb_room_carousel_container .hb_room {
+    height: 15rem !important;
+    min-height: 0 !important;
+    }
+    .owl-carousel .owl-wrapper-outer {
+        width: 95% !important;
+    }
+}
+
+@media screen and (min-width: 0) and (max-width: 769px) {
+  .hb_room_carousel_container .hb_room{
+  }
+  .rooms .hb_room .media img {
+    height: 15rem !important;
+  }
+  .hb_room_carousel_container .hb_room {
+    height: 15rem !important;
+    min-height: 0 !important;
+    }
+}
+
 @media screen and (min-width: 991px){
   .n-scroll a{
     color: #35322e !important;
   }
+
+}
+@media screen and (min-width: 1215px){
+  .hb_room_carousel_container .hb_room{
+    width: 40rem !important;
+  }
+  .rooms .hb_room .media img {
+    height: 25rem !important;
+  }
+  .hb_room_carousel_container .hb_room {
+    height: 25rem !important;
+}
+
 }
