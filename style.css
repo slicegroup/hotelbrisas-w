@@ -109,13 +109,14 @@ header {
   color: #35322e;
   padding-top: 3rem;
 }
-
 .padding-top-bottom {
   padding-top: 8rem;
   padding-bottom: 5rem;
 }
-
-
+.padding-form{
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
 .cover {
   height: 100%;
   width: 100%;

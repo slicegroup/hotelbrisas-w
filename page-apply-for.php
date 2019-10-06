@@ -27,7 +27,7 @@
   <!-- END BANNER -->
 
   <section class="multi_step_form form-flex">
-    <div class="container padding-top-bottom">
+    <div class="container padding-form">
       <div class="">
         <?php echo FrmFormsController::get_form_shortcode( array( 'id' => 3, 'title' => false, 'description' => false ) ); ?>
 
