@@ -103,7 +103,7 @@ gem 'jquery-validation-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 #javascript
-gem 'gon', '6.2.1'
+gem 'gon', '6.4.0'
 
 #datepicker
 gem 'bootstrap-datepicker-rails'
