@@ -114,7 +114,7 @@ gem 'momentjs-rails'
 
 # Development
 group :development do
-  gem 'better_errors', '2.4.0'
+  gem 'better_errors', '2.9.1'
   gem 'binding_of_caller', '~> 0.8.0'
   gem 'byebug', '10.0.2'
   gem 'commands', '0.2.1'
